@@ -94,7 +94,15 @@
   .wrap{
     width: 30%;
     position: absolute;
-    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .plakPhoto{
+    position: absolute;
+    left: 50%;
+    transform: translate(49%, -60%);
+    width: 200px;
+
+    z-index: -10;
   }

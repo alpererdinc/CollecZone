@@ -1,0 +1,100 @@
+.topnav {
+    position: relative;
+    background-color: rgb(255, 255, 255)); 
+    overflow: hidden;
+  }
+  
+
+  .topnav a {
+    float: left;
+    color: rgb(26, 26, 26);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  }
+  
+
+  .topnav a:hover {
+    background-color: rgba(12, 12, 12, 0.822);
+    color: rgb(238, 238, 238);
+    border-radius: 100px;
+  }
+  
+ 
+
+  .topnav-center a {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .topnav-left{
+    float: left;
+    margin-left: 16px;
+  
+  }
+  
+ 
+  .topnav-right {
+    float: right;
+  }
+  
+  .pre-blog{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    margin-bottom: 19px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
+    padding-bottom: 4px;
+    font-size: x-large; 
+    text-align: center;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  }
+
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #1a1a1a;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #1f1f1f;
+  }
+  
+  .searchTerm:focus{
+    color: rgb(26, 26, 26);
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid rgb(26, 26, 26);
+    background: rgb(26, 26, 26);
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

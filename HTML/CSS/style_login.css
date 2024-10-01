@@ -20,6 +20,10 @@ body {
     text-align: center;
 }
 
+.CollecZoneText{
+    font-family: 'Times New Roman', Times, serif;
+  }
+
 h1 {
     color: #0c0c0c;
 }

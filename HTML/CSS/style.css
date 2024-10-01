@@ -1,6 +1,11 @@
+.CollecZoneText{
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .topnav {
-    position: relative;
-    background-color: rgb(255, 255, 255)); 
+    position: sticky;
+    top: 10px;
+    background-color: rgb(255, 255, 255); 
     overflow: hidden;
   }
   
@@ -27,8 +32,8 @@
   .topnav-center a {
     float: none;
     position: absolute;
-    top: 50%;
     left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
   }
   
@@ -68,7 +73,7 @@
     border: 3px solid #1a1a1a;
     border-right: none;
     padding: 5px;
-    height: 20px;
+    height: 36px;
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #1f1f1f;
@@ -105,4 +110,20 @@
     width: 200px;
 
     z-index: -10;
+    
+  }
+
+  
+  .plakOrtasi{
+    position: absolute;
+    left: 50%;
+    transform: translate(190%, -98%);
+    width: 87px;
+
+    z-index: -5;
+    
+    animation: mymove 5s infinite;
+  }
+  @keyframes mymove {
+    50% {transform: rotate(180deg);}
   }

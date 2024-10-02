@@ -1,129 +1,298 @@
-.CollecZoneText{
+.CollecZoneText {
   font-family: 'Times New Roman', Times, serif;
 }
 
 .topnav {
-    position: sticky;
-    top: 10px;
-    background-color: rgb(255, 255, 255); 
-    overflow: hidden;
-  }
-  
+  position: sticky;
+  top: 10px;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
 
-  .topnav a {
-    float: left;
-    color: rgb(26, 26, 26);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-  }
-  
 
-  .topnav a:hover {
-    background-color: rgba(12, 12, 12, 0.822);
-    color: rgb(238, 238, 238);
-    border-radius: 100px;
-  }
-  
- 
+.topnav a {
+  float: left;
+  color: rgb(26, 26, 26);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
 
-  .topnav-center a {
-    float: none;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .topnav-left{
-    float: left;
-    margin-left: 16px;
-  
-  }
-  
- 
-  .topnav-right {
-    float: right;
-  }
-  
-  .pre-blog{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 150px;
-    margin-bottom: 19px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 40px;
-    padding-bottom: 4px;
-    font-size: x-large; 
-    text-align: center;
-    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+
+.topnav a:hover {
+  background-color: rgba(12, 12, 12, 0.822);
+  color: rgb(238, 238, 238);
+  border-radius: 100px;
+}
+
+
+
+.topnav-center a {
+  float: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-left {
+  float: left;
+  margin-left: 16px;
+
+}
+
+
+.topnav-right {
+  float: right;
+  margin-right: 16px;
+}
+
+.pre-blog {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  margin-bottom: 19px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+  padding-bottom: 4px;
+  font-size: x-large;
+  text-align: center;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+.search {
+  width: 300px;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: calc(100% - 40px);
+  /* Arama düğmesine yer bırakmak için genişliği ayarlıyoruz */
+  border: 3px solid #1a1a1a;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #1f1f1f;
+}
+
+.searchTerm:focus {
+  color: rgb(26, 26, 26);
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid rgb(26, 26, 26);
+  background: rgb(26, 26, 26);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+  width: 300px;
+  /* Sabit genişlik ayarlandı */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.plakPhoto {
+  position: absolute;
+  left: 50%;
+  transform: translate(49%, -60%);
+  width: 200px;
+
+  z-index: -10;
+
+}
+
+
+.plakOrtasi {
+  position: absolute;
+  left: 50%;
+  transform: translate(159%, -70%);
+  /* translate işlemi burada kalacak */
+  width: 87px;
+  z-index: -5;
+  animation: mymove 10s linear infinite;
+}
+
+@keyframes mymove {
+  0% {
+    transform: translate(159%, -70%) rotate(0deg);
   }
 
-  .search {
-    width: 100%;
+  /* translate'i koruyarak rotate işlemini ekliyoruz */
+  100% {
+    transform: translate(159%, -70%) rotate(360deg);
+  }
+
+  /* tam dönüş yapacak */
+}
+
+.nota {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 20px;
+  height: 20px;
+  background: url('music-note.png') no-repeat center center;
+  background-size: contain;
+  animation: floatNotes 3s ease-out infinite;
+  opacity: 1;
+}
+
+@keyframes floatNotes {
+  0% {
+    transform: translate(200px, -90px) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(340px, -300px) scale(0.5);
+    /* Sağ üst köşeye doğru gidecek ve küçülecek */
+    opacity: 0;
+    /* Giderek yok olacak */
+  }
+}
+
+@media (min-width: 1025px) {
+  .h-custom {
+    height: 100vh !important;
+  }
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+  top: 13px;
+}
+
+.bigRound {
+  transform: translate(-300px, -6px);
+  margin-top: 190px;
+  height: 1700px;
+  width: 1700px;
+  background-color: #080808;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  /* Yatay olarak ortalar */
+  align-items: center;
+  /* Dikey olarak ortalar */
+  color: white;
+  /* Yazı rengini belirledik */
+  text-align: center;
+  /* Yazıyı ortaladık */
+}
+
+.circleText {
+  font-size: 24px;
+  /* Yazı boyutu */
+  padding: 400px;
+  /* Yazının etrafında biraz boşluk bıraktık */
+}
+
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+}
+
+a {
+  text-decoration: none;
+  color: rgb(204, 72, 72);
+}
+
+
+.bodyText{
+  text-align: center;
+  font-size: 24px;
+  padding: 200px;
+
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 70px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.copyRights {
+  text-align: center;
+}
+
+/* Dropdown Container */
+.dropdown {
     position: relative;
-    display: flex;
-  }
-  
-  .searchTerm {
-    width: 100%;
-    border: 3px solid #1a1a1a;
-    border-right: none;
-    padding: 5px;
-    height: 36px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #1f1f1f;
-  }
-  
-  .searchTerm:focus{
-    color: rgb(26, 26, 26);
-  }
-  
-  .searchButton {
-    width: 40px;
-    height: 36px;
-    border: 1px solid rgb(26, 26, 26);
-    background: rgb(26, 26, 26);
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  /*Resize the wrap to see the search bar change!*/
-  .wrap{
-    width: 30%;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+    display: inline-block;
+}
 
-  .plakPhoto{
-    position: absolute;
-    left: 50%;
-    transform: translate(49%, -60%);
-    width: 200px;
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent; /* Buton arka plan rengi */
+    color: white; /* Yazı rengi */
+    padding: 16px; /* Butonun iç boşlukları */
+    font-size: 16px; /* Yazı boyutu */
+    border: none; /* Kenar çizgisi yok */
+    cursor: pointer; /* İmleç değişimi */
+    outline: none; /* Kenar çerçevesi yok */
+}
 
-    z-index: -10;
-    
-  }
+/* Dropdown İçeriği */
+.dropdown-content {
+    display: none; /* Başlangıçta gizli */
+    position: absolute; /* Gövdenin üzerinde yerleşim */
+    background-color: #f9f9f9; /* Arka plan rengi */
+    min-width: 160px; /* Minimum genişlik */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Gölge efekti */
+    z-index: 1; /* Üstte görünmesi için */
+}
 
-  
-  .plakOrtasi{
-    position: absolute;
-    left: 50%;
-    transform: translate(190%, -98%);
-    width: 87px;
+/* Dropdown Linkleri */
+.dropdown-content a {
+    color: black; /* Yazı rengi */
+    padding: 12px 16px; /* İç boşluklar */
+    text-decoration: none; /* Alt çizgi yok */
+    display: block; /* Blok elementi */
+}
 
-    z-index: -5;
-    
-    animation: mymove 5s infinite;
-  }
-  @keyframes mymove {
-    50% {transform: rotate(180deg);}
-  }
+/* Dropdown Linki Üzerine Gelindiğinde */
+.dropdown-content a:hover {
+    background-color: #ddd; /* Üzerine gelince arka plan rengi */
+}
+
+/* Dropdown'ı açma */
+.dropdown:hover .dropdown-content {
+    display: block; /* Üzerine gelindiğinde göster */
+}
+
+/* Dropdown İçeriği üzerine gelindiğinde buton yazısının görünürlüğünü artırmak için */
+.dropdown:hover .dropbtn {
+    color: #ddd; /* Buton üzerindeyken renk değişimi */
+}

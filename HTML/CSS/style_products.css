@@ -83,8 +83,46 @@
  
   .topnav-right {
     float: right;
+    margin-right: 16px;
+
   }
 
   body{
     background-color: aliceblue;
+  }
+
+
+
+  .searchInProds {
+    width: 100%;
+    position: relative;
+    display: flex;
+    transform: translate(0px,-480px);
+  }
+  
+  .searchTermProds {
+    width: 100%;
+    border: 3px solid #1a1a1a;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #1f1f1f;
+  }
+  
+  .searchTermProds:focus {
+    color: rgb(26, 26, 26);
+  }
+  
+  .searchButtonProds {
+    width: 40px;
+    height: 36px;
+    border: 1px solid rgb(26, 26, 26);
+    background: rgb(26, 26, 26);
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
   }

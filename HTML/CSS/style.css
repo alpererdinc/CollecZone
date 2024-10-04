@@ -1,54 +1,3 @@
-.CollecZoneText {
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.topnav {
-  position: sticky;
-  top: 10px;
-  background-color: rgb(255, 255, 255);
-  overflow: hidden;
-}
-
-
-.topnav a {
-  float: left;
-  color: rgb(26, 26, 26);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-}
-
-
-.topnav a:hover {
-  background-color: rgba(12, 12, 12, 0.822);
-  color: rgb(238, 238, 238);
-  border-radius: 100px;
-}
-
-
-
-.topnav-center a {
-  float: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.topnav-left {
-  float: left;
-  margin-left: 16px;
-
-}
-
-
-.topnav-right {
-  float: right;
-  margin-right: 16px;
-}
-
 .pre-blog {
   margin-left: auto;
   margin-right: auto;
@@ -58,9 +7,33 @@
   padding-right: 20px;
   padding-top: 40px;
   padding-bottom: 4px;
-  font-size: x-large;
   text-align: center;
-  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+
+.mainText {
+  font-size: 180px;
+  font-family: "Allison", cursive;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -5px;
+  rotate: -2deg;
+  transform: translate(0, 74px);
+  color: #ce3043;
+  z-index: 10;
+  position: relative;
+}
+
+.mainText2 {
+  font-size: 100px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  transform: translate(9px,0);
+
+}
+
+.RotatingVinyl{
+  transform: translate(-180px,-274px);
 }
 
 .search {
@@ -72,24 +45,24 @@
 .searchTerm {
   width: calc(100% - 40px);
   /* Arama düğmesine yer bırakmak için genişliği ayarlıyoruz */
-  border: 3px solid #1a1a1a;
+  border: 3px solid #202529;
   border-right: none;
   padding: 5px;
   height: 36px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #1f1f1f;
+  color: #202529;
 }
 
 .searchTerm:focus {
-  color: rgb(26, 26, 26);
+  color: #202529;
 }
 
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid rgb(26, 26, 26);
-  background: rgb(26, 26, 26);
+  border: 1px solid #202529;
+  background: #202529;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
@@ -106,6 +79,28 @@
   transform: translate(-50%, -50%);
 }
 
+@media (max-width: 1024px) {
+  .col-sm {
+      flex: 1 1 calc(50% - 20px);
+  }
+
+  #header {
+      flex-direction: column;
+      padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-sm {
+      flex: 1 1 100%;
+  }
+
+  .search {
+      width: 100%;
+  }
+}
+
+
 .plakPhoto {
   position: absolute;
   left: 50%;
@@ -120,21 +115,21 @@
 .plakOrtasi {
   position: absolute;
   left: 50%;
-  transform: translate(159%, -70%);
+  transform: translate(171%, -70%);
   /* translate işlemi burada kalacak */
-  width: 87px;
+  width: 83px;
   z-index: -5;
   animation: mymove 10s linear infinite;
 }
 
 @keyframes mymove {
   0% {
-    transform: translate(159%, -70%) rotate(0deg);
+    transform: translate(171%, -70%) rotate(0deg);
   }
 
   /* translate'i koruyarak rotate işlemini ekliyoruz */
   100% {
-    transform: translate(159%, -70%) rotate(360deg);
+    transform: translate(171%, -70%) rotate(360deg);
   }
 
   /* tam dönüş yapacak */
@@ -173,6 +168,44 @@
   }
 }
 
+.expandButton {
+  text-align: center; /* Butonu ortalamak için */
+  margin-top: 20px;
+}
+
+.circleButton {
+  background-color: #202529;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 21px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.circleButton2 {
+  background-color: #f9f9f9;
+  color: #202529;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 21px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+
+.circleButton:hover {
+  transform: scale(1.1); /* Hover efektle buton büyüyecek */
+}
+
+.circleButton2:hover {
+  transform: scale(1.1); /* Hover efektle buton büyüyecek */
+}
+
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
   font-size: 1rem;
   line-height: 2.15;
@@ -185,13 +218,20 @@
 }
 
 .bigRound {
-  transform: translate(-300px, -6px);
-  margin-top: 190px;
-  height: 1700px;
-  width: 1700px;
-  background-color: #080808;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  margin-bottom: 19px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+  padding-bottom: 4px;
+  text-align: center;
+  height: 1000px;
+  width: 1000px;
+  background-color:#202529;
   border-radius: 50%;
-  display: flex;
+  display: flexbox;
   justify-content: center;
   /* Yatay olarak ortalar */
   align-items: center;
@@ -203,12 +243,39 @@
 }
 
 .circleText {
-  font-size: 24px;
+  font-size: 19px;
   /* Yazı boyutu */
-  padding: 400px;
+  padding: 200px;
   /* Yazının etrafında biraz boşluk bıraktık */
 }
 
+
+.GoTopButton {
+  position: fixed;  /* Sabit pozisyon */
+  right: 50px;      /* Sağdan 20px uzaklıkta */
+  bottom: 80px;     /* Alttan 20px uzaklıkta */
+  z-index: 1000;    /* Üstte kalmasını sağlamak için z-index */
+}
+
+.circleButton3 {
+  background-color: #202529;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.circleButton3:hover {
+  transform: scale(1.1);
+}
+
+body {
+  background-color: #f9f9f9;
+}
 
 html,
 body {
@@ -219,11 +286,16 @@ body {
 
 a {
   text-decoration: none;
-  color: rgb(204, 72, 72);
+  color: #ce3043;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #ff7878;
 }
 
 
-.bodyText{
+.bodyText {
   text-align: center;
   font-size: 24px;
   padding: 200px;
@@ -247,52 +319,57 @@ footer {
   text-align: center;
 }
 
-/* Dropdown Container */
-.dropdown {
-    position: relative;
-    display: inline-block;
+
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #f8f8f8;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
-/* Dropdown Button */
-.dropbtn {
-    background-color: transparent; /* Buton arka plan rengi */
-    color: white; /* Yazı rengi */
-    padding: 16px; /* Butonun iç boşlukları */
-    font-size: 16px; /* Yazı boyutu */
-    border: none; /* Kenar çizgisi yok */
-    cursor: pointer; /* İmleç değişimi */
-    outline: none; /* Kenar çerçevesi yok */
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Dropdown İçeriği */
-.dropdown-content {
-    display: none; /* Başlangıçta gizli */
-    position: absolute; /* Gövdenin üzerinde yerleşim */
-    background-color: #f9f9f9; /* Arka plan rengi */
-    min-width: 160px; /* Minimum genişlik */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Gölge efekti */
-    z-index: 1; /* Üstte görünmesi için */
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
 }
 
-/* Dropdown Linkleri */
-.dropdown-content a {
-    color: black; /* Yazı rengi */
-    padding: 12px 16px; /* İç boşluklar */
-    text-decoration: none; /* Alt çizgi yok */
-    display: block; /* Blok elementi */
+#navbar li a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 0.3s ease;
 }
 
-/* Dropdown Linki Üzerine Gelindiğinde */
-.dropdown-content a:hover {
-    background-color: #ddd; /* Üzerine gelince arka plan rengi */
+#navbar li a:hover {
+  color: #ce3043;
 }
 
-/* Dropdown'ı açma */
-.dropdown:hover .dropdown-content {
-    display: block; /* Üzerine gelindiğinde göster */
+#navbar li a:hover,
+#navbar li a.active {
+  color: #ce3043;
 }
 
-/* Dropdown İçeriği üzerine gelindiğinde buton yazısının görünürlüğünü artırmak için */
-.dropdown:hover .dropbtn {
-    color: #ddd; /* Buton üzerindeyken renk değişimi */
+.logo {
+  width: 200px;
+}
+
+.cartIcon {
+
+  width: 25px;
+  transition: 0.3s ease;
+
+}
+
+.cartIcon:hover {
+  filter: invert(24%) sepia(36%) saturate(4167%) hue-rotate(332deg) brightness(97%) contrast(93%);
 }

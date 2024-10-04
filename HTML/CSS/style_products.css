@@ -1,128 +1,189 @@
-.CollecZoneText{
-  font-family: 'Times New Roman', Times, serif;
+body {
+  background-color: aliceblue;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.col-sm {
+  flex: 1 1 calc(33.333% - 20px);
+  margin: 10px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 13px;
+  padding: 15px;
+  text-align: center;
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+  height: 450px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 200px; /* Resimlerin yüksekliği sabitlendi */
+  object-fit: contain; /* Resimlerin kırpılarak sığmasını sağlar */
 }
 
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-    border-radius: 13px;
-  }
-  
-  .plakName{
-    font-size: x-large;
-  }
+.plakName {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  height: 200px; 
+}
 
-  .price {
-    color: grey;
-    font-size: 22px;
-  }
-  
-  .card button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-    border-radius: 12px;
-  }
-  
-  .card button:hover {
-    opacity: 0.7;
-  } 
+.price {
+  color: grey;
+  font-size: 1.2rem;
+}
 
-  .topnav {
-    position: sticky;
-    top: 10px;
-    background-color: rgb(255, 255, 255); 
-    overflow: hidden;
-    margin-bottom: 80px;
-  }
-  
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #202529;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 12px;
+}
 
-  .topnav a {
-    float: left;
-    color: rgb(26, 26, 26);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-  }
-  
-
-  .topnav a:hover {
-    background-color: rgba(12, 12, 12, 0.822);
-    color: rgb(238, 238, 238);
-    border-radius: 100px;
-  }
-  
- 
-
-  .topnav-center a {
-    float: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .topnav-left{
-    float: left;
-    margin-left: 16px;
-  
-  }
-  
- 
-  .topnav-right {
-    float: right;
-    margin-right: 16px;
-
-  }
-
-  body{
-    background-color: aliceblue;
-  }
+.card button:hover {
+  opacity: 0.8;
+}
 
 
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #f8f8f8;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
 
-  .searchInProds {
-    width: 100%;
-    position: relative;
-    display: flex;
-    transform: translate(0px,-480px);
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+}
+
+#navbar li a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 0.3s ease;
+}
+
+#navbar li a:hover {
+  color: #ce3043;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: #ce3043;
+}
+
+.logo {
+  width: 200px;
+}
+
+.cartIcon {
+
+  width: 25px;
+  transition: 0.3s ease;
+
+}
+
+.cartIcon:hover {
+  filter: invert(24%) sepia(36%) saturate(4167%) hue-rotate(332deg) brightness(97%) contrast(93%);
+}
+
+.search {
+  width: 300px;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: calc(100% - 40px);
+  /* Arama düğmesine yer bırakmak için genişliği ayarlıyoruz */
+  border: 3px solid #202529;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #202529;
+}
+
+.searchTerm:focus {
+  color: #202529;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #202529;
+  background: #202529;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+  width: 300px;
+  /* Sabit genişlik ayarlandı */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1024px) {
+  .col-sm {
+      flex: 1 1 calc(50% - 20px);
   }
-  
-  .searchTermProds {
-    width: 100%;
-    border: 3px solid #1a1a1a;
-    border-right: none;
-    padding: 5px;
-    height: 36px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #1f1f1f;
+
+  #header {
+      flex-direction: column;
+      padding: 10px 20px;
   }
-  
-  .searchTermProds:focus {
-    color: rgb(26, 26, 26);
+}
+
+@media (max-width: 768px) {
+  .col-sm {
+      flex: 1 1 100%;
   }
-  
-  .searchButtonProds {
-    width: 40px;
-    height: 36px;
-    border: 1px solid rgb(26, 26, 26);
-    background: rgb(26, 26, 26);
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
+
+  .search {
+      width: 100%;
   }
+}

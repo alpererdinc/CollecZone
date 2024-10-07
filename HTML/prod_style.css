@@ -1,0 +1,178 @@
+body {
+    background-color: aliceblue;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Öğeler arasında eşit boşluk bırakır */
+    margin-left: -10px; /* Negatif margin ile satırları hizala */
+    margin-right: -10px; /* Negatif margin ile satırları hizala */
+
+}
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 13px;
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+    height: 450px;
+    width: 100%; /* Kartın genişliği %100 olacak */
+    max-width: 400px; /* Kartın maksimum genişliği */
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px; /* Resimlerin yüksekliği sabitlendi */
+    object-fit: contain; /* Resimlerin kırpılarak sığmasını sağlar */
+}
+
+.plakName {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    height: 200px; 
+}
+
+.price {
+    color: grey;
+    font-size: 1.2rem;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #202529;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 12px;
+}
+
+.card button:hover {
+    opacity: 0.8;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #f8f8f8;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover {
+    color: #ce3043;
+}
+
+.logo {
+    width: 200px;
+}
+
+.cartIcon {
+    width: 25px;
+    transition: 0.3s ease;
+}
+
+.cartIcon:hover {
+    filter: invert(24%) sepia(36%) saturate(4167%) hue-rotate(332deg) brightness(97%) contrast(93%);
+}
+
+.search {
+    width: 300px;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: calc(100% - 40px);
+    border: 3px solid #202529;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #202529;
+}
+
+.searchTerm:focus {
+    color: #202529;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #202529;
+    background: #202529;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.wrap {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.col-sm {
+    flex: 0 1 calc(33.333% - 20px); /* Flex-grow: 0, Flex-shrink: 0, Flex-basis: %33.333 */
+    max-width: calc(33.333% - 20px); /* Her satırda 3 kart olmasını sağlar */
+    margin: 10px; /* Kartlar arasındaki boşluk */
+}
+
+/* Küçük ekranlarda düzeni korumak için medya sorguları */
+@media (max-width: 1024px) {
+    .col-sm {
+        flex: 0 1 calc(50% - 20px); /* Daha küçük ekranlarda 2 kart */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .col-sm {
+        flex: 0 1 100%; /* Mobil cihazlarda 1 kart */
+        max-width: 100%;
+    }
+}
+
+

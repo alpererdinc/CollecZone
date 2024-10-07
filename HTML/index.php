@@ -26,7 +26,9 @@
         href="https://fonts.googleapis.com/css2?family=Allison&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-        <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
+
+
 
 </head>
 
@@ -34,40 +36,9 @@
 
 <body>
 
-    <section id="header">
-        <a href="#"><img src="CSS/images/colleczoneLogo.png" class="logo" alt=""></a>
+    <!-- index.php -->
+<?php include 'navbar.php'; ?>
 
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="index.html">Ana Sayfa</a></li>
-                <!-- Dropdown menü başlıyor -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Kategoriler
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="prod_index.php">Plaklar</a>
-                    <a class="dropdown-item" href="#">Çizgi Romanlar</a>
-                    <a class="dropdown-item" href="#">Mumlar</a>
-                </div>
-            </li>
-            <!-- Dropdown menü bitiyor -->
-                <li><a href="about.html">Hakkımızda</a></li>
-                <li><a href="profile.php">Profilim</a></li>
-                <li><a href="cart.html"><img src="CSS/images/shopping-bag.png" class="cartIcon" alt=""></a></li>
-                <li>
-                    <div class="search">
-                        <input type="text" class="searchTerm" placeholder="Eksik parçanı bul...">
-                        <button type="submit" class="searchButton">
-                            <i class="fa fa-search"></i>
-                        </button>
-                </li>
-
-
-            </ul>
-        </div>
-    </section>
 
 
 
@@ -93,14 +64,14 @@
 
     <div class="expandButton">
         <a href="#Round"><button class="circleButton">
-            &#x2193; <!-- Aşağı ok simgesi -->
-        </button></a>
+                &#x2193; <!-- Aşağı ok simgesi -->
+            </button></a>
     </div>
 
     <div class="GoTopButton">
         <a href="#"><button class="circleButton3">
-            &#x2191; <!-- Aşağı ok simgesi -->
-        </button></a>
+                &#x2191; <!-- Aşağı ok simgesi -->
+            </button></a>
     </div>
 
 
@@ -115,11 +86,11 @@
             Koleksiyonumuzda, kendi parçalarınızın arasına girebilecek ürünlerin dünyasında eşsiz bir yolculuğa
             çıkarken, tarihî ve kültürel
             mirası elinizde tutma fırsatını yakalayın.</p>
-            <div class="expandButton">
-                <a href="#End"><button class="circleButton2">
+        <div class="expandButton">
+            <a href="#End"><button class="circleButton2">
                     &#x2193; <!-- Aşağı ok simgesi -->
                 </button></a>
-            </div>
+        </div>
     </div>
 
     <div id="End" class="bodyTextSpace"></div>

@@ -19,9 +19,12 @@
   letter-spacing: -5px;
   rotate: -2deg;
   transform: translate(0, 74px);
-  color: #ce3043;
+  color: #FF6666;
   z-index: 10;
   position: relative;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .mainText2 {
@@ -29,6 +32,9 @@
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 400;
   transform: translate(9px,0);
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 
 }
 
@@ -68,6 +74,26 @@
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+  transition: 0.3s ease;
+
+}
+
+.searchButton:hover {
+
+  background: #ce3043;
+
+}
+
+.gradient-text{
+  background: linear-gradient(to right, rgb(198, 47, 47),rgb(236, 109, 109),rgb(156, 36, 36));
+  background-clip: text;
+  -webkit-background-clip:text;
+  color:rgba(0,0,0,1);
+  transition: color .2s ease-in-out;
+  text-transform:uppercase;
+}
+.gradient-text:hover{
+  color:rgba(0,0,0,0);
 }
 
 /*Resize the wrap to see the search bar change!*/
@@ -104,8 +130,8 @@
 .plakPhoto {
   position: absolute;
   left: 50%;
-  transform: translate(49%, -60%);
-  width: 200px;
+  transform: translate(5%, -56%);
+  width: 330px;
 
   z-index: -10;
 
@@ -115,21 +141,21 @@
 .plakOrtasi {
   position: absolute;
   left: 50%;
-  transform: translate(171%, -70%);
+  transform: translate(56%, -62%);
   /* translate işlemi burada kalacak */
-  width: 83px;
+  width: 170px;
   z-index: -5;
   animation: mymove 10s linear infinite;
 }
 
 @keyframes mymove {
   0% {
-    transform: translate(171%, -70%) rotate(0deg);
+    transform: translate(56%, -62%) rotate(0deg);
   }
 
   /* translate'i koruyarak rotate işlemini ekliyoruz */
   100% {
-    transform: translate(171%, -70%) rotate(360deg);
+    transform: translate(56%, -62%) rotate(360deg);
   }
 
   /* tam dönüş yapacak */
@@ -140,8 +166,8 @@
   left: 50%;
   top: 50%;
 
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   background: url('music-note.png') no-repeat center center;
   background-size: contain;
   animation: floatNotes 3s ease-out infinite;
@@ -150,12 +176,12 @@
 
 @keyframes floatNotes {
   0% {
-    transform: translate(200px, -90px) scale(1);
+    transform: translate(230px, -90px) scale(1);
     opacity: 1;
   }
 
   100% {
-    transform: translate(340px, -300px) scale(0.5);
+    transform: translate(360px, -300px) scale(0.5);
     /* Sağ üst köşeye doğru gidecek ve küçülecek */
     opacity: 0;
     /* Giderek yok olacak */
@@ -373,3 +399,4 @@ footer {
 .cartIcon:hover {
   filter: invert(24%) sepia(36%) saturate(4167%) hue-rotate(332deg) brightness(97%) contrast(93%);
 }
+

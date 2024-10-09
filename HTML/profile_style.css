@@ -1,8 +1,7 @@
-
 /* Genel Stil Ayarları */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(CSS/images/GreenGradi.jpg);
     margin: 0;
     padding: 0;
 }
@@ -11,83 +10,94 @@ body {
 h1 {
     text-align: center;
     color: #333;
-    margin-top: 20px;
+    margin: 20px 0;
+    font-size: 2.5rem; /* Daha büyük başlık boyutu */
+    font-weight: 600;
 }
 
 /* Kullanıcı Bilgileri */
 .user-info {
     max-width: 600px;
     margin: 20px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    position: relative; /* Pozisyonu ayarla */
 }
 
-/* E-posta ve diğer bilgilerin stili */
-.user-info p {
-    font-size: 16px;
-    color: #555;
-}
+
+
 
 /* Profil Fotoğrafı Stili */
-img {
+.profile-pic {
     display: block;
     margin: 20px auto;
     border-radius: 50%;
-    max-width: 150px;
-    max-height: 150px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Kırpma stili */
+
+    border: 3px solid #007bff; /* Çerçeve ekleme */
 }
 
 /* Bağlantılar */
-a {
+.profile_picture.a {
     display: block;
     text-align: center;
     margin: 10px 0;
-    padding: 10px;
-    color: white;
+    padding: 12px;
+    color: #fff;
     background-color: #FF6666;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s; /* Dönüşüm efektleri */
 }
 
-a:hover {
-    background-color: #007bff4a;
+.profile_picture.a:hover {
+    background-color: #e55e5e; /* Daha koyu bir renk */
+    transform: scale(1.05); /* Hover efekti ile büyüme */
 }
 
 /* Form Alanı Stili */
 form {
     max-width: 600px;
     margin: 20px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Form Elemanları Stili */
 form label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: bold;
+    color: #333;
 }
 
 form input[type="file"] {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 form input[type="submit"] {
     display: block;
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 12px;
+    background-color: #000000;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s; /* Dönüşüm efektleri */
 }
 
 form input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #181818;
+    transform: scale(1.05); /* Hover efekti ile büyüme */
 }
+
+

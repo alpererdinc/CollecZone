@@ -1,3 +1,8 @@
+.upper_design {
+  transform: translate(0%, -20%);
+  margin-bottom: 60px;
+}
+
 .pre-blog {
   margin-left: auto;
   margin-right: auto;
@@ -8,6 +13,73 @@
   padding-top: 40px;
   padding-bottom: 4px;
   text-align: center;
+  transform: translate(0%, 8%);
+  position: relative;
+  z-index: 20;
+}
+
+/* Toggle Switch Stil */
+.switch {
+  position: absolute;
+  top: 23px;
+  right: 20px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+}
+
+ul {
+  list-style-type: none; /* Noktasız liste için bu kuralı kullan */
+  padding: 0; /* Varsayılan iç boşluğu kaldırmak için */
+  margin: 0; /* Varsayılan dış boşluğu kaldırmak için */
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #FF5B5B;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+/* Renkli Tema */
+body.colored-theme {
+  background-image: url(images/GreenGradi.jpg);
+  color: #ffffff;
+  transition: background-color 0.5s ease, background-image 0.5s ease, color 0.5s ease;
+  /* Arka plan rengi ve resmi ile yazı rengi geçişi */
 }
 
 
@@ -19,27 +91,49 @@
   letter-spacing: -5px;
   rotate: -2deg;
   transform: translate(0, 74px);
-  color: #FF6666;
+  color: #FF5B5B;
   z-index: 10;
   position: relative;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+}
+
+body.colored-theme .mainText {
+  color: #ffffff;
+  /* Temanın değiştiği renk */
+  text-shadow: -3px 1px 15px rgba(0, 0, 0, 0.189);
+
 }
 
 .mainText2 {
+  color: #000000;
   font-size: 100px;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 400;
-  transform: translate(9px,0);
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  transform: translate(0, 19px);
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+  position: relative;
+  z-index: 12;
+}
+
+body.colored-theme .mainText2 {
+  color: #ffffff;
+  /* Temanın değiştiği renk */
+  text-shadow: -3px 1px 15px rgba(0, 0, 0, 0.189);
 
 }
 
-.RotatingVinyl{
-  transform: translate(-180px,-274px);
+.RotatingVinyl {
+  transform: translate(-180px, -274px);
 }
 
 .search {
@@ -84,16 +178,17 @@
 
 }
 
-.gradient-text{
-  background: linear-gradient(to right, rgb(198, 47, 47),rgb(236, 109, 109),rgb(156, 36, 36));
+.gradient-text {
+  background: linear-gradient(to right, rgb(140, 255, 46), rgb(214, 255, 66), rgb(46, 240, 251));
   background-clip: text;
-  -webkit-background-clip:text;
-  color:rgba(0,0,0,1);
+  -webkit-background-clip: text;
+  color: rgb(0, 0, 0);
   transition: color .2s ease-in-out;
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
-.gradient-text:hover{
-  color:rgba(0,0,0,0);
+
+.gradient-text:hover {
+  color: rgba(0, 0, 0, 0);
 }
 
 /*Resize the wrap to see the search bar change!*/
@@ -107,22 +202,22 @@
 
 @media (max-width: 1024px) {
   .col-sm {
-      flex: 1 1 calc(50% - 20px);
+    flex: 1 1 calc(50% - 20px);
   }
 
   #header {
-      flex-direction: column;
-      padding: 10px 20px;
+    flex-direction: column;
+    padding: 10px 20px;
   }
 }
 
 @media (max-width: 768px) {
   .col-sm {
-      flex: 1 1 100%;
+    flex: 1 1 100%;
   }
 
   .search {
-      width: 100%;
+    width: 100%;
   }
 }
 
@@ -132,9 +227,8 @@
   left: 50%;
   transform: translate(5%, -56%);
   width: 330px;
-
   z-index: -10;
-
+  /* filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.332)); */
 }
 
 
@@ -144,8 +238,44 @@
   transform: translate(56%, -62%);
   /* translate işlemi burada kalacak */
   width: 170px;
+
   z-index: -5;
   animation: mymove 10s linear infinite;
+}
+
+.plakKolu {
+  position: absolute;
+  left: 50%;
+  transform: translate(163%, -56%);
+  width: 130px;
+
+  z-index: -1;
+  transform-origin: top center;
+  animation: swing 2s infinite ease-in-out;
+  /* filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.332)); */
+
+}
+
+@keyframes swing {
+  0% {
+    transform: translate(163%, -56%) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(163%, -56%) rotate(0.5deg);
+  }
+
+  50% {
+    transform: translate(163%, -56%) rotate(0deg);
+  }
+
+  75% {
+    transform: translate(163%, -56%) rotate(0.9deg);
+  }
+
+  100% {
+    transform: translate(163%, -56%) rotate(0deg);
+  }
 }
 
 @keyframes mymove {
@@ -195,12 +325,15 @@
 }
 
 .expandButton {
-  text-align: center; /* Butonu ortalamak için */
+  text-align: center;
+  /* Butonu ortalamak için */
   margin-top: 20px;
+  opacity: 0.8;
+
 }
 
 .circleButton {
-  background-color: #202529;
+  background-color: #202529d3;
   color: white;
   border: none;
   border-radius: 50%;
@@ -209,11 +342,12 @@
   font-size: 21px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+
 }
 
 .circleButton2 {
   background-color: #f9f9f9;
-  color: #202529;
+  color: #202529d1;
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -221,15 +355,18 @@
   font-size: 21px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+
 }
 
 
 .circleButton:hover {
-  transform: scale(1.1); /* Hover efektle buton büyüyecek */
+  transform: scale(1.1);
+  /* Hover efektle buton büyüyecek */
 }
 
 .circleButton2:hover {
-  transform: scale(1.1); /* Hover efektle buton büyüyecek */
+  transform: scale(1.1);
+  /* Hover efektle buton büyüyecek */
 }
 
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
@@ -255,7 +392,8 @@
   text-align: center;
   height: 1000px;
   width: 1000px;
-  background-color:#202529;
+  background-color: #000000;
+  mix-blend-mode: multiply; /* Karıştırma modu */
   border-radius: 50%;
   display: flexbox;
   justify-content: center;
@@ -266,6 +404,7 @@
   /* Yazı rengini belirledik */
   text-align: center;
   /* Yazıyı ortaladık */
+
 }
 
 .circleText {
@@ -277,10 +416,16 @@
 
 
 .GoTopButton {
-  position: fixed;  /* Sabit pozisyon */
-  right: 50px;      /* Sağdan 20px uzaklıkta */
-  bottom: 80px;     /* Alttan 20px uzaklıkta */
-  z-index: 1000;    /* Üstte kalmasını sağlamak için z-index */
+  position: fixed;
+  /* Sabit pozisyon */
+  right: 50px;
+  /* Sağdan 20px uzaklıkta */
+  bottom: 80px;
+  /* Alttan 20px uzaklıkta */
+  z-index: 1000;
+  /* Üstte kalmasını sağlamak için z-index */
+  opacity: 0.8;
+
 }
 
 .circleButton3 {
@@ -293,6 +438,8 @@
   font-size: 24px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+  opacity: 0.8;
+
 }
 
 .circleButton3:hover {
@@ -300,8 +447,16 @@
 }
 
 body {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
+  /* Varsayılan arka plan rengi */
+  background-image: none;
+  /* Varsayılan arka plan resmi */
+  color: #000000;
+  /* Varsayılan yazı rengi */
+  transition: background-color 0.5s ease, background-image 0.5s ease, color 0.5s ease;
+  /* Arka plan rengi ve resmi ile yazı rengi geçişi */
 }
+
 
 html,
 body {
@@ -331,7 +486,6 @@ a:hover {
 footer {
   width: 100%;
   background-color: rgb(255, 255, 255);
-  border-radius: 35px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -352,8 +506,9 @@ footer {
   align-items: center;
   justify-content: space-between;
   padding: 20px 80px;
-  background: #f8f8f8;
+  background: #ffffff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+
 }
 
 #navbar {
@@ -400,3 +555,71 @@ footer {
   filter: invert(24%) sepia(36%) saturate(4167%) hue-rotate(332deg) brightness(97%) contrast(93%);
 }
 
+#productCarousel {
+  position: relative;
+  margin: 70px auto; /* Merkezleme için otomatik yan boşluk */
+  border-radius: 8px; /* Kenar yuvarlama */
+  overflow: hidden; /* Taşmayı önler */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Yumuşak gölge efekti */
+  max-width: 600px; /* Maksimum genişlik */
+}
+
+.carousel-item img {
+  width: 100%; /* Resmin genişliği %100 */
+  height: 250px; /* Sabit yükseklik */
+  object-fit: cover; /* Resmi uygun alana sığdırır */
+  border-radius: 8px; /* Kenar yuvarlama */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px; /* Kontrollerin genişliği */
+  height: 40px; /* Kontrollerin yüksekliği */
+  border-radius: 50%; /* Yuvarlak görünüm */
+  background-color: rgba(0, 0, 0, 0.6); /* Şeffaf arka plan rengi */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%; /* Dikey ortalama */
+  transform: translateY(-50%); /* Dikeyde merkezleme */
+  z-index: 1; /* Üstte görünüm için */
+  transition: background-color 0.3s; /* Hover geçişi */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.9); /* Hoverda daha koyu arka plan rengi */
+}
+
+.newProdTitle {
+  text-align: center;
+  font-size: 16px; /* Yazı boyutu */
+  color: #333; /* Yazı rengi */
+  margin: 5px 0; /* Üst ve alt boşluk */
+}
+
+.carousel-indicators {
+  bottom: 10px; /* Aşağıda konumlandırma */
+}
+
+.carousel-indicators li {
+  background-color: rgba(0, 0, 0, 0.5); /* Noktaların arka plan rengi */
+  border-radius: 50%; /* Yuvarlak görünüm */
+  width: 12px; /* Nokta genişliği */
+  height: 12px; /* Nokta yüksekliği */
+}
+
+.carousel-indicators .active {
+  background-color: rgba(0, 0, 0, 0.9); /* Aktif noktanın rengi */
+}
+
+/* Responsive Medya Sorgusu */
+@media (max-width: 768px) {
+  #productCarousel {
+      margin: 10px; /* Daha küçük ekranlarda margin azalt */
+  }
+
+  .newProdTitle {
+      font-size: 14px; /* Daha küçük başlık boyutu */
+  }
+}

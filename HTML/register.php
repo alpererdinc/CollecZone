@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "users_db";
+$dbname = "products_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -16,13 +16,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
+    // Kullanıcıyı veritabanına ekle
     $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
     if ($conn->query($sql) === TRUE) {
+        // Eklenen kullanıcının user_id'sini al
+        $user_id = $conn->insert_id;
+        
+        // Oturumda user_id'yi sakla
+        session_start();
+        $_SESSION['user_id'] = $user_id;
+
         echo "Kayıt başarılı!";
-        $_SESSION['username'] = $username; // Oturum değişkenini ayarla
-        header("Location: login.php"); // Profil sayfasına yönlendir
-        exit; // Yönlendirme sonrası kodu durdur
+        header("Location: login.php"); // Kullanıcıyı yönlendir
+        exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -30,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
+
 
 <!-- <!DOCTYPE html>
 <html>
@@ -69,7 +77,7 @@ $conn->close();
 
 <body>
     <div class="main">
-        <a href="index.html"><img src="colleczoneLogo.png" class="LoginLogo" alt=""></a>
+        <a href="index.php"><img src="colleczoneLogo.png" class="LoginLogo" alt=""></a>
 
         <h3>Merhaba,<br>Aramıza gel ve koleksiyonunu zenginleştir!<br>🥳</h3>
 
@@ -91,6 +99,44 @@ $conn->close();
                   </a>
             </p>
     </div>
+
+    <footer>
+  <hr>
+  <div class="rightstext">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Add font awesome icons -->
+    <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
+    <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
+    <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
+
+    <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+        Erdinç</a></p>
+  </div>
+
+</footer>
+
+<style>
+footer {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+ 
+    text-align: center;
+    position: relative;
+    /* Konumlandırmayı yapabilmek için */
+    bottom: 0;
+    /* En alta sabitle */
+    width: 100%;
+    /* Tüm genişliği kapla */
+    margin-top: auto;
+    /* Üstten otomatik boşluk bırak */
+  }
+
+  .copyRights {
+    text-align: center;
+  }
+</style>
 </body>
 
 </html>

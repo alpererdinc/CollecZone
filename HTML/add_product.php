@@ -53,5 +53,12 @@
         $conn->close();
     }
     ?>
+
+<form action="upload_csv.php" method="post" enctype="multipart/form-data">
+    CSV Dosyanızı Seçin: <input type="file" name="file" id="file">
+    <input type="submit" value="Yükle" name="submit">
+</form>
+
+
 </body>
 </html>

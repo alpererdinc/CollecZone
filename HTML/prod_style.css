@@ -1,4 +1,5 @@
 body {
+    background-image: url("CSS/images/GreenGradi.jpg");
     background-color: aliceblue;
     font-family: Arial, sans-serif;
 }
@@ -12,9 +13,12 @@ body {
 .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Öğeler arasında eşit boşluk bırakır */
-    margin-left: -10px; /* Negatif margin ile satırları hizala */
-    margin-right: -10px; /* Negatif margin ile satırları hizala */
+    justify-content: space-around;
+    /* Öğeler arasında eşit boşluk bırakır */
+    margin-left: -10px;
+    /* Negatif margin ile satırları hizala */
+    margin-right: -10px;
+    /* Negatif margin ile satırları hizala */
 
 }
 
@@ -27,9 +31,12 @@ body {
     background-color: white;
     transition: transform 0.3s ease-in-out;
     height: 450px;
-    width: 100%; /* Kartın genişliği %100 olacak */
-    max-width: 400px; /* Kartın maksimum genişliği */
+    width: 100%;
+    /* Kartın genişliği %100 olacak */
+    max-width: 400px;
+    /* Kartın maksimum genişliği */
 }
+
 .card:hover {
     transform: scale(1.05);
 }
@@ -37,14 +44,16 @@ body {
 .card img {
     width: 100%;
     border-radius: 10px;
-    height: 200px; /* Resimlerin yüksekliği sabitlendi */
-    object-fit: contain; /* Resimlerin kırpılarak sığmasını sağlar */
+    height: 200px;
+    /* Resimlerin yüksekliği sabitlendi */
+    object-fit: contain;
+    /* Resimlerin kırpılarak sığmasını sağlar */
 }
 
 .plakName {
     font-size: 1.5rem;
     margin: 10px 0;
-    height: 200px; 
+    height: 200px;
 }
 
 .price {
@@ -155,22 +164,27 @@ body {
 }
 
 .col-sm {
-    flex: 0 1 calc(33.333% - 20px); /* Flex-grow: 0, Flex-shrink: 0, Flex-basis: %33.333 */
-    max-width: calc(33.333% - 20px); /* Her satırda 3 kart olmasını sağlar */
-    margin: 10px; /* Kartlar arasındaki boşluk */
+    flex: 0 1 calc(33.333% - 20px);
+    /* Flex-grow: 0, Flex-shrink: 0, Flex-basis: %33.333 */
+    max-width: calc(33.333% - 20px);
+    /* Her satırda 3 kart olmasını sağlar */
+    margin: 10px;
+    /* Kartlar arasındaki boşluk */
 }
 
 /* Küçük ekranlarda düzeni korumak için medya sorguları */
 @media (max-width: 1024px) {
     .col-sm {
-        flex: 0 1 calc(50% - 20px); /* Daha küçük ekranlarda 2 kart */
+        flex: 0 1 calc(50% - 20px);
+        /* Daha küçük ekranlarda 2 kart */
         max-width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 768px) {
     .col-sm {
-        flex: 0 1 100%; /* Mobil cihazlarda 1 kart */
+        flex: 0 1 100%;
+        /* Mobil cihazlarda 1 kart */
         max-width: 100%;
     }
 }

@@ -1,22 +1,23 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+// Oturum kontrolü
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php"); // Kullanıcı giriş yapmamışsa yönlendir
     exit;
 }
 
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "users_db";
+$dbname = "products_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$current_user = $_SESSION['username'];
+$current_user_id = $_SESSION['user_id']; // user_id kullanımı
 
 if (isset($_FILES['profile_picture'])) {
     $file = $_FILES['profile_picture'];
@@ -26,17 +27,28 @@ if (isset($_FILES['profile_picture'])) {
     $file_name = basename($file["name"]);
     $file_path = $upload_dir . $file_name;
 
-    // Dosyayı yükleme
-    if (move_uploaded_file($file["tmp_name"], $file_path)) {
-        // Veritabanına kaydet
-        $sql = "UPDATE users SET profile_picture='$file_name' WHERE username='$current_user'";
-        if ($conn->query($sql) === TRUE) {
-            echo "Profile picture uploaded successfully!";
+    // Dosya türü kontrolü
+    $file_type = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));
+    $allowed_types = array('jpg', 'jpeg', 'png', 'gif');
+
+    if (in_array($file_type, $allowed_types)) {
+        // Dosyayı yükleme
+        if (move_uploaded_file($file["tmp_name"], $file_path)) {
+            // Veritabanına kaydet
+            $stmt = $conn->prepare("UPDATE users SET profile_picture=? WHERE user_id=?");
+            $stmt->bind_param("si", $file_name, $current_user_id); // user_id ile güncelle
+            if ($stmt->execute() === TRUE) {
+                echo "Profil fotoğrafı başarıyla yüklendi!";
+                header("Location: profile.php"); // Profil sayfasına yönlendir
+                exit; // Yönlendirme sonrası kodu durdur
+            } else {
+                echo "Hata: " . $conn->error;
+            }
         } else {
-            echo "Error: " . $conn->error;
+            echo "Dosya yüklemesi başarısız oldu!";
         }
     } else {
-        echo "File upload failed!";
+        echo "Yalnızca JPG, JPEG, PNG ve GIF dosyaları yüklenebilir.";
     }
 }
 

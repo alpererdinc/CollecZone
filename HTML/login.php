@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "users_db";
+$dbname = "products_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,27 +15,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT password FROM users WHERE username = '$username'";
-    $result = $conn->query($sql);
+    // Kullanıcı adı ile user_id ve şifreyi seç
+    $sql = "SELECT user_id, password FROM users WHERE username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
+        // Şifreyi doğrula
         if (password_verify($password, $row['password'])) {
             session_start();
-            $_SESSION['username'] = $username;
-            echo "Giriş başarılı! Hoş geldin, " . $_SESSION['username'] . "!";
-            header("Location: index.html"); // Profil sayfasına yönlendir
-            exit; // Yönlendirme sonrası kodu durdur
+            // user_id'yi oturuma ekle
+            $_SESSION['user_id'] = $row['user_id'];
+
+            echo "Giriş başarılı! Hoş geldin!";
+            header("Location: index.php"); // Ana sayfaya yönlendir
+            exit;
         } else {
             echo "Hatalı şifre.";
         }
     } else {
         echo "Böyle bir kullanıcı adı bulunamadı.";
     }
+
+    $stmt->close();
 }
 
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +86,7 @@ $conn->close();
 
 
     <div class="main">
-        <a href="index.html"><img src="colleczoneLogo.png" class="LoginLogo" alt=""></a>
+        <a href="index.php"><img src="colleczoneLogo.png" class="LoginLogo" alt=""></a>
 
         <h3>Tekrar hoş geldin koleksiyoner!<br>Yoksa colleczoner mi demeliydim?<br>😏</h3>
        
@@ -104,7 +114,43 @@ $conn->close();
             </p>
     </div>
 
+    <footer>
+  <hr>
+  <div class="rightstext">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- Add font awesome icons -->
+    <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
+    <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
+    <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
+
+    <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+        Erdinç</a></p>
+  </div>
+
+</footer>
+
+<style>
+footer {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+ 
+    text-align: center;
+    position: relative;
+    /* Konumlandırmayı yapabilmek için */
+    bottom: 0;
+    /* En alta sabitle */
+    width: 100%;
+    /* Tüm genişliği kapla */
+    margin-top: auto;
+    /* Üstten otomatik boşluk bırak */
+  }
+
+  .copyRights {
+    text-align: center;
+  }
+</style>
 </body>
 
 </html>

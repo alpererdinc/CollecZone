@@ -10,7 +10,6 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,29 +35,60 @@
 
 <body>
 
+
+    <?php
+    // Veritabanı bilgilerini tanımlayın
+    $host = 'localhost';
+    $username = 'root';
+    $password = '';
+    $dbname = 'products_db';
+
+    // Veritabanı bağlantısını oluşturun
+    $conn = new mysqli($host, $username, $password, $dbname);
+
+    // Bağlantıyı kontrol et
+    if ($conn->connect_error) {
+        die("Bağlantı hatası: " . $conn->connect_error);
+    }
+    // En son eklenen ürünleri al
+    $sql = "SELECT product_id, name, image, description FROM products ORDER BY product_id DESC LIMIT 5";
+    $result = $conn->query($sql);
+    ?>
+
     <!-- index.php -->
-<?php include 'navbar.php'; ?>
+    <?php include 'navbar.php'; ?>
+
+    <ul>
+        <li>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </li>
+    </ul>
 
 
 
+    <div class="upper_design">
+        <div class="pre-blog">
+            <h1 class="mainText">Koleksiyonunu</h1>
+            <h1 class="mainText2">GE<a href="prod_index.php" class="gradient-text"><strong>NİŞ</strong></a>LET</h1>
 
-    <div class="pre-blog">
-        <h1 class="mainText">Koleksiyonunu</h1>
-        <h1 class="mainText2">GE<a href="prod_index.php" class="gradient-text"><strong>NİŞ</strong></a>LET</h1>
+        </div>
 
-    </div>
-
-    <div class="wrap">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="wrap">
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 
-    </div>
-    <div class="RotatingVinyl">
-        <img class="plakOrtasi" src="CSS/images/TonPlakOrta.svg" />
-        <img class="plakPhoto" src="CSS/images/Frame 30 (2).svg" />
-        <img src="CSS/images/nota.png" alt="nota" class="nota">
+        </div>
+        <div class="RotatingVinyl">
+            <img class="plakKolu" src="CSS/images/PLAKKOLU.svg" />
+            <img class="plakOrtasi" src="CSS/images/TonPlakOrta.svg" />
+            <img class="plakPhoto" src="CSS/images/Frame 30 (2).svg" />
+            <img src="CSS/images/nota.png" alt="nota" class="nota">
+        </div>
     </div>
     </div>
 
@@ -73,6 +103,41 @@
                 &#x2191; <!-- Aşağı ok simgesi -->
             </button></a>
     </div>
+
+
+
+    <div id="productCarousel" class="carousel slide" data-ride="carousel">
+        <h2 class="newProdTitle">Yeni Ürünler</h2>
+        <div class="carousel-inner">
+            <?php
+            $active = "active";
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '
+            <div class="carousel-item ' . $active . '">
+              <img src="' . $row["image"] . '" class="d-block w-100" alt="' . $row["name"] . '">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>' . $row["name"] . '</h5>
+                <p>' . $row["description"] . '</p>
+              </div>
+            </div>';
+                    $active = ""; // Sadece ilk ürün "active" olacak
+                }
+            }
+            ?>
+        </div>
+        <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
 
 
     <div id="Round" class="bigRound">
@@ -110,23 +175,47 @@
 
 
     <script src="https://kit.fontawesome.com/6cf8dab1a7.js" crossorigin="anonymous"></script>
+
+    <script src="theme.js"></script>
+
 </body>
 
 <footer>
-    <hr>
-    <div class="rightstext">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <hr>
+  <div class="rightstext">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- Add font awesome icons -->
-        <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
-        <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
-        <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
+    <!-- Add font awesome icons -->
+    <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
+    <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
+    <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
 
-        <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
-                Erdinç</a></p>
-    </div>
+    <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+        Erdinç</a></p>
+  </div>
 
 </footer>
+
+<style>
+footer {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+ 
+    text-align: center;
+    position: relative;
+    /* Konumlandırmayı yapabilmek için */
+    bottom: 0;
+    /* En alta sabitle */
+    width: 100%;
+    /* Tüm genişliği kapla */
+    margin-top: auto;
+    /* Üstten otomatik boşluk bırak */
+  }
+
+  .copyRights {
+    text-align: center;
+  }
+</style>
 
 </html>

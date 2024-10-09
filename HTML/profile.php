@@ -6,74 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Sayfası</title>
     <link rel="stylesheet" href="profile_style.css">
-    <link rel="stylesheet" href="CSS/style.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allison&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Allison&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
 
 <body>
 
-    <?php include 'navbar.php'; ?>
 
-    <div class="user-info">
+    <div class="user-page">
         <?php
         session_start();
 
-        // Kullanıcı oturumu yoksa giriş sayfasına yönlendir
-        if (!isset($_SESSION['username'])) {
+        if (!isset($_SESSION['user_id'])) {
             header("Location: login.php");
             exit;
         }
+        include 'navbar.php'; ?>
+        <div class="user-info">
+            <?php
+            $user_id = $_SESSION['user_id'];
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "users_db";
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "products_db";
 
-        // Veritabanı bağlantısı
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
 
-        // Oturum açan kullanıcının bilgilerini veritabanından al
-        $current_user = $_SESSION['username'];
-        $sql = "SELECT * FROM users WHERE username='$current_user'";
-        $result = $conn->query($sql);
-        $user = $result->fetch_assoc();
+            // Kullanıcı bilgilerini veritabanından al
+            $sql = "SELECT * FROM users WHERE user_id='$user_id'";
+            $result = $conn->query($sql);
+            $user = $result->fetch_assoc();
 
-        // Profil bilgilerini görüntüle
-        echo "<h1>Hoş geldin, " . $user['username'] . "!</h1>";
-        echo "<p>E-postan: " . $user['email'] . "</p>";
+            if (!$user) {
+                echo "Kullanıcı bulunamadı.";
+                exit; // Kullanıcı bulunamazsa kodu durdur
+            }
 
-        // Profil fotoğrafını göster
-        if ($user['profile_picture']) {
-            echo "<img src='uploads/" . $user['profile_picture'] . "' alt='Profile Picture' />";
-        }
+            // Profil fotoğrafını göster
+            if ($user['profile_picture']) {
+                echo "<img class='profile-pic' src='uploads/" . htmlspecialchars($user['profile_picture']) . "' alt='Profile Picture' />";
+            }
 
-        // Favoriler ve sipariş geçmişi bağlantıları
-        echo "<br><a href='favorites.php'>Favorilerim</a><br>";
-        echo "<br><a href='order_history.php'>Sipariş Geçmişi</a>";
-        echo "<br><br><a href='logout.php'>Çıkış Yap</a>";
-        echo "<br><br>";
+            // Profil bilgilerini görüntüle
+            echo "<h1>Hoş geldin, " . htmlspecialchars($user['username']) . "!</h1>";
+            echo "<p><strong>E-postan:</strong> " . htmlspecialchars($user['email']) . "</p>";
 
-        $conn->close();
-        ?>
+            // Favoriler ve sipariş geçmişi bağlantıları
+            echo "<br><a class='profile_link' href='favorites.php'>Favorilerim</a><br>";
+            echo "<br><a class='profile_link' href='order_history.php'>Sipariş Geçmişi</a>";
+            echo "<br><br><a class='profile_link' href='logout.php'>Çıkış Yap</a>";
+            echo "<br><br>";
+
+            $conn->close();
+            ?>
+        </div>
     </div>
 
     <form action="upload_profile_picture.php" method="POST" enctype="multipart/form-data">
@@ -82,22 +71,49 @@
         <input type="submit" value="Yükle">
     </form>
 
+    <!-- <br><a class="home-button" href="index.php">Ana Sayfaya Dön</a> -->
 
+    <footer>
+  <hr>
+  <div class="rightstext">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- Add font awesome icons -->
+    <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
+    <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
+    <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
 
+    <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+        Erdinç</a></p>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-        crossorigin="anonymous"></script>
+</footer>
 
+<style>
+footer {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+ 
+    text-align: center;
+    position: relative;
+    /* Konumlandırmayı yapabilmek için */
+    bottom: 0;
+    /* En alta sabitle */
+    width: 100%;
+    /* Tüm genişliği kapla */
+    margin-top: auto;
+    /* Üstten otomatik boşluk bırak */
+  }
 
-    <script src="https://kit.fontawesome.com/6cf8dab1a7.js" crossorigin="anonymous"></script>
+  .copyRights {
+    text-align: center;
+  }
+</style>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

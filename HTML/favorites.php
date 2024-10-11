@@ -15,7 +15,7 @@ session_start();
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
     <link rel="icon" type="image/x-icon" sizes="167x167" href="half-circle.png">
-    <link rel="stylesheet" href="prod_style.css">
+    <link rel="stylesheet" href="CSS/prod_style.css">
 </head>
 
 <body>
@@ -149,7 +149,7 @@ session_start();
         }
     </style>
 
-    <footer>
+<footer>
         <hr>
         <div class="rightstext">
             <link rel="stylesheet"
@@ -160,10 +160,10 @@ session_start();
             <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
             <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
 
-            <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
-                    Erdinç</a></p>
-        </div>
-
+        <hr>
+        <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+        Erdinç</a></p>
+        <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

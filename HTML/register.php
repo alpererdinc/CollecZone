@@ -16,19 +16,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    
+
     $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-       
+
         $user_id = $conn->insert_id;
-        
-       
+
+
         session_start();
         $_SESSION['user_id'] = $user_id;
 
         echo "Kayıt başarılı!";
-        header("Location: login.php"); 
+        header("Location: login.php");
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -72,7 +72,7 @@ $conn->close();
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" href="log_style.css"> 
+    <link rel="stylesheet" href="CSS/log_style.css">
 </head>
 
 <body>
@@ -94,49 +94,49 @@ $conn->close();
             <input type="submit" value="Kayıt ol">
         </form>
         <p>Kaydınız var mu?
-                  <a href="login.php" style="text-decoration: none;">
-                        Giriş yapın
-                  </a>
-            </p>
+            <a href="login.php" style="text-decoration: none;">
+                Giriş yapın
+            </a>
+        </p>
     </div>
 
     <footer>
-  <hr>
-  <div class="rightstext">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <hr>
+        <div class="rightstext">
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  
-    <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
-    <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
-    <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
 
-    <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
-        Erdinç</a></p>
-  </div>
+            <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
+            <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
+            <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
 
-</footer>
+            <hr>
+            <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+                    Erdinç</a></p>
+            <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
+    </footer>
 
-<style>
-footer {
-    width: 100%;
-    background-color: rgb(255, 255, 255);
- 
-    text-align: center;
-    position: relative;
-  
-    bottom: 0;
- 
-    width: 100%;
-   
-    margin-top: auto;
-    
-  }
+    <style>
+        footer {
+            width: 100%;
+            background-color: rgb(255, 255, 255);
 
-  .copyRights {
-    text-align: center;
-  }
-</style>
+            text-align: center;
+            position: relative;
+
+            bottom: 0;
+
+            width: 100%;
+
+            margin-top: auto;
+
+        }
+
+        .copyRights {
+            text-align: center;
+        }
+    </style>
 </body>
 
 </html>

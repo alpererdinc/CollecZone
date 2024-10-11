@@ -18,11 +18,24 @@ session_start();
 
 <body>
 
-    <?php include 'navbar.php'; ?>
+    <?php
+    include 'navbar.php';
+    ?>
+
+
+    <?php
+    error_reporting(E_ERROR | E_PARSE); // Yalnızca hata ve parse hatalarını göster
+    ?>
+
+
 
     <?php
     // Veritabanı bağlantısı
     include 'db_connection.php'; // Veritabanı bağlantısı olan dosya
+
+
+
+
 
     // URL'den gelen product_id'yi al
     if (isset($_GET['product_id'])) {
@@ -47,16 +60,29 @@ session_start();
             $fav_result = $fav_stmt->get_result();
             $is_favorited = $fav_result->num_rows > 0;
 
+
             // Ürün detaylarını göster
             echo "<div class='product-detail'>";
             echo "<img src='" . $row["image"] . "' alt='Ürün Resmi'>";
             echo "<div class='product-info'>"; // Ürün bilgileri için bir div oluşturuldu
             echo "<h2>" . $row["name"] . "</h2>";
             echo "<p class='price'>" . $row["price"] . " TL</p>";
+
     ?>
             <form action="add_favorite.php" method="POST">
                 <input type="hidden" name="product_id" value="<?php echo $row["product_id"]; ?>">
                 <button type="submit" class="btn btn-link">
+                    <?php
+
+                    if (isset($_SESSION['user_id'])) {
+                        $user_id = $_SESSION['user_id'];
+                    } else {
+
+                        echo "Favoriye eklemek için giriş yapmalısınız.";
+                    }
+
+
+                    ?>
                     <i class="fa fa-star <?php echo $is_favorited ? 'filled' : ''; ?>"></i>
                 </button>
             </form>
@@ -167,11 +193,13 @@ session_start();
         }
 
         .fa-star {
-            color: #ccc; /* Default empty star color */
+            color: #ccc;
+            /* Default empty star color */
         }
 
         .fa-star.filled {
-            color: #FFD700; /* Filled star color */
+            color: #FFD700;
+            /* Filled star color */
         }
 
         footer {
@@ -258,19 +286,24 @@ session_start();
         }
     </style>
 
+
     <footer>
         <hr>
         <div class="rightstext">
             <link rel="stylesheet"
                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-            <a href="https://www.instagram.com/alperdnl/" target="_blank"><i class="fa fa-instagram"></i></a>
-            <a href="https://twitter.com/alperdnl" target="_blank"><i class="fa fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/alper-demirtas-121746243/" target="_blank"><i class="fa fa-linkedin"></i></a>
-        </div>
+
+            <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
+            <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
+            <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
+
         <hr>
+        <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+        Erdinç</a></p>
         <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
     </footer>
 
 </body>
+
 </html>

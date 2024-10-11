@@ -59,7 +59,7 @@ $conn->close();
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" href="log_style.css"> 
+    <link rel="stylesheet" href="CSS/log_style.css"> 
 </head>
 
 <!-- <!DOCTYPE html>
@@ -115,20 +115,21 @@ $conn->close();
     </div>
 
     <footer>
-  <hr>
-  <div class="rightstext">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <hr>
+        <div class="rightstext">
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
-    <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
-    <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
 
-    <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+            <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
+            <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
+            <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
+
+        <hr>
+        <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
         Erdinç</a></p>
-  </div>
-
-</footer>
+        <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
+    </footer>
 
 <style>
 footer {

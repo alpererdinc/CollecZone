@@ -2,6 +2,12 @@
 session_start();
 include 'db_connection.php'; // Veritabanı bağlantısı
 
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
 if (isset($_POST['product_id'])) {
     $product_id = $_POST['product_id'];
     $user_id = $_SESSION['user_id']; // Kullanıcının ID'si

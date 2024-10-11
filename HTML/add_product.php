@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ürün Ekle</title>
-    <link rel="stylesheet" type="text/css" href="add_prod_style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/add_prod_style.css">
 </head>
 <body>
     <h1>Yeni Ürün Ekle</h1>

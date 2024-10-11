@@ -21,13 +21,13 @@ session_start();
 
   <div class="about-section">
     <h1>Hakkımızda</h1>
-    <p>Some text about who we are and what we do.</p>
+    <p>Ne yaptığımıza dair birkaç cümle.</p>
     <p>CollecZone, koleksiyonerlerin gözdesi olan, dünya çapında ün kazanmış ve artık tedavülden kalkmış ürünleri keşfedebileceğiniz bir sayfa. Özenle derlediğimiz bu seçkide, müzik tarihinin unutulmaz dönemlerine damgasını vuran nadir plaklar ve zamansız parçalar; çizgi roman külliyatının kült ve benzersiz sayıları; kolay kolay bulamayacağınız egzotik aromalı mumlar yer alıyor. Her bir ürün, geçmişin izlerini taşıyan ve koleksiyonerlere özel bir anlam sunan değerli parçalardan oluşur. Bu nadir koleksiyon, müzikseverler ve koleksiyon meraklıları için bir araya getirilmiştir ve her bir ürün, kendi hikayesini anlatır. Koleksiyonumuzda, kendi parçalarınızın arasına girebilecek ürünlerin dünyasında eşsiz bir yolculuğa çıkarken, tarihî ve kültürel mirası elinizde tutma fırsatını yakalayın.
 
     </p>
   </div>
 
-  <h2 style="text-align:center">Our Team</h2>
+  <h2 style="text-align:center">Ekibimiz</h2>
   <div class="row">
     <div class="column">
       <div class="card">
@@ -35,9 +35,9 @@ session_start();
         <div class="container">
           <h2>Alper Erdinç</h2>
           <p class="title">CEO & Founder</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>jane@example.com</p>
-          <p><button class="button">Contact</button></p>
+          <p>Comp. Eng. Student, 2D Animator</p>
+          <p>ae.alpererdinc@gmail.com.com</p>
+          <p><a href="https://taplink.cc/alpererdinc" target="_blank"><button class="button">İletişim</button></p></a>
         </div>
       </div>
     </div>
@@ -46,8 +46,7 @@ session_start();
   </div>
   <style>
     body {
-      background-image: url("CSS/images/GreenGradi.jpg");
-      font-family: Arial, Helvetica, sans-serif;
+      background-color: white;
       margin: 0;
     }
 
@@ -79,7 +78,7 @@ session_start();
     .about-section {
       padding: 50px;
       text-align: center;
-      background-color: #ff7878;
+      background-color: #000;
       color: white;
     }
 
@@ -121,6 +120,85 @@ session_start();
       }
     }
   </style>
+  
+  <ul>
+        <li>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </li>
+    </ul>
+
+   <script src="theme.js"></script>
+   <style>
+.switch {
+  position: absolute;
+  top: 23px;
+  right: 20px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+}
+
+ul {
+  list-style-type: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #FF5B5B;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+/* Renkli Tema kısmı */
+body.colored-theme {
+  background-image: url(CSS/images/GreenGradi.jpg);
+  transition: background-color 0.5s ease, background-image 0.5s ease, color 0.5s ease;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+   </style>
+
 
 <footer>
   <hr>
@@ -128,7 +206,6 @@ session_start();
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Add font awesome icons -->
     <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
     <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
     <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
@@ -146,13 +223,9 @@ footer {
  
     text-align: center;
     position: relative;
-    /* Konumlandırmayı yapabilmek için */
     bottom: 0;
-    /* En alta sabitle */
     width: 100%;
-    /* Tüm genişliği kapla */
     margin-top: auto;
-    /* Üstten otomatik boşluk bırak */
   }
 
   .copyRights {

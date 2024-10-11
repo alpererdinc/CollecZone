@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -37,25 +41,23 @@
 
 
     <?php
-    // Veritabanı bilgilerini tanımlayın
+
+
+
     $host = 'localhost';
     $username = 'root';
     $password = '';
     $dbname = 'products_db';
 
-    // Veritabanı bağlantısını oluşturun
     $conn = new mysqli($host, $username, $password, $dbname);
 
-    // Bağlantıyı kontrol et
     if ($conn->connect_error) {
         die("Bağlantı hatası: " . $conn->connect_error);
     }
-    // En son eklenen ürünleri al
     $sql = "SELECT product_id, name, image, description FROM products ORDER BY product_id DESC LIMIT 5";
     $result = $conn->query($sql);
     ?>
 
-    <!-- index.php -->
     <?php include 'navbar.php'; ?>
 
     <ul>
@@ -100,7 +102,7 @@
 
     <div class="GoTopButton">
         <a href="#"><button class="circleButton3">
-                &#x2191; <!-- Aşağı ok simgesi -->
+                &#x2191; <!-- Yukarı ok simgesi -->
             </button></a>
     </div>
 
@@ -121,7 +123,7 @@
                 <p>' . $row["description"] . '</p>
               </div>
             </div>';
-                    $active = ""; // Sadece ilk ürün "active" olacak
+                    $active = ""; 
                 }
             }
             ?>
@@ -186,7 +188,6 @@
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Add font awesome icons -->
     <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
     <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
     <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
@@ -204,13 +205,9 @@ footer {
  
     text-align: center;
     position: relative;
-    /* Konumlandırmayı yapabilmek için */
     bottom: 0;
-    /* En alta sabitle */
     width: 100%;
-    /* Tüm genişliği kapla */
     margin-top: auto;
-    /* Üstten otomatik boşluk bırak */
   }
 
   .copyRights {

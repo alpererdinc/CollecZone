@@ -31,17 +31,17 @@
         // Veritabanı bağlantısını yap
         include 'db_connection.php';
 
-        // Formdan gelen verileri al
+        // Formdan gelen verileri alıyor.
         $name = $_POST['name'];
         $price = $_POST['price'];
         $description = $_POST['description'];
 
-        // Resmi yüklemek için klasör yolu
+        // Resmi yüklemek için klasör yolu belirten yer
         $target_dir = "uploads/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
-        // Veritabanına kaydet
+        // Veritabanına kaydetmesi için
         $sql = "INSERT INTO products (name, price, description, image) VALUES ('$name', '$price', '$description', '$target_file')";
 
         if ($conn->query($sql) === TRUE) {

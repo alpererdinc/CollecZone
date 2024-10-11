@@ -1,5 +1,5 @@
 <?php
-// Veritabanı bağlantısı
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Kullanıcı adı ile user_id ve şifreyi seç
+   
     $sql = "SELECT user_id, password FROM users WHERE username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
@@ -24,14 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        // Şifreyi doğrula
+       
         if (password_verify($password, $row['password'])) {
             session_start();
-            // user_id'yi oturuma ekle
+
             $_SESSION['user_id'] = $row['user_id'];
 
             echo "Giriş başarılı! Hoş geldin!";
-            header("Location: index.php"); // Ana sayfaya yönlendir
+            header("Location: index.php"); 
             exit;
         } else {
             echo "Hatalı şifre.";
@@ -59,7 +59,7 @@ $conn->close();
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" href="log_style.css"> <!-- CSS dosyasını dahil et -->
+    <link rel="stylesheet" href="log_style.css"> 
 </head>
 
 <!-- <!DOCTYPE html>
@@ -120,7 +120,6 @@ $conn->close();
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Add font awesome icons -->
     <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
     <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
     <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
@@ -138,13 +137,10 @@ footer {
  
     text-align: center;
     position: relative;
-    /* Konumlandırmayı yapabilmek için */
     bottom: 0;
-    /* En alta sabitle */
+    
     width: 100%;
-    /* Tüm genişliği kapla */
     margin-top: auto;
-    /* Üstten otomatik boşluk bırak */
   }
 
   .copyRights {

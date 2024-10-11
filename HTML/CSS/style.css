@@ -30,9 +30,9 @@
 }
 
 ul {
-  list-style-type: none; /* Noktasız liste için bu kuralı kullan */
-  padding: 0; /* Varsayılan iç boşluğu kaldırmak için */
-  margin: 0; /* Varsayılan dış boşluğu kaldırmak için */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -74,12 +74,12 @@ input:checked+.slider:before {
   transform: translateX(26px);
 }
 
-/* Renkli Tema */
+/* Renkli Tema için böyle ayarladım */
 body.colored-theme {
   background-image: url(images/GreenGradi.jpg);
   color: #ffffff;
   transition: background-color 0.5s ease, background-image 0.5s ease, color 0.5s ease;
-  /* Arka plan rengi ve resmi ile yazı rengi geçişi */
+ 
 }
 
 
@@ -95,16 +95,12 @@ body.colored-theme {
   z-index: 10;
   position: relative;
   -webkit-user-select: none;
-  /* Safari */
   -ms-user-select: none;
-  /* IE 10 and IE 11 */
   user-select: none;
-  /* Standard syntax */
 }
 
 body.colored-theme .mainText {
   color: #ffffff;
-  /* Temanın değiştiği renk */
   text-shadow: -3px 1px 15px rgba(0, 0, 0, 0.189);
 
 }
@@ -116,18 +112,14 @@ body.colored-theme .mainText {
   font-weight: 400;
   transform: translate(0, 19px);
   -webkit-user-select: none;
-  /* Safari */
   -ms-user-select: none;
-  /* IE 10 and IE 11 */
   user-select: none;
-  /* Standard syntax */
   position: relative;
   z-index: 12;
 }
 
 body.colored-theme .mainText2 {
   color: #ffffff;
-  /* Temanın değiştiği renk */
   text-shadow: -3px 1px 15px rgba(0, 0, 0, 0.189);
 
 }
@@ -144,7 +136,6 @@ body.colored-theme .mainText2 {
 
 .searchTerm {
   width: calc(100% - 40px);
-  /* Arama düğmesine yer bırakmak için genişliği ayarlıyoruz */
   border: 3px solid #202529;
   border-right: none;
   padding: 5px;
@@ -179,7 +170,7 @@ body.colored-theme .mainText2 {
 }
 
 .gradient-text {
-  background: linear-gradient(to right, rgb(140, 255, 46), rgb(214, 255, 66), rgb(46, 240, 251));
+  background: linear-gradient(to right, rgb(248, 79, 79), rgb(255, 138, 138), rgb(255, 78, 78));
   background-clip: text;
   -webkit-background-clip: text;
   color: rgb(0, 0, 0);
@@ -191,10 +182,8 @@ body.colored-theme .mainText2 {
   color: rgba(0, 0, 0, 0);
 }
 
-/*Resize the wrap to see the search bar change!*/
 .wrap {
   width: 300px;
-  /* Sabit genişlik ayarlandı */
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -228,7 +217,6 @@ body.colored-theme .mainText2 {
   transform: translate(5%, -56%);
   width: 330px;
   z-index: -10;
-  /* filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.332)); */
 }
 
 
@@ -236,7 +224,6 @@ body.colored-theme .mainText2 {
   position: absolute;
   left: 50%;
   transform: translate(56%, -62%);
-  /* translate işlemi burada kalacak */
   width: 170px;
 
   z-index: -5;
@@ -252,7 +239,6 @@ body.colored-theme .mainText2 {
   z-index: -1;
   transform-origin: top center;
   animation: swing 2s infinite ease-in-out;
-  /* filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.332)); */
 
 }
 
@@ -283,12 +269,10 @@ body.colored-theme .mainText2 {
     transform: translate(56%, -62%) rotate(0deg);
   }
 
-  /* translate'i koruyarak rotate işlemini ekliyoruz */
   100% {
     transform: translate(56%, -62%) rotate(360deg);
   }
 
-  /* tam dönüş yapacak */
 }
 
 .nota {
@@ -312,9 +296,7 @@ body.colored-theme .mainText2 {
 
   100% {
     transform: translate(360px, -300px) scale(0.5);
-    /* Sağ üst köşeye doğru gidecek ve küçülecek */
     opacity: 0;
-    /* Giderek yok olacak */
   }
 }
 
@@ -326,14 +308,12 @@ body.colored-theme .mainText2 {
 
 .expandButton {
   text-align: center;
-  /* Butonu ortalamak için */
   margin-top: 20px;
-  opacity: 0.8;
 
 }
 
 .circleButton {
-  background-color: #202529d3;
+  background-color: #000000;
   color: white;
   border: none;
   border-radius: 50%;
@@ -347,7 +327,7 @@ body.colored-theme .mainText2 {
 
 .circleButton2 {
   background-color: #f9f9f9;
-  color: #202529d1;
+  color: #000000;
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -361,12 +341,10 @@ body.colored-theme .mainText2 {
 
 .circleButton:hover {
   transform: scale(1.1);
-  /* Hover efektle buton büyüyecek */
 }
 
 .circleButton2:hover {
   transform: scale(1.1);
-  /* Hover efektle buton büyüyecek */
 }
 
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
@@ -393,43 +371,32 @@ body.colored-theme .mainText2 {
   height: 1000px;
   width: 1000px;
   background-color: #000000;
-  mix-blend-mode: multiply; /* Karıştırma modu */
+  mix-blend-mode: multiply; 
   border-radius: 50%;
   display: flexbox;
   justify-content: center;
-  /* Yatay olarak ortalar */
   align-items: center;
-  /* Dikey olarak ortalar */
   color: white;
-  /* Yazı rengini belirledik */
   text-align: center;
-  /* Yazıyı ortaladık */
 
 }
 
 .circleText {
   font-size: 19px;
-  /* Yazı boyutu */
   padding: 200px;
-  /* Yazının etrafında biraz boşluk bıraktık */
 }
 
 
 .GoTopButton {
   position: fixed;
-  /* Sabit pozisyon */
   right: 50px;
-  /* Sağdan 20px uzaklıkta */
   bottom: 80px;
-  /* Alttan 20px uzaklıkta */
   z-index: 1000;
-  /* Üstte kalmasını sağlamak için z-index */
-  opacity: 0.8;
 
 }
 
 .circleButton3 {
-  background-color: #202529;
+  background-color: #000000;
   color: white;
   border: none;
   border-radius: 50%;
@@ -438,7 +405,6 @@ body.colored-theme .mainText2 {
   font-size: 24px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
-  opacity: 0.8;
 
 }
 
@@ -448,13 +414,9 @@ body.colored-theme .mainText2 {
 
 body {
   background-color: #ffffff;
-  /* Varsayılan arka plan rengi */
   background-image: none;
-  /* Varsayılan arka plan resmi */
   color: #000000;
-  /* Varsayılan yazı rengi */
   transition: background-color 0.5s ease, background-image 0.5s ease, color 0.5s ease;
-  /* Arka plan rengi ve resmi ile yazı rengi geçişi */
 }
 
 
@@ -484,6 +446,7 @@ a:hover {
 }
 
 footer {
+  color: black;
   width: 100%;
   background-color: rgb(255, 255, 255);
   margin-left: auto;
@@ -546,7 +509,6 @@ footer {
 
 .cartIcon {
 
-  width: 25px;
   transition: 0.3s ease;
 
 }
@@ -557,69 +519,70 @@ footer {
 
 #productCarousel {
   position: relative;
-  margin: 70px auto; /* Merkezleme için otomatik yan boşluk */
-  border-radius: 8px; /* Kenar yuvarlama */
-  overflow: hidden; /* Taşmayı önler */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Yumuşak gölge efekti */
-  max-width: 600px; /* Maksimum genişlik */
+  margin: 70px auto; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  max-width: 80%; 
 }
 
 .carousel-item img {
-  width: 100%; /* Resmin genişliği %100 */
-  height: 250px; /* Sabit yükseklik */
-  object-fit: cover; /* Resmi uygun alana sığdırır */
-  border-radius: 8px; /* Kenar yuvarlama */
+  width: 100%; 
+  height: 500px; 
+  object-fit: cover; 
+  border-radius: 8px; 
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-  width: 40px; /* Kontrollerin genişliği */
-  height: 40px; /* Kontrollerin yüksekliği */
-  border-radius: 50%; /* Yuvarlak görünüm */
-  background-color: rgba(0, 0, 0, 0.6); /* Şeffaf arka plan rengi */
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 50%; /* Dikey ortalama */
-  transform: translateY(-50%); /* Dikeyde merkezleme */
-  z-index: 1; /* Üstte görünüm için */
-  transition: background-color 0.3s; /* Hover geçişi */
+  top: 50%; 
+  transform: translateY(-50%); 
+  z-index: 1; 
+  transition: background-color 0.3s; 
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  background-color: rgba(0, 0, 0, 0.9); /* Hoverda daha koyu arka plan rengi */
+  background-color: rgba(0, 0, 0, 0.9); 
 }
 
 .newProdTitle {
   text-align: center;
-  font-size: 16px; /* Yazı boyutu */
-  color: #333; /* Yazı rengi */
-  margin: 5px 0; /* Üst ve alt boşluk */
+  font-size: 16px; 
+  color: #333;
+  margin: 5px 0; 
 }
 
 .carousel-indicators {
-  bottom: 10px; /* Aşağıda konumlandırma */
+  bottom: 10px; 
 }
 
 .carousel-indicators li {
-  background-color: rgba(0, 0, 0, 0.5); /* Noktaların arka plan rengi */
-  border-radius: 50%; /* Yuvarlak görünüm */
-  width: 12px; /* Nokta genişliği */
-  height: 12px; /* Nokta yüksekliği */
+  background-color: rgba(0, 0, 0, 0.5); 
+  border-radius: 50%; 
+  width: 12px; 
+  height: 12px; 
 }
 
 .carousel-indicators .active {
-  background-color: rgba(0, 0, 0, 0.9); /* Aktif noktanın rengi */
+  background-color: rgba(0, 0, 0, 0.9); 
 }
 
-/* Responsive Medya Sorgusu */
+
+/* Responsive Medya için olan kısım */
 @media (max-width: 768px) {
   #productCarousel {
-      margin: 10px; /* Daha küçük ekranlarda margin azalt */
+      margin: 10px; 
   }
 
   .newProdTitle {
-      font-size: 14px; /* Daha küçük başlık boyutu */
+      font-size: 14px; 
   }
 }

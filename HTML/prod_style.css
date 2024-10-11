@@ -1,6 +1,5 @@
 body {
-    background-image: url("CSS/images/GreenGradi.jpg");
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     font-family: Arial, sans-serif;
 }
 
@@ -14,14 +13,24 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* Öğeler arasında eşit boşluk bırakır */
+  
     margin-left: -10px;
-    /* Negatif margin ile satırları hizala */
+ 
     margin-right: -10px;
-    /* Negatif margin ile satırları hizala */
+    
 
 }
 
+footer {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+ 
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+  }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -29,31 +38,31 @@ body {
     padding: 15px;
     text-align: center;
     background-color: white;
-    transition: transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;    
     height: 450px;
     width: 100%;
-    /* Kartın genişliği %100 olacak */
+  
     max-width: 400px;
-    /* Kartın maksimum genişliği */
+    
 }
 
 .card:hover {
-    transform: scale(1.05);
+    background-color: #e8e8e8;
 }
 
 .card img {
     width: 100%;
     border-radius: 10px;
     height: 200px;
-    /* Resimlerin yüksekliği sabitlendi */
+   
     object-fit: contain;
-    /* Resimlerin kırpılarak sığmasını sağlar */
+    
 }
 
 .plakName {
     font-size: 1.5rem;
     margin: 10px 0;
-    height: 200px;
+    height: auto;
 }
 
 .price {
@@ -66,7 +75,7 @@ body {
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: #202529;
+    background-color: #000000;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -75,7 +84,7 @@ body {
 }
 
 .card button:hover {
-    opacity: 0.8;
+    background-color: #FF5B5B;
 }
 
 #header {
@@ -114,8 +123,8 @@ body {
     width: 200px;
 }
 
+
 .cartIcon {
-    width: 25px;
     transition: 0.3s ease;
 }
 
@@ -163,20 +172,52 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.col-sm {
-    flex: 0 1 calc(33.333% - 20px);
-    /* Flex-grow: 0, Flex-shrink: 0, Flex-basis: %33.333 */
-    max-width: calc(33.333% - 20px);
-    /* Her satırda 3 kart olmasını sağlar */
-    margin: 10px;
-    /* Kartlar arasındaki boşluk */
+
+.GoTopButton {
+    position: fixed;
+    
+    right: 50px;
+    
+    bottom: 80px;
+    
+    z-index: 1000;
+   
+
 }
 
-/* Küçük ekranlarda düzeni korumak için medya sorguları */
+
+.circleButton3 {
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.circleButton3:hover {
+    transform: scale(1.1);
+}
+
+
+.col-sm {
+    flex: 0 1 calc(33.333% - 20px);
+    
+    max-width: calc(33.333% - 20px);
+  
+    margin: 10px;
+  
+}
+
+
 @media (max-width: 1024px) {
     .col-sm {
         flex: 0 1 calc(50% - 20px);
-        /* Daha küçük ekranlarda 2 kart */
+       
         max-width: calc(50% - 20px);
     }
 }
@@ -184,9 +225,40 @@ body {
 @media (max-width: 768px) {
     .col-sm {
         flex: 0 1 100%;
-        /* Mobil cihazlarda 1 kart */
+        
         max-width: 100%;
     }
 }
 
 
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+}
+
+
+
+
+
+.card a { 
+     display: inline-block;
+    /* Veya inline */
+    text-decoration: none;
+    /* Link alt çizgisini kaldırmak için */
+    margin: 0;
+    padding: 0;
+    color: #000000;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h2{
+    padding: 0%;
+    margin: 0%;
+}

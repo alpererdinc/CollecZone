@@ -47,3 +47,4 @@ toggleSwitch.addEventListener('change', function () {
         localStorage.setItem('theme', '');
     }
 });
+

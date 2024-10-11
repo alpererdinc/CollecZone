@@ -37,8 +37,8 @@ body {
 .card img {
   width: 100%;
   border-radius: 10px;
-  height: 200px; /* Resimlerin yüksekliği sabitlendi */
-  object-fit: contain; /* Resimlerin kırpılarak sığmasını sağlar */
+  height: 200px; 
+  object-fit: contain; 
 }
 
 
@@ -115,7 +115,6 @@ body {
 
 .cartIcon {
 
-  width: 25px;
   transition: 0.3s ease;
 
 }
@@ -132,7 +131,6 @@ body {
 
 .searchTerm {
   width: calc(100% - 40px);
-  /* Arama düğmesine yer bırakmak için genişliği ayarlıyoruz */
   border: 3px solid #202529;
   border-right: none;
   padding: 5px;
@@ -158,10 +156,8 @@ body {
   font-size: 20px;
 }
 
-/*Resize the wrap to see the search bar change!*/
 .wrap {
   width: 300px;
-  /* Sabit genişlik ayarlandı */
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);

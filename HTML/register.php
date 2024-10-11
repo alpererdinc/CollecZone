@@ -1,5 +1,5 @@
 <?php
-// Veritabanı bağlantısı
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -16,19 +16,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    // Kullanıcıyı veritabanına ekle
+    
     $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        // Eklenen kullanıcının user_id'sini al
+       
         $user_id = $conn->insert_id;
         
-        // Oturumda user_id'yi sakla
+       
         session_start();
         $_SESSION['user_id'] = $user_id;
 
         echo "Kayıt başarılı!";
-        header("Location: login.php"); // Kullanıcıyı yönlendir
+        header("Location: login.php"); 
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -72,7 +72,7 @@ $conn->close();
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" href="log_style.css"> <!-- CSS dosyasını dahil et -->
+    <link rel="stylesheet" href="log_style.css"> 
 </head>
 
 <body>
@@ -106,7 +106,7 @@ $conn->close();
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Add font awesome icons -->
+  
     <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
     <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
     <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
@@ -124,13 +124,13 @@ footer {
  
     text-align: center;
     position: relative;
-    /* Konumlandırmayı yapabilmek için */
+  
     bottom: 0;
-    /* En alta sabitle */
+ 
     width: 100%;
-    /* Tüm genişliği kapla */
+   
     margin-top: auto;
-    /* Üstten otomatik boşluk bırak */
+    
   }
 
   .copyRights {

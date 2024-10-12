@@ -1,0 +1,104 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+
+.user-info {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    position: relative; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+
+/* Profil Fotoğrafı Stili */
+.profile-pic {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Kırpma stili */
+
+    border: 3px solid #000000; /* Çerçeve ekleme */
+}
+
+/* Bağlantılar */
+.profile_picture.a {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+    padding: 12px;
+    color: #fff;
+    background-color: #FF6666;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s; /* Dönüşüm efektleri */
+}
+
+.profile_picture.a:hover {
+    background-color: #e55e5e; /* Daha koyu bir renk */
+    transform: scale(1.05); /* Hover efekti ile büyüme */
+}
+
+/* Form Alanı Stili */
+.pic_form {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Form Elemanları Stili */
+.pic_form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.pic_form input[type="file"] {
+    margin-bottom: 15px;
+}
+
+.pic_form input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Dönüşüm efektleri */
+}
+
+.pic_form input[type="submit"]:hover {
+    background-color: #181818;
+    transform: scale(1.05); /* Hover efekti ile büyüme */
+}
+
+

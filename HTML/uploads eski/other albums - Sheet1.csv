@@ -1,0 +1,32 @@
+product_id,name,price,description,image,category
+0,"Jay-Z, ‘The Blueprint’",359.47,A critically acclaimed album known for its lyrical prowess and production quality.,uploads/0.jpg,music
+1,"OutKast, ‘Aquemini’",419.19,A genre-defining album that blends hip-hop with funk and soul elements.,uploads/0 (1).jpg,music
+2,"Bob Marley and the Wailers, ‘Exodus’",389.63,A classic reggae album featuring timeless tracks about love and freedom.,uploads/0 (2).jpg,music
+3,"Ramones, ‘Ramones’",331.67,"One of the first punk albums, establishing the genre with its raw sound and energy.",uploads/0 (3).jpg,music
+4,"Paul Simon, ‘Graceland’",469.16,An influential album that incorporates African musical elements into pop.,uploads/0 (4).jpg,music
+5,"Prince, ‘Sign O’ the Times’",539.91,A double album exploring various themes and showcasing Prince's musical range.,uploads/0 (5).jpg,music
+6,"Nas, ‘Illmatic’",419.19,"Often regarded as one of the greatest hip-hop albums, known for its lyricism and storytelling.",uploads/0 (6).jpg,music
+7,"A Tribe Called Quest, ‘The Low End Theory’",489.6,An iconic album blending jazz influences with hip-hop.,uploads/0 (7).jpg,music
+8,"Radiohead, ‘OK Computer’",599.86,A landmark album that captures the anxieties of modern life with innovative soundscapes.,uploads/0 (8).jpg,music
+9,"The Rolling Stones, ‘Let It Bleed’",469.16,"A classic rock album featuring a mix of rock, blues, and country influences.",uploads/0 (9).jpg,music
+10,"David Bowie, ‘The Rise and Fall of Ziggy Stardust’",489.6,A seminal glam rock album that tells the story of Ziggy Stardust.,uploads/0 (10).jpg,music
+11,"Talking Heads, ‘Remain in Light’",539.91,An innovative album that blends rock with African rhythms and funk.,uploads/0 (11).jpg,music
+12,"Bob Dylan, ‘Blonde on Blonde’",419.19,A landmark album in rock history known for its surreal lyrics and musical experimentation.,uploads/0 (12).jpg,music
+13,"Dr. Dre, ‘The Chronic’",599.86,A defining album in the West Coast hip-hop scene featuring G-funk elements.,uploads/0 (13).jpg,music
+14,"Michael Jackson, ‘Off the Wall’",489.6,"A groundbreaking album that blends pop, disco, and funk.",uploads/0 (14).jpg,music
+15,"The Beatles, ‘Rubber Soul’",419.19,"A pivotal album in the evolution of pop music, showcasing mature themes and innovative production.",uploads/0 (15).jpg,music
+16,"Stevie Wonder, ‘Innervisions’",539.91,An influential album addressing social issues through soulful music.,uploads/0 (16).jpg,music
+17,"Amy Winehouse, ‘Back to Black’",599.86,"A modern classic that combines elements of soul, jazz, and R&B.",uploads/0 (17).jpg,music
+18,"Beyoncé, ‘Lemonade’",579.04,A powerful album exploring themes of infidelity and empowerment.,uploads/0 (18).jpg,music
+19,"Miles Davis, ‘Kind of Blue’",629.17,"A cornerstone of jazz, known for its improvisational style and smooth melodies.",uploads/0 (19)jpg,music
+20,"Jimi Hendrix, ‘Are You Experienced’",599.86,A revolutionary album in rock music that showcases Hendrix's guitar skills and songwriting.,uploads/0 (20).jpg,music
+21,The Beatles - Abbey Road,540,A classic rock album by The Beatles from 1969.,uploads/0 (22).jpg,music
+22,Pink Floyd - Dark Side of the Moon,675,Iconic progressive rock album by Pink Floyd.,uploads/0 (23).jpg,music
+23,Fleetwood Mac - Rumours,594,Best-selling album featuring timeless hits.,uploads/0 (24).jpg,music
+24,Michael Jackson - Thriller,486,One of the best-selling albums of all time.,uploads/0 (25).jpg,music
+25,David Bowie - The Rise and Fall of Ziggy Stardust,621,Influential glam rock album by David Bowie.,uploads/0 (26).jpg,music
+26,Nirvana - Nevermind,513,"Landmark grunge album featuring ""Smells Like Teen Spirit"".",uploads/0 (27).jpg,music
+27,Queen - A Night at the Opera,648,"Features the legendary track ""Bohemian Rhapsody"".",uploads/0 (28).jpg,music
+28,Bob Marley - Legend,459,A greatest hits compilation of Bob Marley.,uploads/0 (29).jpg,music
+29,U2 - The Joshua Tree,567,Critically acclaimed album blending rock and spiritual themes.,uploads/0 (30).jpg,music
+30,The Rolling Stones - Sticky Fingers,702,"Classic rock album featuring hits like ""Brown Sugar"".",uploads/0 (31).jpg,music

@@ -1,3 +1,8 @@
+.upper_design {
+  transform: translate(0%, -20%);
+  margin-bottom: 60px;
+}
+
 .pre-blog {
   margin-left: auto;
   margin-right: auto;
@@ -8,6 +13,75 @@
   padding-top: 40px;
   padding-bottom: 4px;
   text-align: center;
+  transform: translate(0%, 8%);
+  position: relative;
+  z-index: 20;
+}
+
+/* Toggle Switch Stil */
+.switch {
+  position: absolute;
+  top: 23px;
+  right: 20px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+  transition: 0.4s;
+  border-radius: 34px;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  
+}
+
+input:checked+.slider {
+  background-color: #FF5B5B;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+/* Renkli Tema için böyle ayarladım */
+body.colored-theme {
+  background-image: url(images/GreenGradi.jpg);
+  color: #ffffff;
+  transition: background-color 0.5s ease, background-image 0.5s ease, color 0.5s ease;
+
 }
 
 
@@ -19,61 +93,59 @@
   letter-spacing: -5px;
   rotate: -2deg;
   transform: translate(0, 74px);
-  color: #ce3043;
+  color: #FF5B5B;
   z-index: 10;
   position: relative;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body.colored-theme .mainText {
+  color: #ffffff;
+  text-shadow: -3px 1px 15px rgba(0, 0, 0, 0.189);
+
 }
 
 .mainText2 {
+  color: #000000;
   font-size: 100px;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 400;
-  transform: translate(9px,0);
-
-}
-
-.RotatingVinyl{
-  transform: translate(-180px,-274px);
-}
-
-.search {
-  width: 300px;
+  transform: translate(0, 19px);
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   position: relative;
-  display: flex;
+  z-index: 12;
 }
 
-.searchTerm {
-  width: calc(100% - 40px);
-  /* Arama düğmesine yer bırakmak için genişliği ayarlıyoruz */
-  border: 3px solid #202529;
-  border-right: none;
-  padding: 5px;
-  height: 36px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #202529;
+body.colored-theme .mainText2 {
+  color: #ffffff;
+  text-shadow: -3px 1px 15px rgba(0, 0, 0, 0.189);
+
 }
 
-.searchTerm:focus {
-  color: #202529;
+.RotatingVinyl {
+  transform: translate(-180px, -274px);
 }
 
-.searchButton {
-  width: 40px;
-  height: 36px;
-  border: 1px solid #202529;
-  background: #202529;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
+
+.gradient-text {
+  background: linear-gradient(to right, rgb(248, 79, 79), rgb(255, 138, 138), rgb(255, 78, 78));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgb(0, 0, 0);
+  transition: color .2s ease-in-out;
+  text-transform: uppercase;
 }
 
-/*Resize the wrap to see the search bar change!*/
+.gradient-text:hover {
+  color: rgba(0, 0, 0, 0);
+}
+
 .wrap {
   width: 300px;
-  /* Sabit genişlik ayarlandı */
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -81,22 +153,22 @@
 
 @media (max-width: 1024px) {
   .col-sm {
-      flex: 1 1 calc(50% - 20px);
+    flex: 1 1 calc(50% - 20px);
   }
 
   #header {
-      flex-direction: column;
-      padding: 10px 20px;
+    flex-direction: column;
+    padding: 10px 20px;
   }
 }
 
 @media (max-width: 768px) {
   .col-sm {
-      flex: 1 1 100%;
+    flex: 1 1 100%;
   }
 
   .search {
-      width: 100%;
+    width: 100%;
   }
 }
 
@@ -104,35 +176,65 @@
 .plakPhoto {
   position: absolute;
   left: 50%;
-  transform: translate(49%, -60%);
-  width: 200px;
-
+  transform: translate(5%, -56%);
+  width: 330px;
   z-index: -10;
-
 }
 
 
 .plakOrtasi {
   position: absolute;
   left: 50%;
-  transform: translate(171%, -70%);
-  /* translate işlemi burada kalacak */
-  width: 83px;
+  transform: translate(56%, -62%);
+  width: 170px;
+
   z-index: -5;
   animation: mymove 10s linear infinite;
 }
 
+.plakKolu {
+  position: absolute;
+  left: 50%;
+  transform: translate(163%, -56%);
+  width: 130px;
+
+  z-index: -1;
+  transform-origin: top center;
+  animation: swing 2s infinite ease-in-out;
+
+}
+
+@keyframes swing {
+  0% {
+    transform: translate(163%, -56%) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(163%, -56%) rotate(0.5deg);
+  }
+
+  50% {
+    transform: translate(163%, -56%) rotate(0deg);
+  }
+
+  75% {
+    transform: translate(163%, -56%) rotate(0.9deg);
+  }
+
+  100% {
+    transform: translate(163%, -56%) rotate(0deg);
+  }
+}
+
 @keyframes mymove {
   0% {
-    transform: translate(171%, -70%) rotate(0deg);
+    transform: translate(56%, -62%) rotate(0deg);
   }
 
-  /* translate'i koruyarak rotate işlemini ekliyoruz */
   100% {
-    transform: translate(171%, -70%) rotate(360deg);
+    transform: translate(56%, -62%) rotate(360deg);
   }
 
-  /* tam dönüş yapacak */
 }
 
 .nota {
@@ -140,8 +242,8 @@
   left: 50%;
   top: 50%;
 
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   background: url('music-note.png') no-repeat center center;
   background-size: contain;
   animation: floatNotes 3s ease-out infinite;
@@ -150,15 +252,13 @@
 
 @keyframes floatNotes {
   0% {
-    transform: translate(200px, -90px) scale(1);
+    transform: translate(230px, -90px) scale(1);
     opacity: 1;
   }
 
   100% {
-    transform: translate(340px, -300px) scale(0.5);
-    /* Sağ üst köşeye doğru gidecek ve küçülecek */
+    transform: translate(360px, -300px) scale(0.5);
     opacity: 0;
-    /* Giderek yok olacak */
   }
 }
 
@@ -169,12 +269,13 @@
 }
 
 .expandButton {
-  text-align: center; /* Butonu ortalamak için */
+  text-align: center;
   margin-top: 20px;
+
 }
 
 .circleButton {
-  background-color: #202529;
+  background-color: #000000;
   color: white;
   border: none;
   border-radius: 50%;
@@ -183,11 +284,12 @@
   font-size: 21px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+
 }
 
 .circleButton2 {
   background-color: #f9f9f9;
-  color: #202529;
+  color: #000000;
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -195,15 +297,16 @@
   font-size: 21px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+
 }
 
 
 .circleButton:hover {
-  transform: scale(1.1); /* Hover efektle buton büyüyecek */
+  transform: scale(1.1);
 }
 
 .circleButton2:hover {
-  transform: scale(1.1); /* Hover efektle buton büyüyecek */
+  transform: scale(1.1);
 }
 
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
@@ -229,36 +332,33 @@
   text-align: center;
   height: 1000px;
   width: 1000px;
-  background-color:#202529;
+  background-color: #000000;
+  mix-blend-mode: multiply;
   border-radius: 50%;
   display: flexbox;
   justify-content: center;
-  /* Yatay olarak ortalar */
   align-items: center;
-  /* Dikey olarak ortalar */
   color: white;
-  /* Yazı rengini belirledik */
   text-align: center;
-  /* Yazıyı ortaladık */
+
 }
 
 .circleText {
   font-size: 19px;
-  /* Yazı boyutu */
   padding: 200px;
-  /* Yazının etrafında biraz boşluk bıraktık */
 }
 
 
 .GoTopButton {
-  position: fixed;  /* Sabit pozisyon */
-  right: 50px;      /* Sağdan 20px uzaklıkta */
-  bottom: 80px;     /* Alttan 20px uzaklıkta */
-  z-index: 1000;    /* Üstte kalmasını sağlamak için z-index */
+  position: fixed;
+  right: 50px;
+  bottom: 80px;
+  z-index: 1000;
+
 }
 
 .circleButton3 {
-  background-color: #202529;
+  background-color: #000000;
   color: white;
   border: none;
   border-radius: 50%;
@@ -267,6 +367,7 @@
   font-size: 24px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+
 }
 
 .circleButton3:hover {
@@ -274,8 +375,12 @@
 }
 
 body {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
+  background-image: none;
+  color: #000000;
+  transition: background-color 0.5s ease, background-image 0.5s ease, color 0.5s ease;
 }
+
 
 html,
 body {
@@ -286,12 +391,12 @@ body {
 
 a {
   text-decoration: none;
-  color: #ce3043;
+  color: #FF5B5B;
 }
 
 a:hover {
   text-decoration: none;
-  color: #ff7878;
+  color: #ff7070;
 }
 
 
@@ -303,9 +408,9 @@ a:hover {
 }
 
 footer {
+  color: black;
   width: 100%;
   background-color: rgb(255, 255, 255);
-  border-radius: 35px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -326,8 +431,9 @@ footer {
   align-items: center;
   justify-content: space-between;
   padding: 20px 80px;
-  background: #f8f8f8;
+  background: #ffffff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+
 }
 
 #navbar {
@@ -351,12 +457,12 @@ footer {
 }
 
 #navbar li a:hover {
-  color: #ce3043;
+  color: #FF5B5B;
 }
 
 #navbar li a:hover,
 #navbar li a.active {
-  color: #ce3043;
+  color: #FF5B5B;
 }
 
 .logo {
@@ -365,11 +471,82 @@ footer {
 
 .cartIcon {
 
-  width: 25px;
   transition: 0.3s ease;
 
 }
 
 .cartIcon:hover {
   filter: invert(24%) sepia(36%) saturate(4167%) hue-rotate(332deg) brightness(97%) contrast(93%);
+}
+
+#productCarousel {
+  position: relative;
+  margin: 70px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  transition: background-color 0.3s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.newProdTitle {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.carousel-indicators {
+  bottom: 10px;
+}
+
+.carousel-indicators li {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+}
+
+.carousel-indicators .active {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+/* Responsive Medya için olan kısım */
+@media (max-width: 768px) {
+  #productCarousel {
+    margin: 10px;
+  }
+
+  .newProdTitle {
+    font-size: 14px;
+  }
 }

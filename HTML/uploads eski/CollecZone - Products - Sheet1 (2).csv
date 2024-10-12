@@ -1,0 +1,101 @@
+product_id,name,price,description,image,category
+0,The Beatles - Abbey Road,500,Iconic album by The Beatles,uploads/0,music
+1,Pink Floyd - The Dark Side of the Moon,450,Concept album by Pink Floyd,uploads/1,music
+2,Michael Jackson - Thriller,400,Best-selling album of all time,uploads/2,music
+3,Fleetwood Mac - Rumours,350,Classic rock album,uploads/3,music
+4,Nirvana - Nevermind,300,Influential grunge album,uploads/4,music
+5,Bob Dylan - Highway 61 Revisited,250,Landmark folk rock album,uploads/5,music
+6,Madonna - Like a Virgin,280,Pop icon's defining album,uploads/6,music
+7,Queen - A Night at the Opera,320,Progressive rock masterpiece,uploads/7,music
+8,Prince - Purple Rain,370,Acclaimed soundtrack album,uploads/8,music
+9,The Rolling Stones - Exile on Main St.,430,Rock classic album,uploads/9,music
+10,AC/DC - Back in Black,390,Iconic hard rock album,uploads/10,music
+11,The Beach Boys - Pet Sounds,350,Landmark album in pop music,uploads/11,music
+12,Radiohead - OK Computer,360,Influential alternative rock album,uploads/12,music
+13,Elvis Presley - Elvis Presley,400,Debut album of the King,uploads/13,music
+14,David Bowie - The Rise and Fall of Ziggy Stardust,340,Classic glam rock album,uploads/14,music
+15,Bruce Springsteen - Born to Run,380,Rock album defining a generation,uploads/15,music
+16,The Clash - London Calling,330,Punk rock classic,uploads/16,music
+17,U2 - The Joshua Tree,420,Landmark rock album,uploads/17,music
+18,Whitney Houston - The Bodyguard Soundtrack,450,Best-selling soundtrack album,uploads/18,music
+19,Amy Winehouse - Back to Black,410,Acclaimed neo-soul album,uploads/19,music
+20,Simon & Garfunkel - Bridge Over Troubled Water,300,Folk rock classic,uploads/20,music
+21,The Smiths - The Queen Is Dead,340,Influential indie album,uploads/21,music
+22,Jay-Z - The Blueprint,370,Landmark hip-hop album,uploads/22,music
+23,Kendrick Lamar - To Pimp a Butterfly,390,Acclaimed modern hip-hop album,uploads/23,music
+24,Beyoncé - Lemonade,420,Critically acclaimed visual album,uploads/24,music
+25,"Billie Eilish - When We All Fall Asleep, Where Do We Go?",350,Breakthrough pop album,uploads/25,music
+26,Taylor Swift - 1989,380,Grammy-winning pop album,uploads/26,music
+27,The Cure - Disintegration,340,Landmark album in gothic rock,uploads/27,music
+28,Led Zeppelin - IV,400,Classic rock album,uploads/28,music
+29,Oasis - (What's the Story) Morning Glory?,370,Britpop landmark,uploads/29,music
+30,R.E.M. - Automatic for the People,330,Influential alternative rock album,uploads/30,music
+31,Green Day - Dookie,350,Pop punk classic,uploads/31,music
+32,Bon Jovi - Slippery When Wet,380,Iconic rock album,uploads/32,music
+33,Fleetwood Mac - Tango in the Night,400,Classic rock album,uploads/33,music
+34,Pearl Jam - Ten,390,Influential grunge album,uploads/34,music
+35,Metallica - Metallica (The Black Album),450,Hard rock classic,uploads/35,music
+36,Alanis Morissette - Jagged Little Pill,370,Landmark alternative album,uploads/36,music
+37,Coldplay - A Rush of Blood to the Head,390,Acclaimed rock album,uploads/37,music
+38,Katy Perry - Teenage Dream,380,Pop sensation album,uploads/38,music
+39,Bruno Mars - 24K Magic,400,Modern pop album,uploads/39,music
+40,Adele - 21,450,Critically acclaimed album,uploads/40,music
+41,The Strokes - Is This It,340,Influential garage rock album,uploads/41,music
+42,Sade - Diamond Life,370,Smooth jazz and soul album,uploads/42,music
+43,Gorillaz - Demon Days,390,Acclaimed virtual band album,uploads/43,music
+44,The Police - Synchronicity,360,Classic rock album,uploads/44,music
+45,Linkin Park - Hybrid Theory,400,Landmark nu-metal album,uploads/45,music
+46,Fleetwood Mac - Tusk,340,Classic rock album,uploads/46,music
+47,The Weeknd - Starboy,380,Modern pop and R&B album,uploads/47,music
+48,David Bowie - Heroes,370,Classic glam rock album,uploads/48,music
+49,The Velvet Underground - The Velvet Underground & Nico,350,Influential rock album,uploads/49,music
+50,Kanye West - My Beautiful Dark Twisted Fantasy,400,Acclaimed hip-hop album,uploads/50,music
+51,Billie Holiday - Lady in Satin,360,Classic jazz album,uploads/51,music
+52,Daft Punk - Discovery,380,Landmark electronic album,uploads/52,music
+53,Johnny Cash - At Folsom Prison,370,Iconic country album,uploads/53,music
+54,The Who - Who's Next,390,Classic rock album,uploads/54,music
+55,The Eagles - Hotel California,450,Landmark rock album,uploads/55,music
+56,Stevie Wonder - Songs in the Key of Life,380,Iconic soul album,uploads/56,music
+57,Fleetwood Mac - Mirage,350,Classic rock album,uploads/57,music
+58,The Notorious B.I.G. - Ready to Die,400,Acclaimed hip-hop album,uploads/58,music
+59,Oasis - Be Here Now,370,Britpop album,uploads/59,music
+60,Beck - Odelay,360,Influential alternative rock album,uploads/60,music
+61,Kendrick Lamar - DAMN.,410,Acclaimed hip-hop album,uploads/61,music
+62,Hozier - Hozier,370,Breakthrough debut album,uploads/62,music
+63,The Killers - Hot Fuss,390,Modern rock album,uploads/63,music
+64,Billie Eilish - Happier Than Ever,420,Acclaimed pop album,uploads/64,music
+65,The Beatles - The White Album,480,Classic album by The Beatles,uploads/65,music
+66,Mariah Carey - Daydream,350,Iconic pop and R&B album,uploads/66,music
+67,Ed Sheeran - Divide,370,Best-selling modern pop album,uploads/67,music
+68,Travis Scott - Astroworld,390,Acclaimed hip-hop album,uploads/68,music
+69,Shakira - Laundry Service,360,Breakthrough Latin pop album,uploads/69,music
+70,Lana Del Rey - Born to Die,350,Critically acclaimed indie pop album,uploads/70,music
+71,Drake - Views,400,Popular modern hip-hop album,uploads/71,music
+72,Frank Ocean - Blonde,420,Acclaimed alternative R&B album,uploads/72,music
+73,Lorde - Melodrama,370,Critically acclaimed pop album,uploads/73,music
+74,"Ariana Grande - Thank U, Next",400,Acclaimed pop album,uploads/74,music
+75,Justin Timberlake - FutureSex/LoveSounds,390,Popular R&B and pop album,uploads/75,music
+76,Rihanna - Anti,420,Critically acclaimed R&B album,uploads/76,music
+77,Post Malone - Hollywood's Bleeding,390,Popular hip-hop and pop album,uploads/77,music
+78,Sam Smith - In the Lonely Hour,380,Grammy-winning pop and soul album,uploads/78,music
+79,Taylor Swift - Folklore,420,Acclaimed indie folk album,uploads/79,music
+80,Dua Lipa - Future Nostalgia,390,Critically acclaimed pop album,uploads/80,music
+81,Lady Gaga - The Fame,360,Breakthrough pop album,uploads/81,music
+82,Harry Styles - Fine Line,400,Popular modern pop album,uploads/82,music
+83,Shawn Mendes - Shawn Mendes,350,Popular pop album,uploads/83,music
+84,Ellie Goulding - Halcyon,380,Acclaimed pop and electronic album,uploads/84,music
+85,The 1975 - A Brief Inquiry into Online Relationships,390,Popular indie pop album,uploads/85,music
+86,Tame Impala - Currents,420,Critically acclaimed psychedelic rock album,uploads/86,music
+87,The Weeknd - After Hours,400,Acclaimed modern pop album,uploads/87,music
+88,Blackpink - The Album,370,Breakthrough K-pop album,uploads/88,music
+89,BTS - Map of the Soul: 7,410,Popular K-pop album,uploads/89,music
+90,Olivia Rodrigo - SOUR,380,Breakthrough pop album,uploads/90,music
+91,Lil Nas X - Montero,400,Acclaimed pop and hip-hop album,uploads/91,music
+92,Cardi B - Invasion of Privacy,370,Popular hip-hop album,uploads/92,music
+93,Megan Thee Stallion - Good News,390,Critically acclaimed hip-hop album,uploads/93,music
+94,Doja Cat - Hot Pink,360,Breakthrough pop and R&B album,uploads/94,music
+95,Billie Eilish - Don't Smile at Me,380,Acclaimed debut pop album,uploads/95,music
+96,Rosalia - El Mal Querer,390,Acclaimed flamenco and pop album,uploads/96,music
+97,Bad Bunny - YHLQMDLG,400,Popular reggaeton album,uploads/97,music
+98,J Balvin - Colores,370,Acclaimed reggaeton album,uploads/98,music
+99,The Chainsmokers - Memories...Do Not Open,350,Popular electronic and pop album,uploads/99,music

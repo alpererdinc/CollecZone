@@ -44,6 +44,7 @@ session_start();
 
 
 
+
     $host = 'localhost';
     $username = 'root';
     $password = '';
@@ -60,21 +61,14 @@ session_start();
 
     <?php include 'navbar.php'; ?>
 
-    <ul>
-        <li>
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </li>
-    </ul>
+
 
 
 
     <div class="upper_design">
         <div class="pre-blog">
-            <h1 class="mainText">Koleksiyonunu</h1>
-            <h1 class="mainText2">GE<a href="prod_index.php" class="gradient-text"><strong>NİŞ</strong></a>LET</h1>
+            <h1 class="mainText">Expand</h1>
+            <h1 class="mainText2">YOUR <a href="prod_index.php" class="gradient-text"><strong>COLLECT</strong></a>ION</h1>
 
         </div>
 
@@ -109,21 +103,26 @@ session_start();
 
 
     <div id="productCarousel" class="carousel slide" data-ride="carousel">
-        <h2 class="newProdTitle">Yeni Ürünler</h2>
+        <h2 class="newProdTitle">New Pieces</h2>
         <div class="carousel-inner">
             <?php
             $active = "active";
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo '
-            <div class="carousel-item ' . $active . '">
-              <img src="' . $row["image"] . '" class="d-block w-100" alt="' . $row["name"] . '">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>' . $row["name"] . '</h5>
-                <p>' . $row["description"] . '</p>
-              </div>
-            </div>';
-                    $active = ""; 
+                <div class="carousel-item ' . $active . '">
+                <a href="product_detail.php?product_id=' . $row['product_id'] . '" style="color: white; text-decoration: none;">
+                    <img src="' . $row["image"] . '" class="d-block w-100" alt="' . $row["name"] . '">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h5>
+                                ' . $row["name"] . '
+                        </h5>
+                        <p>' . $row["description"] . '</p>
+                    </div>                            
+                    </a>
+
+                </div>';
+                    $active = "";
                 }
             }
             ?>
@@ -142,17 +141,20 @@ session_start();
 
 
 
+
     <div id="Round" class="bigRound">
-        <p class="circleText">Collec<strong>Zone</strong>, koleksiyonerlerin gözdesi olan, dünya çapında ün kazanmış ve
-            artık tedavülden kalkmış ürünleri keşfedebileceğiniz bir sayfa. Özenle derlediğimiz bu seçkide, müzik
-            tarihinin unutulmaz dönemlerine damgasını vuran nadir plaklar ve zamansız parçalar; çizgi roman külliyatının
-            kült ve benzersiz sayıları; kolay kolay bulamayacağınız egzotik aromalı mumlar yer alıyor.
-            Her bir ürün, geçmişin izlerini taşıyan ve koleksiyonerlere özel bir anlam sunan değerli parçalardan oluşur.
-            Bu nadir koleksiyon, müzikseverler ve koleksiyon meraklıları için bir araya getirilmiştir ve her bir ürün,
-            kendi hikayesini anlatır.
-            Koleksiyonumuzda, kendi parçalarınızın arasına girebilecek ürünlerin dünyasında eşsiz bir yolculuğa
-            çıkarken, tarihî ve kültürel
-            mirası elinizde tutma fırsatını yakalayın.</p>
+        <p class="circleText">Collec<strong>Zone</strong> is a page where you can discover collectors' favorites,
+            world-famous and now out-of-circulation products. This carefully
+            compiled selection includes rare records and timeless pieces that
+            left their mark on unforgettable periods in music history; cult
+            and unique issues of comic book collections; exotic aromatic
+            candles that you cannot easily find. Each product consists of
+            valuable pieces that carry traces of the past and offer a special
+            meaning to collectors. This rare collection has been brought
+            together for music lovers and collectors, and each product tells
+            its own story. Take the opportunity to hold historical and cultural
+            heritage in your hands while embarking on a unique journey in the
+            world of products that can be among your own pieces in our collection.</p>
         <div class="expandButton">
             <a href="#End"><button class="circleButton2">
                     &#x2193; <!-- Aşağı ok simgesi -->
@@ -161,7 +163,7 @@ session_start();
     </div>
 
     <div id="End" class="bodyTextSpace"></div>
-    <p class="bodyText">Eksik parçanı <a href="prod_index.php"><strong>bul.</strong></a></p>
+    <p class="bodyText"><a href="prod_index.php"><strong>Find</strong></a> your missing piece.</p>
     </div>
 
 
@@ -183,37 +185,37 @@ session_start();
 </body>
 
 <footer>
-        <hr>
-        <div class="rightstext">
-            <link rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <hr>
+    <div class="rightstext">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-            <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
-            <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
-            <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
+        <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
+        <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
+        <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
 
         <hr>
         <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
-        Erdinç</a></p>
-        <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
-    </footer>
+                Erdinç</a></p>
+        <p>All rights reserved. © 2024 CollecZone</p>
+</footer>
 
 <style>
-footer {
-    width: 100%;
-    background-color: rgb(255, 255, 255);
- 
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: auto;
-  }
+    footer {
+        width: 100%;
+        background-color: rgb(255, 255, 255);
 
-  .copyRights {
-    text-align: center;
-  }
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: auto;
+    }
+
+    .copyRights {
+        text-align: center;
+    }
 </style>
 
 </html>

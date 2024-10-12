@@ -9,6 +9,8 @@ body {
     background: #f3f3f3;
     flex-direction: column;
     margin: 0;
+    padding-top: 100px;
+
 }
 
 .main {

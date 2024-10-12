@@ -21,7 +21,7 @@
         <hr>
         <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
         Erdinç</a></p>
-        <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
+        <p>All rights reserved. © 2024 CollecZone</p>
     </footer>
 </body>
 </html>

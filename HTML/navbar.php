@@ -4,18 +4,47 @@
 <head>
 
   <style>
+    body {
+      background-color: #F5F5F7;
+    }
+
+    a {
+      color: #FF5B5B;
+      text-decoration: none;
+    }
+
     #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: top 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 80px;
       background: #ffffff;
       box-shadow: 0 2.6px 0px rgba(0, 0, 0, 1);
-      
+
+
+    }
+
+    #header:hover {
+      box-shadow: 0 7px 0px rgba(0, 0, 0, 1);
     }
 
     .logo {
       width: 200px;
+      filter: drop-shadow(0px 0px 0px #FF5B5B);
+      transition: filter 0.1s ease-in-out, transform 0.1s ease-in-out;
+
+    }
+
+    .logo:hover {
+      filter: drop-shadow(2px 2px 0px #FF5B5B);      
+      transform: translate(-1.5px, -1.5px);
+
     }
 
     #navbar {
@@ -54,13 +83,13 @@
     }
 
     .search {
-      width: 300px;
+      width: 250px;
       position: relative;
       display: flex;
     }
 
     .searchTerm {
-      width: calc(100% - 60px);
+      width: calc(100% - 50px);
       border: 3px solid #000;
       border-right: none;
       padding: 5px;
@@ -73,19 +102,24 @@
     .searchButton {
       width: 40px;
       height: 36px;
-      border: 2px solid #000;
       background: #000;
       color: #fff;
       border-radius: 0 5px 5px 0;
       cursor: pointer;
       font-size: 20px;
-      transition: 0.3s ease;
       transform: translate(-5px, 1px);
+      border: 2.6px solid black;
+      box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+      transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
     }
 
     .searchButton:hover {
       background: #FF5B5B;
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+      transform: translate(-6px, 0px);
+
     }
+
 
     /* Mobil Menü Butonu */
     #mobile-menu-icon {
@@ -144,6 +178,18 @@
 
 <body>
 
+  <?php
+  if (isset($_SESSION['user_id'])) { // Kullanıcının oturum açma durumu
+    // Giriş yapmışsa "My Profile" yazdır
+    $profileLinkText = "My Profile";
+  } else {
+    // Giriş yapmamışsa "Login" yazdır
+    $profileLinkText = "Login / Sign up";
+  }
+  ?>
+
+
+
   <section id="header">
     <a href="index.php"><img src="CSS/images/colleczoneLogo.png" class="logo" alt=""></a>
     <link rel="stylesheet"
@@ -151,18 +197,18 @@
 
     <div>
       <ul id="navbar">
-        <li><a href="index.php">Ana Sayfa</a></li>
+        <li><a href="index.php">Home</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Kategoriler</a>
+            aria-haspopup="true" aria-expanded="false">Categories</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="prod_index.php">Tüm ürünler</a>
-            <a class="dropdown-item" href="product_filter.php?category=music">Müzik</a>
-            <a class="dropdown-item" href="product_filter.php?category=comics">Çizgi Roman</a>
+            <a class="dropdown-item" href="prod_index.php">All Products</a>
+            <a class="dropdown-item" href="product_filter.php?category=music">Music</a>
+            <a class="dropdown-item" href="product_filter.php?category=comics">Comics</a>
           </div>
         </li>
-        <li><a href="about.php">Hakkımızda</a></li>
-        <li><a href="profile.php">Profilim</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="profile.php"><?php echo $profileLinkText; ?></a></li>
 
         <li>
           <a href="cart.php">
@@ -194,13 +240,22 @@
         <li>
           <div class="search">
             <form action="search.php" method="GET">
-              <input type="text" class="searchTerm" name="query" placeholder="Eksik parçanı bul..." required>
+              <input type="text" class="searchTerm" name="query" placeholder="Find your missing piece..." required>
               <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
               </button>
             </form>
           </div>
         </li>
+
+        <ul>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="theme-toggle">
+              <span class="slider"></span>
+            </label>
+          </li>
+        </ul>
 
       </ul>
       <div id="mobile-menu-icon">
@@ -211,6 +266,34 @@
 
 
   <script src="mobile_menu.js" defer></script>
+
+
+  <script>
+    let lastScrollTop = 0;
+    const header = document.getElementById("header");
+    const scrollThreshold = 100; // 100px scroll sonrası navbar kaybolabilir
+
+    window.addEventListener("scroll", function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > scrollThreshold) {
+        // Aşağı kaydırma ve 100px üzerindeyse header kaybolur
+        if (scrollTop > lastScrollTop) {
+          header.style.top = "-100px";
+        } else {
+          // Yukarı kaydırma, header geri görünür
+          header.style.top = "0";
+        }
+      } else {
+        // 100px'in altında header yerinde kalsın
+        header.style.top = "0";
+      }
+
+      lastScrollTop = scrollTop;
+    });
+  </script>
+
+
 </body>
 
 </html>

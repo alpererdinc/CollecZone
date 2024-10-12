@@ -1,6 +1,8 @@
 body {
     background-color: rgb(255, 255, 255);
     font-family: Arial, sans-serif;
+    padding-top: 100px;
+
 }
 
 .container {
@@ -35,20 +37,23 @@ footer {
 .card {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
     border-radius: 13px;
-    border-color: #000000;
     padding: 15px;
     text-align: center;
     background-color: white;
-    transition: border-width 0.06s ease-in-out;    
     height: 450px;
     width: 100%;
-    border-width: 3px;
     max-width: 400px;
+    border: 2.6px solid black;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+    transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
     
 }
 
 .card:hover {
-border-width: 4px;}
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 1);
+    transform: translate(-3px, -3px);
+
+}
 
 .card img {
     width: 100%;
@@ -59,10 +64,18 @@ border-width: 4px;}
     
 }
 
+.col-sm img {
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+    width: 59.085%;
+    border: 2.6px solid black;
+
+}
+
 .plakName {
     font-size: 1.5rem;
     margin: 10px 0;
     height: auto;
+
 }
 
 .price {

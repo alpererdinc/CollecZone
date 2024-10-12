@@ -4,6 +4,8 @@ body {
     background-color: #000000;
     margin: 0;
     padding: 0;
+    padding-top: 100px;
+
 }
 
 
@@ -22,12 +24,20 @@ h1 {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
     position: relative; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 2.6px solid black;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+    transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+    
 
 }
+.user-info:hover {
+
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 1);
+    transform: translate(-3px, -3px);
+
+}
+
 
 
 
@@ -36,10 +46,11 @@ h1 {
 .profile-pic {
     display: block;
     margin: 20px auto;
-    border-radius: 50%;
+    border-radius: 30%;
     width: 150px;
     height: 150px;
     object-fit: cover; /* Kırpma stili */
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
 
     border: 3px solid #000000; /* Çerçeve ekleme */
 }
@@ -70,6 +81,14 @@ h1 {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+    border: 2.6px solid black;
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+
+.pic_form:hover{
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 1);
+    transform: translate(-3px, -3px);
 }
 
 /* Form Elemanları Stili */
@@ -91,14 +110,16 @@ h1 {
     background-color: #000000;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Dönüşüm efektleri */
+    transition: background-color 0.3s ease-in-out; /* Dönüşüm efektleri */
 }
 
 .pic_form input[type="submit"]:hover {
-    background-color: #181818;
-    transform: scale(1.05); /* Hover efekti ile büyüme */
+    background-color: #ffffff;
+    color: #000000;
+    border: 2.6px solid black;
 }
+
 
 

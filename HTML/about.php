@@ -23,17 +23,17 @@ session_start();
     <h1>About Us</h1>
     <p>A few sentences about what we do.</p>
     <p>CollecZone is a page where you can discover collectors' favorites,
-       world-famous and now out-of-circulation products. This carefully
-        compiled selection includes rare records and timeless pieces that
-         left their mark on unforgettable periods in music history; cult
-          and unique issues of comic book collections; exotic aromatic
-           candles that you cannot easily find. Each product consists of
-           valuable pieces that carry traces of the past and offer a special
-            meaning to collectors. This rare collection has been brought 
-            together for music lovers and collectors, and each product tells
-             its own story. Take the opportunity to hold historical and cultural
-              heritage in your hands while embarking on a unique journey in the
-               world of products that can be among your own pieces in our collection.
+      world-famous and now out-of-circulation products. This carefully
+      compiled selection includes rare records and timeless pieces that
+      left their mark on unforgettable periods in music history; cult
+      and unique issues of comic book collections; exotic aromatic
+      candles that you cannot easily find. Each product consists of
+      valuable pieces that carry traces of the past and offer a special
+      meaning to collectors. This rare collection has been brought
+      together for music lovers and collectors, and each product tells
+      its own story. Take the opportunity to hold historical and cultural
+      heritage in your hands while embarking on a unique journey in the
+      world of products that can be among your own pieces in our collection.
 
     </p>
   </div>
@@ -68,8 +68,9 @@ session_start();
   </div>
   <style>
     body {
-      background-color: white;
       margin: 0;
+      padding-top: 100px;
+
     }
 
     html {
@@ -94,8 +95,25 @@ session_start();
     .card {
       margin: 8px;
       padding: 10px;
-      border-width: 2.6px;
-      border-color: #000;
+      border: 2.6px solid black;
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+      transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+    }
+
+    .card:hover {
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 1);
+    transform: translate(-3px, -3px);
+
+    }
+
+    .card img {
+      object-fit: cover;
+      border-radius: 30%;
+      height: 200px;
+      border: 2.6px solid black;
+      box-shadow: 7px 7px 0px rgba(0, 0, 0, 1);
+      margin-bottom: 20px;
+
     }
 
     .about-section {
@@ -130,10 +148,13 @@ session_start();
       text-align: center;
       cursor: pointer;
       width: 100%;
+      transition: border 0.05s ease-in-out;
     }
 
     .button:hover {
-      background-color: #555;
+      background-color: white;
+      border: 2.6px solid black;
+      color: #000;
     }
 
     @media screen and (max-width: 650px) {
@@ -144,14 +165,7 @@ session_start();
     }
   </style>
 
-  <ul>
-    <li>
-      <label class="switch">
-        <input type="checkbox" id="theme-toggle">
-        <span class="slider"></span>
-      </label>
-    </li>
-  </ul>
+
 
   <script src="theme.js"></script>
   <style>
@@ -188,6 +202,7 @@ session_start();
       background-color: #000000;
       transition: 0.4s;
       border-radius: 34px;
+      z-index: 1500;
     }
 
     .slider:before {
@@ -236,7 +251,7 @@ session_start();
       <hr>
       <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
           Erdinç</a></p>
-      <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
+      <p>All rights reserved. © 2024 CollecZone</p>
   </footer>
 
   <style>

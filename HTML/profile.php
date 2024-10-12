@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Sayfası</title>
+    <link rel="icon" type="image/x-icon" sizes="167x167" href="half-circle.png">
+
+    <title>CollecZone Profile</title>
     <link rel="stylesheet" href="CSS/profile_style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
@@ -50,13 +52,13 @@
             }
 
             
-            echo "<h1>Hoş geldin, " . htmlspecialchars($user['username']) . "!</h1>";
-            echo "<p><strong>E-postan:</strong> " . htmlspecialchars($user['email']) . "</p>";
+            echo "<h1>Welcome, " . htmlspecialchars($user['username']) . "!</h1>";
+            echo "<p><strong>E-mail:</strong> " . htmlspecialchars($user['email']) . "</p>";
 
            
-            echo "<br><a class='profile_link' href='favorites.php'>Favorilerim</a><br>";
-            echo "<br><a class='profile_link' href='order_history.php'>Sipariş Geçmişi</a>";
-            echo "<br><br><a class='profile_link' href='logout.php'>Çıkış Yap</a>";
+            echo "<br><a class='profile_link' href='favorites.php'>My Favorites</a><br>";
+            echo "<br><a class='profile_link' href='order_history.php'>Order History</a>";
+            echo "<br><br><a class='profile_link' href='logout.php'>Logout</a>";
             echo "<br><br>";
 
             $conn->close();
@@ -65,20 +67,13 @@
     </div>
 
     <form class="pic_form" action="upload_profile_picture.php" method="POST" enctype="multipart/form-data">
-        <label for="profile_picture">Profil fotoğrafı ekle:</label>
+        <label for="profile_picture">Add profile photo:</label>
         <input type="file" name="profile_picture" id="profile_picture" accept="image/*" required>
-        <input type="submit" value="Yükle">
+        <input type="submit" value="Upload">
     </form>
 
 
-    <ul>
-        <li>
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </li>
-    </ul>
+
 
    <script src="theme.js"></script>
    <style>
@@ -146,7 +141,10 @@ body.colored-theme {
 }
 
 
+body{
+  padding-top: 100px;
 
+}
 
         
  </style>
@@ -166,7 +164,7 @@ body.colored-theme {
         <hr>
         <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
         Erdinç</a></p>
-        <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
+        <p>All rights reserved. © 2024 CollecZone</p>
     </footer>
 
 <style>

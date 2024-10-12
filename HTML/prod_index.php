@@ -67,14 +67,14 @@ session_start();
 
                     echo "<img src='" . $row["image"] . "' alt='Ürün Resmi'>";
                     echo "<h2 class='plakName'>" . $row["name"] . "</h2>";
-                    echo "<p class='price'>Fiyat: " . $row["price"] . " TL</p>";
+                    echo "<p class='price'>Price: " . $row["price"] . " TL</p>";
                     echo "<p>" . $row["description"] . "</p>";
 
                     echo "</a>"; // Linki kapat
                     echo "<form action='add_cart.php' method='POST'>";
                     echo "<input type='hidden' name='product_id' value='" . $row["product_id"] . "'>"; // Ürün ID'si
                     // echo "<input type='number' name='quantity' value='1' min='1' class='form-control mb-2'>"; 
-                    echo "<button type='submit' class='btn btn-primary'>Sepete Ekle</button>";
+                    echo "<button type='submit' class='btn btn-primary'>Add to Cart</button>";
                     echo "</form>";
                     echo "</div>";
                 }
@@ -103,30 +103,31 @@ session_start();
             <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
             <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
 
-        <hr>
-        <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
-        Erdinç</a></p>
-        <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
+            <hr>
+            <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+                    Erdinç</a></p>
+            <p>All rights reserved. © 2024 CollecZone</p>
     </footer>
 
     <style>
         .filter_form {
-            margin-bottom: 50px;
-            margin-top: 50px;
-
+            box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+            border: 2.6px solid black;
+            width: 20%;
+            margin: 50px 70% 40px 30%;
             text-align: center;
+            background-color: white;
+            transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
         }
 
+        .filter_form:hover{
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+            transform: translate(-1px, -1px);
+
+
+        }
     </style>
 
-    <ul>
-        <li>
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </li>
-    </ul>
 
     <script src="theme.js"></script>
     <style>

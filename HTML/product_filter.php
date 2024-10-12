@@ -92,14 +92,7 @@ session_start();
         }
     </style>
 
-    <ul>
-        <li>
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </li>
-    </ul>
+ 
 
     <script src="theme.js"></script>
     <style>
@@ -193,7 +186,7 @@ session_start();
         <hr>
         <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
         Erdinç</a></p>
-        <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
+        <p>All rights reserved. © 2024 CollecZone</p>
     </footer>
 
 

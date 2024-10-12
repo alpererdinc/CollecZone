@@ -65,14 +65,7 @@ session_start();
     ?>
 
 
-    <ul>
-        <li>
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </li>
-    </ul>
+
 
     <script src="theme.js"></script>
     <style>
@@ -137,6 +130,11 @@ session_start();
             transition: background-color 0.5s ease, background-image 0.5s ease, color 0.5s ease;
         }
 
+        body{
+            padding-top: 100px;
+
+        }
+
         footer {
             width: 100%;
             background-color: rgb(255, 255, 255);
@@ -163,7 +161,7 @@ session_start();
         <hr>
         <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
         Erdinç</a></p>
-        <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
+        <p>All rights reserved. © 2024 CollecZone</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

@@ -36,14 +36,19 @@ $result = $stmt->get_result();
             <?php if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<div class='col-sm card'>";
+                    // Ürün detay sayfasına link
+                    echo "<a  href='product_detail.php?product_id=" . $row['product_id'] . "'>";
+
                     echo "<img src='" . $row["image"] . "' alt='Ürün Resmi'>";
                     echo "<h2 class='plakName'>" . $row["name"] . "</h2>";
-                    echo "<p class='price'>Fiyat: " . $row["price"] . " TL</p>";
+                    echo "<p class='price'>Price: " . $row["price"] . " TL</p>";
                     echo "<p>" . $row["description"] . "</p>";
+
+                    echo "</a>"; // Linki kapat
                     echo "<form action='add_cart.php' method='POST'>";
                     echo "<input type='hidden' name='product_id' value='" . $row["product_id"] . "'>"; // Ürün ID'si
-                    echo "<input type='number' name='quantity' value='1' min='1' class='form-control mb-2'>"; // Adet
-                    echo "<button type='submit' class='btn btn-primary'>Sepete Ekle</button>";
+                    // echo "<input type='number' name='quantity' value='1' min='1' class='form-control mb-2'>"; 
+                    echo "<button type='submit' class='btn btn-primary'>Add to Cart</button>";
                     echo "</form>";
                     echo "</div>";
                 }
@@ -81,7 +86,7 @@ $result = $stmt->get_result();
         <hr>
         <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
         Erdinç</a></p>
-        <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
+        <p>All rights reserved. © 2024 CollecZone</p>
     </footer>
     <style>
 
@@ -110,14 +115,7 @@ $result = $stmt->get_result();
         }
     </style>
 
-    <ul>
-        <li>
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </li>
-    </ul>
+
 
     <script src="theme.js"></script>
     <style>

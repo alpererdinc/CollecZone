@@ -44,7 +44,9 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sepetim</title>
+    <link rel="icon" type="image/x-icon" sizes="167x167" href="half-circle.png">
+
+    <title>CollecZone Cart</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
 
@@ -101,7 +103,7 @@ $conn->close();
         <hr>
         <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
         Erdinç</a></p>
-        <p>Tüm hakları saklıdır. © 2024 CollecZone</p>
+        <p>All rights reserved. © 2024 CollecZone</p>
     </footer>
 
     <style>
@@ -124,14 +126,6 @@ $conn->close();
 
     </style>
 
-<ul>
-        <li>
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </li>
-    </ul>
 
    <script src="theme.js"></script>
    <style>
@@ -151,6 +145,12 @@ ul {
   padding: 0; 
   margin: 0; 
 }
+
+body{
+    padding-top: 100px;
+
+}
+
 
 
 .switch input {

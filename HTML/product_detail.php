@@ -24,35 +24,31 @@ session_start();
 
 
     <?php
-    error_reporting(E_ERROR | E_PARSE); // Yalnızca hata ve parse hatalarını göster
+    error_reporting(E_ERROR | E_PARSE);
     ?>
 
 
 
     <?php
-    // Veritabanı bağlantısı
-    include 'db_connection.php'; // Veritabanı bağlantısı olan dosya
+    include 'db_connection.php'; 
 
 
 
 
 
-    // URL'den gelen product_id'yi al
     if (isset($_GET['product_id'])) {
         $product_id = $_GET['product_id'];
 
-        // Ürünün detaylarını veritabanından al
         $sql = "SELECT * FROM products WHERE product_id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $product_id); // product_id'yi parametre olarak bağla
+        $stmt->bind_param("i", $product_id);
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
 
-            // Check if the product is already favorited by the user
-            $user_id = $_SESSION['user_id']; // Assuming you have the user ID in the session
+            $user_id = $_SESSION['user_id']; 
             $fav_sql = "SELECT * FROM favorites WHERE user_id = ? AND product_id = ?";
             $fav_stmt = $conn->prepare($fav_sql);
             $fav_stmt->bind_param("ii", $user_id, $product_id);
@@ -64,7 +60,7 @@ session_start();
             // Ürün detaylarını göster
             echo "<div class='product-detail'>";
             echo "<img src='" . $row["image"] . "' alt='Ürün Resmi'>";
-            echo "<div class='product-info'>"; // Ürün bilgileri için bir div oluşturuldu
+            echo "<div class='product-info'>";
             echo "<h2>" . $row["name"] . "</h2>";
             echo "<p class='price'>" . $row["price"] . " TL</p>";
 
@@ -91,11 +87,11 @@ session_start();
             echo "<p>" . $row["description"] . "</p>";
 
             // Sepete ekle butonu
-            echo "<form action='add_cart.php' method='POST' class='d-inline'>"; // Form d-inline olarak ayarlandı
-            echo "<input type='hidden' name='product_id' value='" . $row["product_id"] . "'>"; // Ürün ID'si
+            echo "<form action='add_cart.php' method='POST' class='d-inline'>"; 
+            echo "<input type='hidden' name='product_id' value='" . $row["product_id"] . "'>"; 
             echo "<button type='submit' class='btn btn-primary'>Sepete Ekle</button>";
             echo "</form>";
-            echo "</div>"; // Ürün bilgileri divinin kapatılması
+            echo "</div>"; 
 
             echo "</div>";
         } else {
@@ -113,7 +109,6 @@ session_start();
 
     <style>
         body {
-            background-color: #f7f7f7;
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
@@ -130,34 +125,33 @@ session_start();
         .product-detail {
             display: flex;
             align-items: flex-start;
-            /* Ürün fotoğrafı ve içerik üstten hizalanır */
             background-color: #ffffff;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 24px;
+            box-shadow: 4px 4px 0px black;
+            border: 2.6px solid black;
+            margin: 30px;
         }
 
         .product-detail img {
-            width: 300px;
-            /* Resim boyutu ayarlanıyor */
-            border-radius: 10px;
+            width: 500px;
+            border-radius: 14px;
             margin-right: 20px;
-            /* Resim ile içerik arasındaki boşluk */
             object-fit: cover;
+            border: 2.6px solid black;
+            box-shadow: 4px 4px 0px black;
+
         }
 
         .product-info {
-            /* Ürün bilgileri için yeni sınıf */
             display: flex;
             flex-direction: column;
-            /* Alt alta dizilmesi için dikey düzenleme */
         }
 
         .product-detail h2 {
             font-size: 2rem;
             color: #333333;
             margin: 0 0 10px;
-            /* Aşağıda boşluk bırakılır */
         }
 
         .product-detail .price {
@@ -165,43 +159,45 @@ session_start();
             color: #28a745;
             font-weight: bold;
             margin: 0 0 10px;
-            /* Aşağıda boşluk bırakılır */
         }
 
         .product-detail p {
             font-size: 1.1rem;
             color: #666666;
             margin: 0 0 15px;
-            /* Aşağıda boşluk bırakılır */
         }
 
         .product-detail form {
             margin-top: 10px;
-            /* Form ile üst kısımlar arasında boşluk */
         }
 
         .product-detail button {
-            padding: 10px 20px;
+            padding: 10px 20px 10;
             font-size: 1.2rem;
-            background-color: #007bff;
+            background-color: black;
             color: white;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border: 2.6px solid black;
+            border-radius: 7px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0px 0px 0 #000000;
+            margin-bottom: 17px;
         }
 
         .product-detail button:hover {
-            background-color: #0056b3;
+            background-color: #FF5B5B;
+            color: white;
+            border: 2.6px solid black;
+            transform: translate(-3px, -3px);
+            box-shadow: 8px 8px 0 #000000;
         }
 
         .fa-star {
-            color: #ccc;
-            /* Default empty star color */
+            color: #fff;
+            transition: color 0.3s ease-in-out;
         }
 
         .fa-star.filled {
-            color: #FFD700;
-            /* Filled star color */
+            color: #ffbb00;
         }
 
         footer {
@@ -292,10 +288,10 @@ session_start();
             <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
             <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
 
-        <hr>
-        <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
-        Erdinç</a></p>
-        <p>All rights reserved. © 2024 CollecZone</p>
+            <hr>
+            <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+                    Erdinç</a></p>
+            <p>All rights reserved. © 2024 CollecZone</p>
     </footer>
 
 </body>

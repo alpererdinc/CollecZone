@@ -61,7 +61,9 @@ session_start();
           <p class="title">Mental Supporter, Co-founder</p>
           <p>Cat</p>
           <p></p>
-          <p><a href="#"><button class="button">Maow</button></p></a>
+          <p><a ><button id="meowButton" class="button">Maow</button></a></p>
+          <div id="pawContainer"></div>
+          <audio id="meowSound" src="CSS/images/meow.mp3"></audio>
         </div>
       </div>
     </div>
@@ -101,8 +103,8 @@ session_start();
     }
 
     .card:hover {
-    box-shadow: 12px 12px 0px rgba(0, 0, 0, 1);
-    transform: translate(-3px, -3px);
+      box-shadow: 12px 12px 0px rgba(0, 0, 0, 1);
+      transform: translate(-3px, -3px);
 
     }
 
@@ -139,22 +141,30 @@ session_start();
     }
 
     .button {
-      border: none;
-      outline: 0;
-      display: inline-block;
-      padding: 8px;
+
+      background-color: black;
       color: white;
-      background-color: #000;
-      text-align: center;
+      border: 2.6px solid black;
+      border-radius: 7px;
+      width: 300px;
+      height: 50px;
+      font-size: 20px;
+      padding: 8px;
       cursor: pointer;
-      width: 100%;
-      transition: border 0.05s ease-in-out;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      box-shadow: 0px 0px 0 #000000;
+
     }
 
     .button:hover {
-      background-color: white;
+
+      background-color: #FF5B5B;
+      color: #ffffff;
       border: 2.6px solid black;
-      color: #000;
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0 #000000;
+      text-decoration: none;
+
     }
 
     @media screen and (max-width: 650px) {
@@ -234,6 +244,10 @@ session_start();
     html {
       overflow-x: hidden;
     }
+
+    h2{
+      color: #000;
+    }
   </style>
 
 
@@ -280,6 +294,9 @@ session_start();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
     crossorigin="anonymous"></script>
+
+
+    <script src="cat.js"></script>
 </body>
 
 </html>

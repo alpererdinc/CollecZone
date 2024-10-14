@@ -20,6 +20,8 @@ session_start();
 
 <body>
 
+<h2 class="fav_title">Favorites</h2>
+
     <?php include 'navbar.php'; ?>
 
 
@@ -69,6 +71,12 @@ session_start();
 
     <script src="theme.js"></script>
     <style>
+
+.fav_title{
+    text-align: center;
+
+}
+
         .switch {
             position: absolute;
             top: 23px;

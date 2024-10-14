@@ -58,7 +58,7 @@
            
             echo "<br><a class='profile_link' href='favorites.php'>My Favorites</a><br>";
             echo "<br><a class='profile_link' href='order_history.php'>Order History</a>";
-            echo "<br><br><a class='profile_link' href='logout.php'>Logout</a>";
+            echo "<br><br><a class='red_link' href='#' data-toggle='modal' data-target='#logoutModal'>Logout</a>";
             echo "<br><br>";
 
             $conn->close();
@@ -191,6 +191,34 @@ footer {
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+<!-- Logout Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-custom">
+      <div class="modal-header">
+        <h5 class="modal-title" id="logoutModalLabel">Are you sure?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Do you really want to logout?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary modal-button-cancel" data-dismiss="modal">Cancel</button>
+        <a href="logout.php" class="btn btn-danger modal-button-logout">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
 
 </html>

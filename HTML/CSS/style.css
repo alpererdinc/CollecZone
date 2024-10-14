@@ -13,7 +13,7 @@
   padding-top: 40px;
   padding-bottom: 4px;
   text-align: center;
-  transform: translate(0%, 8%);
+  transform: translate(0, 10px);
   position: relative;
   z-index: 20;
 }
@@ -80,6 +80,7 @@ input:checked+.slider:before {
 /* Renkli Tema için böyle ayarladım */
 body.colored-theme {
   background-image: url(images/GreenGradi.jpg);
+  /* background-color: #000000; */
   color: #ffffff;
   transition: background-color 0.5s ease, background-image 0.5s ease, color 0.5s ease;
 
@@ -93,7 +94,7 @@ body.colored-theme {
   font-style: normal;
   letter-spacing: -5px;
   rotate: -2deg;
-  transform: translate(0, 74px);
+  transform: translate(-23px, 74px);
   color: #FF5B5B;
   z-index: 10;
   position: relative;
@@ -119,6 +120,8 @@ body.colored-theme .mainText {
   user-select: none;
   position: relative;
   z-index: 12;
+  line-height: 94%;
+
 
 }
 
@@ -133,19 +136,25 @@ body.colored-theme .mainText2 {
 }
 
 
-.gradient-text {
-  background: linear-gradient(to right, rgb(248, 79, 79), rgb(255, 138, 138), rgb(255, 78, 78));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: rgb(0, 0, 0);
-  transition: color .2s ease-in-out;
-  text-transform: uppercase;
-  
+.text3d {
+  color: #000000;
+  top: 0;
+  left: 0;
+  transition: top 0.2s ease-in-out, left 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
 }
 
-.gradient-text:hover {
-  color: rgba(0, 0, 0, 0);
-  
+.text3d:hover {
+  color: #FF5B5B;
+  -webkit-text-stroke: 2.6px black;
+  position: relative;
+  /* or absolute, fixed, sticky */
+  top: -3px;
+  /* moves the element down */
+  left: -3px;
+  /* moves the element to the right */
+  text-shadow: 6px 6px #000000;
+
+
 }
 
 .wrap {
@@ -173,6 +182,9 @@ body.colored-theme .mainText2 {
 
   .search {
     width: 100%;
+  }
+  .pre-blog{
+    transform: translate(0px, 30px);
   }
 }
 
@@ -288,7 +300,8 @@ body.colored-theme .mainText2 {
   height: 50px;
   font-size: 21px;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0px 0px 0 #000000;
 
 }
 
@@ -301,19 +314,27 @@ body.colored-theme .mainText2 {
   height: 50px;
   font-size: 21px;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
   z-index: 200px;
   transform: translate(0, -160px);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
 }
 
 
 .circleButton:hover {
-  transform: scale(1.1);
+  background-color: #FF5B5B;
+  color: #ffffff;
+  border: 2.6px solid black;
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 #000000;
 }
 
 .circleButton2:hover {
-  transform: scale(1.1) translate(0, -145px);
+  background-color: #FF5B5B;
+  color: #ffffff;
+  border: 2.6px solid rgb(255, 255, 255);
+  transform: translate(-3px, -163px);
+  box-shadow: 6px 6px 0 #ffffff;
 }
 
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
@@ -373,12 +394,16 @@ body.colored-theme .mainText2 {
   height: 50px;
   font-size: 24px;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0px 0px 0 #000000;
 }
 
 .circleButton3:hover {
-  transform: scale(1.1);
+  background-color: #FF5B5B;
+  color: #ffffff;
+  border: 2.6px solid black;
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 #000000;
 }
 
 body {
@@ -623,7 +648,7 @@ footer {
     padding-top: 90px;
     padding-right: 200px;
     padding-left: 50px;
-    
+
   }
 
   .wrap {

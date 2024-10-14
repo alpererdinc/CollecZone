@@ -5,7 +5,7 @@
 
   <style>
     body {
-      background-color: #F5F5F7;
+      background-color: #FAF7F0;
     }
 
     a {
@@ -42,7 +42,7 @@
     }
 
     .logo:hover {
-      filter: drop-shadow(2px 2px 0px #FF5B5B);      
+      filter: drop-shadow(2px 2px 0px #FF5B5B);
       transform: translate(-1.5px, -1.5px);
 
     }
@@ -134,11 +134,18 @@
       position: absolute;
       background-color: white;
       min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: 4px 4px 0px #000;
+      border: 2.1px solid black;
+      top: 32px; 
     }
 
     .dropdown:hover .dropdown-menu {
       display: block;
+    }
+
+    .dropdown-item:active{
+      background-color: #FF5B5B;
+      color: #fff;
     }
 
     /* Responsive Ayarlar */
@@ -168,6 +175,37 @@
       #navbar.active {
         display: flex;
       }
+    }
+
+
+
+    .GoTopButton {
+      position: fixed;
+      right: 50px;
+      bottom: 80px;
+      z-index: 1000;
+
+    }
+
+    .circleButton3 {
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      box-shadow: 0px 0px 0 #000000;
+    }
+
+    .circleButton3:hover {
+      background-color: #FF5B5B;
+      color: white;
+      border: 2.6px solid black;
+      transform: translate(-3px, -3px);
+      box-shadow: 6px 6px 0 #000000;
     }
   </style>
 

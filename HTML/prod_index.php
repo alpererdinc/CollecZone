@@ -28,11 +28,11 @@ session_start();
 
 
     <form class="filter_form" method="GET" action="product_filter.php">
-        <label for="category">Kategori Seç:</label>
+        <label for="category">Choose category:</label>
         <select name="category" id="category">
-            <option value="">Tüm ürünler</option>
-            <option value="music">Müzik</option>
-            <option value="comics">Çizgi Roman</option>
+            <option value="">All products</option>
+            <option value="music">Music</option>
+            <option value="comics">Comics</option>
             <!-- Diğer kategoriler burada eklenebilir -->
         </select>
         <button type="submit">Filter</button>
@@ -113,11 +113,14 @@ session_start();
         .filter_form {
             box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
             border: 2.6px solid black;
-            width: 20%;
+            width: 30%;
             margin: 50px 70% 40px 30%;
+            padding: 7px;
             text-align: center;
             background-color: white;
             transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+            background-color: #FF5B5B;
+            color: white;
         }
 
         .filter_form:hover{

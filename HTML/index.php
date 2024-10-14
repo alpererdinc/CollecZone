@@ -68,7 +68,7 @@ session_start();
     <div class="upper_design">
         <div class="pre-blog">
             <h1 class="mainText">Expand</h1>
-            <h1 class="mainText2">YOUR <a href="prod_index.php" class="gradient-text"><strong>COLLECT</strong></a>ION</h1>
+            <h1 class="mainText2">YOUR <a href="prod_index.php" class="text3d"><strong>COLLECT</strong></a>ION</h1>
 
         </div>
 

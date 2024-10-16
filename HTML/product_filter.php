@@ -21,6 +21,127 @@ session_start();
 
     <?php include 'navbar.php'; ?>
 
+<!-- Sol filtre menüsü -->
+<div class="sidebar">
+        <h3><strong>F</strong>ilters</h3>
+        <ul>
+            <a href="product_filter.php?category=">
+                <li>All Prods.</li>
+            </a>
+            <a href="product_filter.php?category=music">
+                <li>Music</li>
+            </a>
+            <a href="product_filter.php?category=comics">
+                <li>Comics</li>
+            </a>
+        </ul>
+        <h3><strong>P</strong>rice <strong>R</strong>ange</h3>
+        <input type="range" min="0" max="10000" step="50" id="price-range" name="price">
+    </div>
+
+    <style>
+        .sidebar {
+            width: 270px;
+            background-color: #FF5B5B;
+            padding: 30px;
+            padding-left: 50px;
+            position: fixed;
+            height: 50vh;
+            overflow-y: auto;
+            top: 170px;
+            left: -13px;
+            border-radius: 0px 13px 13px 0px;
+            border: 2.6px solid black;
+            box-shadow: 4px 4px 0 black;
+            transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+            color: #fff;
+        }
+
+        .sidebar:hover {
+            box-shadow: 10px 10px 0 black;
+            transform: translate(-2px, -2px);
+
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+            box-shadow: 4px 4px 0 black;
+            background-color: #fff;
+            border: 2.6px solid black;
+            color: #000000;
+            font-size: 25px;
+            padding: 4px;
+            border-radius: 7px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 18px 0;
+            box-shadow: 2px 2px 0 black;
+            border: 2.6px solid black;
+            width: 90px;
+            padding: 0 5px 0 5px;
+            background-color: #ffb700;
+            border-radius: 6px;
+            transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
+        }
+
+        .sidebar ul li:hover {
+            box-shadow: 4px 4px 0 black;
+            transform: translate(-1px, -1px);
+        }
+
+        .sidebar ul a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+            width: 11rem;
+            box-shadow: 2px 2px 0 black;
+
+        }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: #fff;
+            height: 0.5rem;
+            border: 2.4px solid black;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -8px;
+            background-color: #ffb700;
+            height: 1.3rem;
+            width: 1.3rem;
+            border: 2.4px solid black;
+            border-radius: 50%;
+            box-shadow: 1.2px 1.2px 0 black;
+            transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
+
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+
+            box-shadow: 3px 3px 0 black;
+            transform: translate(-1px,-1px);
+
+        }
+    </style>
+
+
+
+
     <form class="filter_form" method="GET" action="product_filter.php">
         <label for="category">Choose category:</label>
         <select name="category" id="category">
@@ -98,7 +219,7 @@ session_start();
             color: white;
         }
 
-        .filter_form:hover{
+        .filter_form:hover {
             box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
             transform: translate(-1px, -1px);
 
@@ -106,7 +227,7 @@ session_start();
         }
     </style>
 
- 
+
 
     <script src="theme.js"></script>
     <style>
@@ -186,7 +307,7 @@ session_start();
         }
     </style>
 
-<footer>
+    <footer>
         <hr>
         <div class="rightstext">
             <link rel="stylesheet"
@@ -197,10 +318,10 @@ session_start();
             <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
             <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
 
-        <hr>
-        <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
-        Erdinç</a></p>
-        <p>All rights reserved. © 2024 CollecZone</p>
+            <hr>
+            <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+                    Erdinç</a></p>
+            <p>All rights reserved. © 2024 CollecZone</p>
     </footer>
 
 

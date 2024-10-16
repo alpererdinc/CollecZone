@@ -17,21 +17,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
 
-    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+    // E-posta kontrolü
+    $email_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+    $result = $conn->query($email_check_query);
 
-    if ($conn->query($sql) === TRUE) {
+    if ($result->num_rows > 0) {
+        // E-posta zaten kayıtlı
+        echo "This email is already in use.";
+    } else  {
+        // Kayıt işlemi
+        $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
-        $user_id = $conn->insert_id;
+        if ($conn->query($sql) === TRUE) {
+            $user_id = $conn->insert_id;
 
+            session_start();
+            $_SESSION['user_id'] = $user_id;
 
-        session_start();
-        $_SESSION['user_id'] = $user_id;
-
-        echo "Kayıt başarılı!";
-        header("Location: login.php");
-        exit;
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Registration successful!";
+            header("Location: login.php");
+            exit;
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     }
 }
 
@@ -79,23 +87,23 @@ $conn->close();
     <div class="main">
         <a href="index.php"><img src="colleczoneLogo.png" class="LoginLogo" alt=""></a>
 
-        <h3>Merhaba,<br>Aramıza gel ve koleksiyonunu zenginleştir!<br>🥳</h3>
+        <h3>Hi,<br>Come join us and enrich your collection!<br>🥳</h3>
 
         <form action="register.php" method="POST">
-            <label for="username">Kullanıcı Adı:</label>
+            <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
 
-            <label for="email">E-posta:</label>
+            <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" required><br><br>
 
-            <label for="password">Şifre:</label>
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br><br>
 
             <input type="submit" value="Kayıt ol">
         </form>
-        <p>Kaydınız var mu?
+        <p>Do you have an account?
             <a href="login.php" style="text-decoration: none;">
-                Giriş yapın
+                Login
             </a>
         </p>
     </div>

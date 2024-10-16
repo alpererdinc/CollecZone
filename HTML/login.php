@@ -30,14 +30,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $_SESSION['user_id'] = $row['user_id'];
 
-            echo "Giriş başarılı! Hoş geldin!";
+            echo "Login successful! Welcome!";
             header("Location: index.php"); 
             exit;
         } else {
-            echo "Hatalı şifre.";
+            echo "Incorrect password.";
         }
     } else {
-        echo "Böyle bir kullanıcı adı bulunamadı.";
+        echo "No such username found.";
     }
 
     $stmt->close();
@@ -88,28 +88,28 @@ $conn->close();
     <div class="main">
         <a href="index.php"><img src="colleczoneLogo.png" class="LoginLogo" alt=""></a>
 
-        <h3>Tekrar hoş geldin koleksiyoner!<br>Yoksa colleczoner mi demeliydim?<br>😏</h3>
+        <h3>Welcome back collector!<br>Or should I say CollecZoner?<br>😏</h3>
        
         <form action="login.php" method="POST">
                   <label for="username">
-                        Kullanıcı Adı:
+                        Username:
                   </label>
-                  <input type="text" id="username" name="username" placeholder="Kullanıcı adınızı giriniz" required>
+                  <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
                   <label for="password">
-                        Şifre:
+                        Password:
                   </label>
-                  <input type="password" id="password" name="password" placeholder="Şifrenizi giriniz" required>
+                  <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
                   <div class="wrap">
                         <button type="submit" onclick="solve()">
-                              Giriş Yap
+                              Login
                         </button>
                   </div>
             </form>
-            <p>Kaydınız yok mu?
+            <p>Don't have a registration?
                   <a href="register.php" style="text-decoration: none;">
-                        Hesap oluşturun
+                  Create an account
                   </a>
             </p>
     </div>

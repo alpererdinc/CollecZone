@@ -82,7 +82,7 @@ $conn->close();
                 </tbody>
             </table>
             <h4>Total Price: <?php echo htmlspecialchars($total_price); ?> TL</h4>
-            <a href="checkout.php" class="btn btn-success text-right" id="buyButton">Buy</a>
+            <a href="payment.php" class="btn btn-success text-right" id="buyButton">Buy</a>
             <a href="prod_index.php" class="btn btn-secondary">Back to shop</a>
         <?php else: ?>
             <p>There is no product in cart.</p>
@@ -171,7 +171,7 @@ $conn->close();
             border-color: black !important;
             color: #fff !important;
             transform: translate(-3px, -3px);
-            box-shadow: 6px 6px 0 #000000;
+            box-shadow: 8px 8px 0 #000000;
         }
 
         .btn-success {

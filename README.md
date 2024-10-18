@@ -1,5 +1,5 @@
 ![colleczoneLogoWhite](https://github.com/user-attachments/assets/6eb3b0c5-0926-4d85-ac4b-e2ecfcf4434f)  
-## CollecZone 🎶📚🎨
+# CollecZone 🎶📚🎨
 
 **CollecZone**, koleksiyoncular için özel olarak tasarlanmış bir e-ticaret sitesidir. Kullanıcılar nadir ve özel parçaları keşfedebilir, favori listeleri oluşturabilir ve kendi koleksiyonlarını genişletebilirler. Proje, modern tasarım prensipleri ve kullanıcı dostu arayüzü ile benzersiz bir alışveriş deneyimi sunmayı amaçlar.
 

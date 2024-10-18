@@ -14,3 +14,15 @@
 ![Ekran görüntüsü 2024-10-18 091033](https://github.com/user-attachments/assets/f6c4cb90-d841-481b-92e1-217d31432ac0)
 ![Ekran görüntüsü 2024-10-17 144441](https://github.com/user-attachments/assets/8ebf662a-d458-437e-8e3a-1c28cc5a3ac4)
 ![Ekran görüntüsü 2024-10-18 091157](https://github.com/user-attachments/assets/93c9a0a5-566e-4c1b-a655-35959db9d874)
+
+## Kullanılan Teknolojiler 🧰
+- HTML5: Yapı ve içerik yönetimi
+- CSS3 (Sass): Stil ve düzenleme
+- JavaScript (ES6): Dinamik işlevsellik
+- PHP: Sunucu taraflı programlama
+- MySQL: Veritabanı yönetimi
+- Bootstrap: Responsive tasarım framework’ü
+- Git/GitHub: Versiyon kontrolü ve proje yönetimi
+
+##Proje Durumu 📅
+- Bu proje şu anda geliştirme aşamasında olup, yeni özellikler eklenmeye devam etmektedir.

@@ -19,12 +19,14 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT orders.order_id, orders.order_date, orders.total_price, 
-        GROUP_CONCAT(products.name SEPARATOR ', ') as products
+        GROUP_CONCAT(products.name SEPARATOR '|') as product_names, 
+        GROUP_CONCAT(products.product_id SEPARATOR '|') as product_ids
         FROM orders 
         JOIN order_items ON orders.order_id = order_items.order_id
         JOIN products ON order_items.product_id = products.product_id
         WHERE orders.user_id = ?
         GROUP BY orders.order_id";
+
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -47,6 +49,8 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order History</title>
+    <link rel="icon" type="image/x-icon" sizes="167x167" href="half-circle.png">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -71,7 +75,29 @@ $conn->close();
                         <tr>
                             <td><?php echo htmlspecialchars($order['order_id']); ?></td>
                             <td><?php echo date("d/m/Y H:i", strtotime($order['order_date'])); ?></td>
-                            <td><?php echo htmlspecialchars($order['products']); ?></td>
+
+                            <!-- Ürün isimlerini ve ID'lerini ayırıcıya göre link haline getirme -->
+                            <td>
+                                <?php
+                                $product_names = explode("|", $order['product_names']);
+                                $product_ids = explode("|", $order['product_ids']);
+                                $product_links = [];
+
+                                // Her bir ürünü kontrol edin
+                                for ($i = 0; $i < count($product_names); $i++) {
+                                    if (isset($product_ids[$i])) {  // Eğer ürün ID'si varsa
+                                        $product_links[] = '<a href="product_detail.php?product_id=' . htmlspecialchars($product_ids[$i]) . '">' . htmlspecialchars($product_names[$i]) . '</a>';
+                                    } else {
+                                        // Ürün ID'si yoksa sadece ismini gösterin
+                                        $product_links[] = htmlspecialchars($product_names[$i]);
+                                    }
+                                }
+
+                                // Ürün linklerini virgülle ayırarak ekrana yazdırma
+                                echo implode(", ", $product_links);
+                                ?>
+                            </td>
+
                             <td><?php echo htmlspecialchars($order['total_price']); ?> TL</td>
                         </tr>
                     <?php endforeach; ?>
@@ -155,7 +181,7 @@ $conn->close();
         }
 
         table th {
-            background-color: #343a40;
+            background-color: #000 !important;
             color: white;
         }
 
@@ -183,8 +209,7 @@ $conn->close();
             box-shadow: 8px 8px 0 #000000;
         }
 
-
-
+        
         /* Toggle Switch Stil */
         .switch {
             position: absolute;

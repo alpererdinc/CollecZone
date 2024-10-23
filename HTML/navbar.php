@@ -1,3 +1,30 @@
+<?php
+
+// Varsayılan dili ayarla
+if (!isset($_SESSION['language'])) {
+  $_SESSION['language'] = 'en'; // Varsayılan dil: İngilizce
+}
+
+// Form ile dil değiştirildiyse
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['language'])) {
+  $_SESSION['language'] = $_POST['language'];
+
+  // POST-Redirect-GET işlemi
+  header("Location: " . $_SERVER['REQUEST_URI']);
+  exit();
+}
+
+// Seçilen dile göre çeviri dosyasını yükle
+$language = $_SESSION['language'];
+$translations = json_decode(file_get_contents("translations/$language.json"), true);
+
+function translate($key)
+{
+  global $translations;
+  return $translations[$key];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +32,9 @@
 
   <style>
     body {
-      background-color: #FAF7F0;
+      background-color: #fff5e6;
+      /* background-color: #FAF7F0; */
+
     }
 
     a {
@@ -26,7 +55,6 @@
       padding: 20px 80px;
       background: #ffffff;
       box-shadow: 0 2.6px 0px rgba(0, 0, 0, 1);
-
 
     }
 
@@ -97,6 +125,7 @@
       border-radius: 5px 0 0 5px;
       outline: none;
       color: #202529;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     .searchButton {
@@ -136,14 +165,14 @@
       min-width: 160px;
       box-shadow: 4px 4px 0px #000;
       border: 2.1px solid black;
-      top: 32px; 
+      top: 32px;
     }
 
     .dropdown:hover .dropdown-menu {
       display: block;
     }
 
-    .dropdown-item:active{
+    .dropdown-item:active {
       background-color: #FF5B5B;
       color: #fff;
     }
@@ -209,9 +238,45 @@
     }
 
 
+    /* Form class */
+    .language-select-form {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
 
+    /* Select box styling */
+    .language-select-form select {
+      padding: 4px;
+      font-size: 14px;
+      border-radius: 5px;
+      border: 0px solid black;
+      background-color: #FFF;
+      color: #000;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      box-shadow:0px 0px 0px 2px black inset, 0 0 0 black;
+    }
 
-    
+    /* On hover */
+    .language-select-form select:hover {
+      transform: translate(-2px, -2px);
+      background-color: #FF5B5B;
+      color: #FFF;
+      box-shadow:0px 0px 0px 2px black inset, 3px 3px 0 black;
+      
+    }
+
+    /* On focus */
+    .language-select-form select:focus {
+      outline: none;
+      border-color: #FF5B5B;
+    }
+
+    /* Option styling */
+    .language-select-form option {
+      padding: 4px;
+
+    }
   </style>
 
   <meta charset="UTF-8">
@@ -221,13 +286,17 @@
 
 <body>
 
+
+
+
+
   <?php
   if (isset($_SESSION['user_id'])) { // Kullanıcının oturum açma durumu
     // Giriş yapmışsa "My Profile" yazdır
-    $profileLinkText = "My Profile";
+    $profileLinkText = translate('myProfile');;
   } else {
     // Giriş yapmamışsa "Login" yazdır
-    $profileLinkText = "Login / Sign up";
+    $profileLinkText = translate('navLogin');
   }
   ?>
 
@@ -240,17 +309,17 @@
 
     <div>
       <ul id="navbar">
-        <li><a href="index.php">Home</a></li>
+        <li><a href="index.php"><?php echo translate('home'); ?></a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Categories</a>
+            aria-haspopup="true" aria-expanded="false"><?php echo translate('categories'); ?></a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="prod_index.php">All Products</a>
             <a class="dropdown-item" href="product_filter.php?category=music">Music</a>
             <a class="dropdown-item" href="product_filter.php?category=comics">Comics</a>
           </div>
         </li>
-        <li><a href="about.php">About</a></li>
+        <li><a href="about.php"><?php echo translate('about'); ?></a></li>
         <li><a href="profile.php"><?php echo $profileLinkText; ?></a></li>
 
         <li>
@@ -290,6 +359,16 @@
             </form>
           </div>
         </li>
+
+        <li>
+          <form id="languageForm" class="language-select-form" method="POST" action="">
+            <select name="language" onchange="document.getElementById('languageForm').submit()">
+              <option value="en">EN</option>
+              <option value="tr">TR</option>
+            </select>
+          </form>
+        </li>
+
 
         <ul>
           <li>
@@ -335,6 +414,11 @@
       lastScrollTop = scrollTop;
     });
   </script>
+
+  <script src="translations/en.json"></script>
+  <script src="translations/tr.json"></script>
+
+
 
 
 </body>

@@ -20,63 +20,84 @@ session_start();
 
 <body>
 
-<h2 class="fav_title">Favorites</h2>
+    <h2 class="fav_title">Favorites</h2>
 
     <?php include 'navbar.php'; ?>
 
+    <div class="container">
+        <div class="row">
 
-    <?php
-    include 'db_connection.php';
+            <?php
+            include 'db_connection.php';
 
-    if (!isset($_SESSION['user_id'])) {
-        echo "Lütfen giriş yapın.";
-        exit();
-    }
+            if (!isset($_SESSION['user_id'])) {
+                echo "Lütfen giriş yapın.";
+                exit();
+            }
 
-    $user_id = $_SESSION['user_id'];
-    $sql = "SELECT p.* FROM favorites f JOIN products p ON f.product_id = p.product_id WHERE f.user_id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $user_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<div class='col-sm card'>";
-            // Ürün detay sayfasına link
-            echo "<a  href='product_detail.php?product_id=" . $row['product_id'] . "'>";
+            $user_id = $_SESSION['user_id'];
+            $sql = "SELECT p.* FROM favorites f JOIN products p ON f.product_id = p.product_id WHERE f.user_id = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $user_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-            echo "<img src='" . $row["image"] . "' alt='Ürün Resmi'>";
-            echo "<h2 class='plakName'>" . $row["name"] . "</h2>";
-            echo "<p class='price'>Fiyat: " . $row["price"] . " TL</p>";
-            echo "<p>" . $row["description"] . "</p>";
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='col-sm card'>";
+                    // Ürün detay sayfasına link
+                    echo "<a  href='product_detail.php?product_id=" . $row['product_id'] . "'>";
 
-            echo "</a>"; // Linki kapat
-            echo "<form action='add_cart.php' method='POST'>";
-            echo "<input type='hidden' name='product_id' value='" . $row["product_id"] . "'>"; // Ürün ID'si
-            // echo "<input type='number' name='quantity' value='1' min='1' class='form-control mb-2'>"; 
-            echo "<button type='submit' class='btn btn-primary'>Sepete Ekle</button>";
-            echo "</form>";
-            echo "</div>";
-        }
-    } else {
-        echo "<p>Hiç ürün yok.</p>";
-    }
-    $stmt->close();
-    $conn->close();
-    ?>
+                    echo "<img src='" . $row["image"] . "' alt='Ürün Resmi'>";
+                    echo "<h2 class='plakName'>" . $row["name"] . "</h2>";
+                    echo "<p class='price'>Price: " . $row["price"] . " TL</p>";
+                    echo "<p>" . $row["description"] . "</p>";
+
+                    echo "</a>"; // Linki kapat
+                    echo "<form action='add_cart.php' method='POST'>";
+                    echo "<input type='hidden' name='product_id' value='" . $row["product_id"] . "'>"; // Ürün ID'si
+                    // echo "<input type='number' name='quantity' value='1' min='1' class='form-control mb-2'>"; 
+                    echo "<button type='submit' class='btn btn-primary'>Add to Cart</button>";
+                    echo "</form>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>Hiç ürün yok.</p>";
+            }
+            $conn->close();
+            ?>
+        </div>
+    </div>
+
+    <div class="GoTopButton">
+        <a href="#"><button class="circleButton3">
+                &#x2191; <!-- Yukarı ok simgesi -->
+            </button></a>
+    </div>
+
+    <footer>
+        <hr>
+        <div class="rightstext">
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+            <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
+            <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
+            <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
+
+            <hr>
+            <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
+                    Erdinç</a></p>
+            <p>All rights reserved. © 2024 CollecZone</p>
+    </footer>
 
 
 
 
     <script src="theme.js"></script>
     <style>
-
-.fav_title{
-    text-align: center;
-
-}
-
         .switch {
             position: absolute;
             top: 23px;
@@ -136,41 +157,14 @@ session_start();
         body.colored-theme {
             background-image: url(CSS/images/GreenGradi.jpg);
             transition: background-color 0.5s ease, background-image 0.5s ease, color 0.5s ease;
-        }
-
-        body{
-            padding-top: 100px;
 
         }
 
-        footer {
-            width: 100%;
-            background-color: rgb(255, 255, 255);
-
+        .fav_title{
             text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            margin-top: 500px;
         }
+    
     </style>
-
-<footer>
-        <hr>
-        <div class="rightstext">
-            <link rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-            <a href="https://www.instagram.com/alperd.inc/" class="fa fa-instagram" target="_blank"></a>
-            <a href="https://www.linkedin.com/in/alper-erdin%C3%A7-363b07252/" class="fa fa-linkedin" target="_blank"></a>
-            <a href="https://www.youtube.com/@alpererdinc47" class="fa fa-youtube" target="_blank"></a>
-
-        <hr>
-        <p class="copyRights">A website by <a href="https://www.instagram.com/alperd.inc/" target="_blank">Alper
-        Erdinç</a></p>
-        <p>All rights reserved. © 2024 CollecZone</p>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -181,7 +175,6 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
         integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>

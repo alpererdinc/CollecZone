@@ -31,19 +31,12 @@ session_start();
 
     <link rel="preload" href="CSS/style.css" as="style" onload="this.rel='stylesheet'">
 
-
-
 </head>
-
-
 
 <body>
 
 
     <?php
-
-
-
 
     $host = 'localhost';
     $username = 'root';
@@ -61,21 +54,16 @@ session_start();
 
     <?php include 'navbar.php'; ?>
 
-
-
-
-
     <div class="upper_design">
         <div class="pre-blog">
-            <h1 class="mainText">Expand</h1>
-            <h1 class="mainText2">YOUR <a href="prod_index.php" class="text3d"><strong>COLLECT</strong></a>ION</h1>
+            <h1 class="mainText"><?php echo translate('expand'); ?></h1>
+            <h1 class="mainText2"><?php echo translate('your'); ?><a href="product_filter.php?category=music" class="text3d"><strong><?php echo translate('collect'); ?></strong></a><?php echo translate('ion'); ?></h1>
 
         </div>
 
         <div class="wrap">
             <link rel="stylesheet"
                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 
 
         </div>
@@ -101,9 +89,8 @@ session_start();
     </div>
 
 
-
     <div id="productCarousel" class="carousel slide" data-ride="carousel">
-        <h2 class="newProdTitle">New Pieces</h2>
+        <h2 class="newProdTitle"><?php echo translate('newPieces'); ?></h2>
         <div class="carousel-inner">
             <?php
             $active = "active";
@@ -139,22 +126,8 @@ session_start();
 
 
 
-
-
-
     <div id="Round" class="bigRound">
-        <p class="circleText">Collec<strong>Zone</strong> is a page where you can discover collectors' favorites,
-            world-famous and now out-of-circulation products. This carefully
-            compiled selection includes rare records and timeless pieces that
-            left their mark on unforgettable periods in music history; cult
-            and unique issues of comic book collections; exotic aromatic
-            candles that you cannot easily find. Each product consists of
-            valuable pieces that carry traces of the past and offer a special
-            meaning to collectors. This rare collection has been brought
-            together for music lovers and collectors, and each product tells
-            its own story. Take the opportunity to hold historical and cultural
-            heritage in your hands while embarking on a unique journey in the
-            world of products that can be among your own pieces in our collection.</p>
+        <p class="circleText">Collec<strong>Zone</strong> <?php echo translate('mainAbout'); ?></p>
         <div class="expandButton">
             <a href="#End"><button class="circleButton2">
                     &#x2193; <!-- Aşağı ok simgesi -->
@@ -162,9 +135,23 @@ session_start();
         </div>
     </div>
 
-    <div id="End" class="bodyTextSpace"></div>
-    <p class="bodyText"><a href="prod_index.php"><strong>Find</strong></a> your missing piece.</p>
+    <div class="secondSpace">
+        <div>
+            <h1 class="secondText">Arşivini<br><a href="product_filter.php?category=comics"><strong class="text3d">Zenginleş</strong></a>tir</h1>
+        </div>
+        <img class="comicImage1" src="css/images/Dotto.svg"></img>
+        <img class="comicImage2" src="css/images/comicBook.svg"></img>
+        <div class="container">
+            <div class="elips"></div>
+        </div>
+
     </div>
+
+    <div id="End" class="bodyTextSpace"></div>
+    <p class="bodyText"><a href="prod_index.php"><strong><?php echo translate('mainMottoFind'); ?></strong></a> <?php echo translate('mainMotto'); ?></p>
+    </div>
+
+    <img class="sittingCol" src="css/images/sitting-Col.png" />
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -181,6 +168,16 @@ session_start();
     <script src="https://kit.fontawesome.com/6cf8dab1a7.js" crossorigin="anonymous"></script>
 
     <script src="theme.js"></script>
+
+
+
+    <script>
+        document.querySelector('select[name="language"]').value = localStorage.getItem('language') || 'en';
+
+        document.querySelector('select[name="language"]').addEventListener('change', function() {
+            localStorage.setItem('language', this.value);
+        });
+    </script>
 
 </body>
 
@@ -203,7 +200,6 @@ session_start();
 
 <style>
     footer {
-        width: 100%;
         background-color: rgb(255, 255, 255);
 
         text-align: center;
@@ -211,10 +207,18 @@ session_start();
         bottom: 0;
         width: 100%;
         margin-top: auto;
+        border-top: 2.6px solid black;
     }
 
     .copyRights {
         text-align: center;
+    }
+
+    .sittingCol {
+        position: absolute;
+        width: 200px;
+        z-index: 500;
+        transform: translate(400px, -186.6px);
     }
 </style>
 

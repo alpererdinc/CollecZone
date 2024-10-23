@@ -21,6 +21,9 @@ session_start();
 
     <?php include 'navbar.php'; ?>
 
+    <img class="cole" src="CSS/images/Col.svg" />
+
+
 <!-- Sol filtre menüsü -->
 <div class="sidebar">
         <h3><strong>F</strong>ilters</h3>

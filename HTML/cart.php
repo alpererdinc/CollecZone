@@ -117,6 +117,7 @@ $conn->close();
             max-width: 1200px;
             margin: 50px auto;
             padding: 20px;
+            margin-bottom: 500px;
         }
 
         table {

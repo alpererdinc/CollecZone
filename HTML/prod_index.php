@@ -26,17 +26,9 @@ session_start();
     ?>
     <?php include 'navbar.php'; ?>
 
-    <img class="col" src="CSS/images/Col.svg" />
+    <img class="cole" src="CSS/images/Col.svg" />
 
-    <style>
-        .col{
-            position: fixed;
-            z-index: 900;
-            width: 190px;
-            filter: drop-shadow(4px 0px 0px #000);
-            transform: translate(140px, 390px);
-        }
-    </style>
+
 
     <!-- Sol filtre menüsü -->
     <div class="sidebar">
@@ -55,106 +47,6 @@ session_start();
         <h3><strong>P</strong>rice <strong>R</strong>ange</h3>
         <input type="range" min="0" max="10000" step="50" id="price-range" name="price">
     </div>
-
-    <style>
-        .sidebar {
-            width: 270px;
-            background-color: #FF5B5B;
-            padding: 30px;
-            padding-left: 50px;
-            position: fixed;
-            height: 50vh;
-            overflow-y: auto;
-            top: 170px;
-            left: -13px;
-            border-radius: 0px 13px 13px 0px;
-            border: 2.6px solid black;
-            box-shadow: 4px 4px 0 black;
-            transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
-            color: #fff;
-        }
-
-        .sidebar:hover {
-            box-shadow: 10px 10px 0 black;
-            transform: translate(-2px, -2px);
-
-        }
-
-        .sidebar h3 {
-            margin-top: 0;
-            box-shadow: 4px 4px 0 black;
-            background-color: #fff;
-            border: 2.6px solid black;
-            color: #000000;
-            font-size: 25px;
-            padding: 4px;
-            border-radius: 7px;
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            margin: 18px 0;
-            box-shadow: 2px 2px 0 black;
-            border: 2.6px solid black;
-            width: 90px;
-            padding: 0 5px 0 5px;
-            background-color: #ffb700;
-            border-radius: 6px;
-            transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
-        }
-
-        .sidebar ul li:hover {
-            box-shadow: 4px 4px 0 black;
-            transform: translate(-1px, -1px);
-        }
-
-        .sidebar ul a {
-            text-decoration: none;
-            color: #000000;
-            font-weight: bold;
-        }
-
-        input[type="range"] {
-            -webkit-appearance: none;
-            appearance: none;
-            background: transparent;
-            cursor: pointer;
-            width: 11rem;
-            box-shadow: 2px 2px 0 black;
-
-        }
-
-        input[type="range"]::-webkit-slider-runnable-track {
-            background: #fff;
-            height: 0.5rem;
-            border: 2.4px solid black;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            margin-top: -8px;
-            background-color: #ffb700;
-            height: 1.3rem;
-            width: 1.3rem;
-            border: 2.4px solid black;
-            border-radius: 50%;
-            box-shadow: 1.2px 1.2px 0 black;
-            transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
-
-        }
-
-        input[type="range"]::-webkit-slider-thumb:hover {
-
-            box-shadow: 3px 3px 0 black;
-            transform: translate(-1px, -1px);
-
-        }
-    </style>
 
 
 

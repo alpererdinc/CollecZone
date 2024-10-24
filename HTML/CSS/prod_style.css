@@ -402,10 +402,13 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 @media (min-width: 1600px) {
     .container{
-        max-width: 1500px;
+        max-width: 1200px;
+        transform: translate(90px, 0px);
 
     }
     .cole{
         transform: translate(80px, 586px);
     }
 }
+
+

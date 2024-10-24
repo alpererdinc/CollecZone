@@ -1,0 +1,21 @@
+product_id,name,price,description,image,category
+1,Action Comics #1,"88,000,000 TL","First appearance of Superman, an iconic and groundbreaking issue.",action_comics_1.jpg,comics
+2,Amazing Fantasy #15,"30,250,000 TL","First appearance of Spider-Man, a pivotal issue in Marvel history.",amazing_fantasy_15.jpg,comics
+3,Detective Comics #27,"68,750,000 TL","First appearance of Batman, one of the most influential comic issues ever.",detective_comics_27.jpg,comics
+4,X-Men #1,"13,475,000 TL","First appearance of the X-Men and Magneto, an iconic issue for Marvel enthusiasts.",xmen_1.jpg,comics
+5,Marvel Comics #1,"33,000,000 TL","First appearance of the Human Torch and Namor, a must-have for collectors.",marvel_comics_1.jpg,comics
+6,Incredible Hulk #1,"13,475,000 TL","First appearance of the Hulk, a major character in Marvel Universe.",incredible_hulk_1.jpg,comics
+7,All Star Comics #8,"25,762,500 TL","First appearance of Wonder Woman, a landmark in superhero history.",all_star_comics_8.jpg,comics
+8,Amazing Spider-Man #1,"12,375,000 TL","First solo series for Spider-Man, an essential part of Marvel history.",amazing_spiderman_1.jpg,comics
+9,Fantastic Four #1,"8,250,000 TL","First appearance of the Fantastic Four, launching Marvel’s superhero age.",fantastic_four_1.jpg,comics
+10,Superman #1,"15,125,000 TL","First solo series for Superman, the world’s first superhero.",superman_1.jpg,comics
+11,Avengers #1,"7,562,500 TL","First appearance of the Avengers, a key comic in Marvel’s universe.",avengers_1.jpg,comics
+12,Tales of Suspense #39,"10,375,000 TL","First appearance of Iron Man, a must-have for any serious collector.",tales_of_suspense_39.jpg,comics
+13,Journey into Mystery #83,"22,125,000 TL","First appearance of Thor, another key figure in the Marvel Universe.",journey_into_mystery_83.jpg,comics
+14,Batman #1,"12,375,000 TL","First solo series for Batman, featuring the Joker and Catwoman’s first appearances.",batman_1.jpg,comics
+15,Flash Comics #1,"4,927,500 TL","First appearance of the Flash, a groundbreaking comic in the superhero genre.",flash_comics_1.jpg,comics
+16,Showcase #4,"7,200,000 TL","Reintroduction of the Flash, marking the start of the Silver Age of comics.",showcase_4.jpg,comics
+17,The Brave and the Bold #28,"17,325,000 TL","First appearance of the Justice League of America, uniting DC’s biggest heroes.",brave_bold_28.jpg,comics
+18,Captain America Comics #1,"2,925,000 TL","First appearance of Captain America, a WWII patriotic icon.",captain_america_1.jpg,comics
+19,Green Lantern #1,"3,575,000 TL","First appearance of Hal Jordan as Green Lantern, a Silver Age classic.",green_lantern_1.jpg,comics
+20,Wonder Woman #1,"3,575,000 TL","First solo series for Wonder Woman, one of the most important characters in comics.",wonder_woman_1.jpg,comics

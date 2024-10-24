@@ -67,6 +67,20 @@ session_start();
         </div>
       </div>
     </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="css/images/ColPose.png" alt="Collie" style="width: 200px">
+        <div class="container">
+          <h2>Collie</h2>
+          <p class="title">Website Mascot, Professional Collector</p>
+          <p>Squirrel</p>
+          <p></p>
+          <p><a href="https://taplink.cc/alpererdinc" target="_blank"><button class="button">Contact</button></p></a>
+
+        </div>
+      </div>
+    </div>
   </div>
   <style>
     body {
@@ -87,7 +101,7 @@ session_start();
 
     .column {
       float: left;
-      width: 33.3%;
+      width: 30%;
       margin-bottom: 16px;
       margin-left: 10px;
       margin-right: 10px;

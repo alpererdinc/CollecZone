@@ -19,8 +19,8 @@ if ($conn->connect_error) {
 
 $current_user_id = $_SESSION['user_id']; 
 
-if (isset($_FILES['profile_picture'])) {
-    $file = $_FILES['profile_picture'];
+if (isset($_FILES['profile_photo'])) {
+    $file = $_FILES['profile_photo'];
     $upload_dir = "uploads/";
 
    
@@ -35,7 +35,7 @@ if (isset($_FILES['profile_picture'])) {
       
         if (move_uploaded_file($file["tmp_name"], $file_path)) {
             
-            $stmt = $conn->prepare("UPDATE users SET profile_picture=? WHERE user_id=?");
+            $stmt = $conn->prepare("UPDATE users SET profile_photo=? WHERE user_id=?");
             $stmt->bind_param("si", $file_name, $current_user_id); 
             if ($stmt->execute() === TRUE) {
                 echo "Profil fotoğrafı başarıyla yüklendi!";

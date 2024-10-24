@@ -47,8 +47,8 @@
                 exit; 
             }
 
-            if ($user['profile_picture']) {
-                echo "<img class='profile-pic' src='uploads/" . htmlspecialchars($user['profile_picture']) . "' alt='Profile Picture' />";
+            if ($user['profile_photo']) {
+                echo "<img class='profile-pic' src='uploads/" . htmlspecialchars($user['profile_photo']) . "' alt='Profile Picture' />";
             }
 
             
@@ -67,8 +67,8 @@
     </div>
 
     <form class="pic_form" action="upload_profile_picture.php" method="POST" enctype="multipart/form-data">
-        <label for="profile_picture">Add profile photo:</label>
-        <input type="file" name="profile_picture" id="profile_picture" accept="image/*" required>
+        <label for="profile_photo">Add profile photo:</label>
+        <input type="file" name="profile_photo" id="profile_photo" accept="image/*" required>
         <input type="submit" value="Upload">
     </form>
 

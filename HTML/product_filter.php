@@ -24,8 +24,8 @@ session_start();
     <img class="cole" src="CSS/images/Col.svg" />
 
 
-<!-- Sol filtre menüsü -->
-<div class="sidebar">
+    <!-- Sol filtre menüsü -->
+    <div class="sidebar">
         <h3><strong>F</strong>ilters</h3>
         <ul>
             <a href="product_filter.php?category=">
@@ -43,67 +43,6 @@ session_start();
     </div>
 
     <style>
-        .sidebar {
-            width: 270px;
-            background-color: #FF5B5B;
-            padding: 30px;
-            padding-left: 50px;
-            position: fixed;
-            height: 50vh;
-            overflow-y: auto;
-            top: 170px;
-            left: -13px;
-            border-radius: 0px 13px 13px 0px;
-            border: 2.6px solid black;
-            box-shadow: 4px 4px 0 black;
-            transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
-            color: #fff;
-        }
-
-        .sidebar:hover {
-            box-shadow: 10px 10px 0 black;
-            transform: translate(-2px, -2px);
-
-        }
-
-        .sidebar h3 {
-            margin-top: 0;
-            box-shadow: 4px 4px 0 black;
-            background-color: #fff;
-            border: 2.6px solid black;
-            color: #000000;
-            font-size: 25px;
-            padding: 4px;
-            border-radius: 7px;
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            margin: 18px 0;
-            box-shadow: 2px 2px 0 black;
-            border: 2.6px solid black;
-            width: 90px;
-            padding: 0 5px 0 5px;
-            background-color: #ffb700;
-            border-radius: 6px;
-            transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
-        }
-
-        .sidebar ul li:hover {
-            box-shadow: 4px 4px 0 black;
-            transform: translate(-1px, -1px);
-        }
-
-        .sidebar ul a {
-            text-decoration: none;
-            color: #000000;
-            font-weight: bold;
-        }
-
         input[type="range"] {
             -webkit-appearance: none;
             appearance: none;
@@ -137,7 +76,7 @@ session_start();
         input[type="range"]::-webkit-slider-thumb:hover {
 
             box-shadow: 3px 3px 0 black;
-            transform: translate(-1px,-1px);
+            transform: translate(-1px, -1px);
 
         }
     </style>
@@ -148,13 +87,14 @@ session_start();
     <form class="filter_form" method="GET" action="product_filter.php">
         <label for="category">Choose category:</label>
         <select name="category" id="category">
-            <option value="">All products</option>
-            <option value="music">Music</option>
-            <option value="comics">Comics</option>
+            <option value="" <?php if (!isset($_GET['category']) || $_GET['category'] == "") echo 'selected'; ?>>All products</option>
+            <option value="music" <?php if (isset($_GET['category']) && $_GET['category'] == "music") echo 'selected'; ?>>Music</option>
+            <option value="comics" <?php if (isset($_GET['category']) && $_GET['category'] == "comics") echo 'selected'; ?>>Comics</option>
             <!-- Diğer kategoriler burada eklenebilir -->
         </select>
         <button type="submit">Filter</button>
     </form>
+
 
 
     <div class="container">

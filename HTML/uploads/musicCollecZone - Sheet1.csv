@@ -1,0 +1,21 @@
+product_id,name,price,description,image,category
+1,The Dark Side of the Moon,300,Iconic album by Pink Floyd.,uploads/dark_side_of_the_moon.jpg,music
+2,Abbey Road,250,The Beatles' last studio album.,uploads/abbey_road.jpg,music
+3,Thriller,400,The best-selling album by Michael Jackson.,uploads/thriller.jpg,music
+4,Back in Black,350,One of AC/DC's most popular albums.,uploads/back_in_black.jpg,music
+5,Rumours,300,Classic album by Fleetwood Mac.,uploads/rumours.jpg,music
+6,Hotel California,350,The Eagles' most well-known album.,uploads/hotel_california.jpg,music
+7,Nevermind,250,Nirvana's legendary grunge album.,uploads/nevermind.jpg,music
+8,The Wall,400,Pink Floyd's concept album.,uploads/the_wall.jpg,music
+9,A Night at the Opera,300,One of Queen's most beloved albums.,uploads/a_night_at_the_opera.jpg,music
+10,Dark Side of the Moon - 50th Anniversary,450,Special edition for the 50th anniversary.,uploads/dark_side_50th.jpg,music
+11,The Joshua Tree,250,One of U2's most iconic albums.,uploads/the_joshua_tree.jpg,music
+12,The Best of Bob Marley,200,The best songs from Bob Marley.,uploads/bob_marley_best.jpg,music
+13,21,300,Adele's Grammy-winning album.,uploads/adele_21.jpg,music
+14,Born to Run,350,The legendary album by Bruce Springsteen.,uploads/born_to_run.jpg,music
+15,The Chronic,300,The album that made a mark on hip-hop history by Dr. Dre.,uploads/the_chronic.jpg,music
+16,To Pimp a Butterfly,400,Award-winning album by Kendrick Lamar.,uploads/to_pimp_a_butterfly.jpg,music
+17,In the Aeroplane Over the Sea,350,Cult album by Neutral Milk Hotel.,uploads/in_the_aeroplane.jpg,music
+18,The Eminem Show,250,One of Eminem's most beloved albums.,uploads/the_eminem_show.jpg,music
+19,American Idiot,300,Punk rock masterpiece by Green Day.,uploads/american_idiot.jpg,music
+20,Graduation,400,Influential album by Kanye West.,uploads/graduation.jpg,music

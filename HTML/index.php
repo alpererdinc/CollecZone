@@ -137,7 +137,7 @@ session_start();
 
     <div class="secondSpace">
         <div>
-            <h1 class="secondText">Arşivini<br><a href="product_filter.php?category=comics"><strong class="text3d">Zenginleş</strong></a>tir</h1>
+            <h1 class="secondText"><?php echo translate('heroText'); ?><a href="product_filter.php?category=comics"><strong class="text3d"><?php echo translate('heroText2'); ?></strong></a><?php echo translate('heroText3'); ?></h1>
         </div>
         <img class="comicImage1" src="css/images/Dotto.svg"></img>
         <img class="comicImage2" src="css/images/comicBook.svg"></img>

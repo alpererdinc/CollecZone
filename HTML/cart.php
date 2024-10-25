@@ -54,15 +54,15 @@ $conn->close();
     <?php include 'navbar.php'; ?>
 
     <div class="container mt-5">
-        <h2>My Cart</h2>
+        <h2><?php echo translate('My Cart'); ?></h2>
         <?php if (count($cart_items) > 0): ?>
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Product Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Process</th>
+                        <th><?php echo translate('Product Name'); ?></th>
+                        <th><?php echo translate('Price'); ?></th>
+                        <th><?php echo translate('Quantity'); ?></th>
+                        <th><?php echo translate('Process'); ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -74,19 +74,19 @@ $conn->close();
                             <td>
                                 <form action="remove_from_cart.php" method="POST">
                                     <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($item['product_id']); ?>">
-                                    <button type="submit" class="btn btn-danger">Remove from list</button>
+                                    <button type="submit" class="btn btn-danger"><?php echo translate('Remove from list'); ?></button>
                                 </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <h4>Total Price: <?php echo htmlspecialchars($total_price); ?> TL</h4>
-            <a href="payment.php" class="btn btn-success text-right" id="buyButton">Buy</a>
-            <a href="prod_index.php" class="btn btn-secondary">Back to shop</a>
+            <h4><?php echo translate('Total Price'); ?> <?php echo htmlspecialchars($total_price); ?> TL</h4>
+            <a href="payment.php" class="btn btn-success text-right" id="buyButton"><?php echo translate('Buy'); ?></a>
+            <a href="prod_index.php" class="btn btn-secondary"><?php echo translate('Back to shop'); ?></a>
         <?php else: ?>
-            <p>There is no product in cart.</p>
-            <a href="prod_index.php" class="btn btn-secondary">Back to shop</a>
+            <p><?php echo translate('There is no product in cart.'); ?></p>
+            <a href="prod_index.php" class="btn btn-secondary"><?php echo translate('Back to shop'); ?></a>
         <?php endif; ?>
     </div>
     <footer>
@@ -309,6 +309,16 @@ $conn->close();
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+
+    
+    <script>
+        document.querySelector('select[name="language"]').value = localStorage.getItem('language') || 'en';
+
+        document.querySelector('select[name="language"]').addEventListener('change', function() {
+            localStorage.setItem('language', this.value);
+        });
+    </script>
 </body>
 
 </html>

@@ -19,10 +19,11 @@ session_start();
 </head>
 
 <body>
-
-    <h2 class="fav_title">Favorites</h2>
-
     <?php include 'navbar.php'; ?>
+    
+    <h2 class="fav_title"><?php echo translate('Favorites'); ?></h2>
+
+
 
     <div class="container">
         <div class="row">
@@ -51,14 +52,14 @@ session_start();
 
                     echo "<img src='" . $row["image"] . "' alt='Ürün Resmi'>";
                     echo "<h2 class='plakName'>" . $row["name"] . "</h2>";
-                    echo "<p class='price'>Price: " . $row["price"] . " TL</p>";
+                    echo "<p class='price'>" . translate('Price') . ": " . $row["price"] . " TL</p>";
                     echo "<p>" . $row["description"] . "</p>";
 
                     echo "</a>"; // Linki kapat
                     echo "<form action='add_cart.php' method='POST'>";
                     echo "<input type='hidden' name='product_id' value='" . $row["product_id"] . "'>"; // Ürün ID'si
                     // echo "<input type='number' name='quantity' value='1' min='1' class='form-control mb-2'>"; 
-                    echo "<button type='submit' class='btn btn-primary'>Add to Cart</button>";
+                    echo "<button type='submit' class='btn btn-primary'>" . translate('Add to Cart') . "</button>";
                     echo "</form>";
                     echo "</div>";
                 }
@@ -160,10 +161,9 @@ session_start();
 
         }
 
-        .fav_title{
+        .fav_title {
             text-align: center;
         }
-    
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -175,6 +175,16 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
         integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
         crossorigin="anonymous"></script>
+
+
+
+        <script>
+        document.querySelector('select[name="language"]').value = localStorage.getItem('language') || 'en';
+
+        document.querySelector('select[name="language"]').addEventListener('change', function() {
+            localStorage.setItem('language', this.value);
+        });
+    </script>
 </body>
 
 </html>

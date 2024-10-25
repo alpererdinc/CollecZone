@@ -32,20 +32,25 @@ session_start();
 
     <!-- Sol filtre menüsü -->
     <div class="sidebar">
-        <h3><strong>F</strong>ilters</h3>
+        <h3><?php echo translate('filters'); ?></h3>
         <ul>
             <a href="product_filter.php?category=">
-                <li>All Prods.</li>
+                <li><?php echo translate('allProds'); ?></li>
             </a>
             <a href="product_filter.php?category=music">
-                <li>Music</li>
+                <li><?php echo translate('music'); ?></li>
             </a>
             <a href="product_filter.php?category=comics">
-                <li>Comics</li>
+                <li><?php echo translate('comics'); ?></li>
             </a>
         </ul>
-        <h3><strong>P</strong>rice <strong>R</strong>ange</h3>
+        <h3><?php echo translate('priceRange'); ?></h3>
         <input type="range" min="0" max="10000" step="50" id="price-range" name="price">
+        <div class="price-points">
+            <span>0 TL</span>
+            <span>5000 TL</span>
+            <span>10000 TL</span>
+        </div>
     </div>
 
 
@@ -53,15 +58,16 @@ session_start();
 
     <!-- Üst filtre menüsü -->
     <form class="filter_form" method="GET" action="product_filter.php">
-        <label for="category">Choose category:</label>
+        <label for="category"><?php echo translate('Choose category'); ?></label>
         <select name="category" id="category">
-            <option value="">All products</option>
-            <option value="music">Music</option>
-            <option value="comics">Comics</option>
+            <option value=""><?php echo translate('allProds'); ?></option>
+            <option value="music"><?php echo translate('music'); ?></option>
+            <option value="comics"><?php echo translate('comics'); ?></option>
             <!-- Diğer kategoriler burada eklenebilir -->
         </select>
-        <button type="submit">Filter</button>
+        <button type="submit"><?php echo translate('Filter'); ?></button>
     </form>
+
 
 
     <div class="container">
@@ -92,14 +98,14 @@ session_start();
 
                     echo "<img src='" . $row["image"] . "' alt='Ürün Resmi'>";
                     echo "<h2 class='plakName'>" . $row["name"] . "</h2>";
-                    echo "<p class='price'>Price: " . $row["price"] . " TL</p>";
+                    echo "<p class='price'>" . translate('Price') . ": " . $row["price"] . " TL</p>";
                     echo "<p>" . $row["description"] . "</p>";
 
                     echo "</a>"; // Linki kapat
                     echo "<form action='add_cart.php' method='POST'>";
                     echo "<input type='hidden' name='product_id' value='" . $row["product_id"] . "'>"; // Ürün ID'si
                     // echo "<input type='number' name='quantity' value='1' min='1' class='form-control mb-2'>"; 
-                    echo "<button type='submit' class='btn btn-primary'>Add to Cart</button>";
+                    echo "<button type='submit' class='btn btn-primary'>" . translate('Add to Cart') . "</button>";
                     echo "</form>";
                     echo "</div>";
                 }
@@ -231,6 +237,24 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
         integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
         crossorigin="anonymous"></script>
+
+
+    <script>
+        document.querySelector('select[name="language"]').value = localStorage.getItem('language') || 'en';
+
+        document.querySelector('select[name="language"]').addEventListener('change', function() {
+            localStorage.setItem('language', this.value);
+        });
+    </script>
+
+
+    <script>
+        document.getElementById("price-range").addEventListener("input", function() {
+            const price = this.value;
+            window.location.href = "product_filter.php?price=" + price;
+        });
+    </script>
+
 </body>
 
 </html>

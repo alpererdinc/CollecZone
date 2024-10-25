@@ -74,7 +74,7 @@ session_start();
                         $user_id = $_SESSION['user_id'];
                     } else {
 
-                        echo "Favoriye eklemek için giriş yapmalısınız.";
+                        echo "".translate('Login to Add Favorite')."";
                     }
 
 
@@ -89,7 +89,7 @@ session_start();
             // Sepete ekle butonu
             echo "<form action='add_cart.php' method='POST' class='d-inline'>"; 
             echo "<input type='hidden' name='product_id' value='" . $row["product_id"] . "'>"; 
-            echo "<button type='submit' class='btn btn-primary'>Sepete Ekle</button>";
+            echo "<button type='submit' class='btn btn-primary'>".translate('Add to Cart')."</button>";
             echo "</form>";
             echo "</div>"; 
 
@@ -188,7 +188,7 @@ session_start();
             color: white;
             border: 2.6px solid black;
             transform: translate(-3px, -3px);
-            box-shadow: 8px 8px 0 #000000;
+            box-shadow: 4px 4px 0 #000000;
         }
 
         .fa-star {
@@ -294,6 +294,16 @@ session_start();
             <p>All rights reserved. © 2024 CollecZone</p>
     </footer>
 
+
+
+    
+    <script>
+        document.querySelector('select[name="language"]').value = localStorage.getItem('language') || 'en';
+
+        document.querySelector('select[name="language"]').addEventListener('change', function() {
+            localStorage.setItem('language', this.value);
+        });
+    </script>
 </body>
 
 </html>

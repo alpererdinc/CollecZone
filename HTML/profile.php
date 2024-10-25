@@ -52,13 +52,13 @@
             }
 
             
-            echo "<h1>Welcome, " . htmlspecialchars($user['username']) . "!</h1>";
-            echo "<p><strong>E-mail:</strong> " . htmlspecialchars($user['email']) . "</p>";
+            echo "<h1>" .translate('Welcome'). ", " . htmlspecialchars($user['username']) . "!</h1>";
+            echo "<p><strong>" .translate('E-mail:'). "</strong> " . htmlspecialchars($user['email']) . "</p>";
 
            
-            echo "<br><a class='profile_link' href='favorites.php'>My Favorites</a><br>";
-            echo "<br><a class='profile_link' href='order_history.php'>Order History</a>";
-            echo "<br><br><a class='red_link' href='#' data-toggle='modal' data-target='#logoutModal'>Logout</a>";
+            echo "<br><a class='profile_link' href='favorites.php'>" .translate('My Favorites'). "</a><br>";
+            echo "<br><a class='profile_link' href='order_history.php'>" .translate('Order History'). "</a>";
+            echo "<br><br><a class='red_link' href='#' data-toggle='modal' data-target='#logoutModal'>" .translate('Logout'). "</a>";
             echo "<br><br>";
 
             $conn->close();
@@ -67,9 +67,9 @@
     </div>
 
     <form class="pic_form" action="upload_profile_picture.php" method="POST" enctype="multipart/form-data">
-        <label for="profile_photo">Add profile photo:</label>
+        <label for="profile_photo"><?php echo translate('Add profile photo:'); ?></label>
         <input type="file" name="profile_photo" id="profile_photo" accept="image/*" required>
-        <input type="submit" value="Upload">
+        <input type="submit" value="<?php echo translate('Upload'); ?>">
     </form>
 
 
@@ -218,6 +218,15 @@ footer {
   </div>
 </div>
 
+
+
+<script>
+        document.querySelector('select[name="language"]').value = localStorage.getItem('language') || 'en';
+
+        document.querySelector('select[name="language"]').addEventListener('change', function() {
+            localStorage.setItem('language', this.value);
+        });
+    </script>
 
 </body>
 

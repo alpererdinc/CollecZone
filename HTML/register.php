@@ -145,6 +145,17 @@ $conn->close();
             text-align: center;
         }
     </style>
+
+
+
+
+<script>
+        document.querySelector('select[name="language"]').value = localStorage.getItem('language') || 'en';
+
+        document.querySelector('select[name="language"]').addEventListener('change', function() {
+            localStorage.setItem('language', this.value);
+        });
+    </script>
 </body>
 
 </html>

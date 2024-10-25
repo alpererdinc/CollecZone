@@ -20,25 +20,14 @@ session_start();
   <?php include 'navbar.php'; ?>
 
   <div class="about-section">
-    <h1>About Us</h1>
-    <p>A few sentences about what we do.</p>
-    <p>CollecZone is a page where you can discover collectors' favorites,
-      world-famous and now out-of-circulation products. This carefully
-      compiled selection includes rare records and timeless pieces that
-      left their mark on unforgettable periods in music history; cult
-      and unique issues of comic book collections; exotic aromatic
-      candles that you cannot easily find. Each product consists of
-      valuable pieces that carry traces of the past and offer a special
-      meaning to collectors. This rare collection has been brought
-      together for music lovers and collectors, and each product tells
-      its own story. Take the opportunity to hold historical and cultural
-      heritage in your hands while embarking on a unique journey in the
-      world of products that can be among your own pieces in our collection.
+    <h1><?php echo translate('About Us'); ?></h1>
+    <p><?php echo translate('A few sentences about what we do.'); ?></p>
+    <p>CollecZone <?php echo translate('mainAbout'); ?>
 
     </p>
   </div>
 
-  <h2 style="text-align:center">Our Team</h2>
+  <h2 style="text-align:center"><?php echo translate('Our Team'); ?></h2>
   <div class="row">
     <div class="column">
       <div class="card">
@@ -48,7 +37,7 @@ session_start();
           <p class="title">CEO & Founder</p>
           <p>Comp. Eng. Student, 2D Animator</p>
           <p>ae.alpererdinc@gmail.com</p>
-          <p><a href="https://taplink.cc/alpererdinc" target="_blank"><button class="button">Contact</button></p></a>
+          <p><a href="https://taplink.cc/alpererdinc" target="_blank"><button class="button"><?php echo translate('Contact'); ?></button></p></a>
         </div>
       </div>
     </div>
@@ -61,7 +50,7 @@ session_start();
           <p class="title">Mental Supporter, Co-founder</p>
           <p>Cat</p>
           <p></p>
-          <p><a ><button id="meowButton" class="button">Maow</button></a></p>
+          <p><a ><button id="meowButton" class="button"><?php echo translate('Maow'); ?></button></a></p>
           <div id="pawContainer"></div>
           <audio id="meowSound" src="CSS/images/meow.mp3"></audio>
         </div>
@@ -76,12 +65,26 @@ session_start();
           <p class="title">Website Mascot, Professional Collector</p>
           <p>Squirrel</p>
           <p></p>
-          <p><a href="https://taplink.cc/alpererdinc" target="_blank"><button class="button">Contact</button></p></a>
+          <p><a href="https://taplink.cc/alpererdinc" target="_blank"><button class="button"><?php echo translate('Contact'); ?></button></p></a>
 
         </div>
       </div>
     </div>
   </div>
+
+  <div class="column">
+      <div class="card">
+        <img src="css/images/fng.jpg" alt="FNG" style="width: 200px">
+        <div class="container">
+          <h2>Fatma Nur Gençdoğan</h2>
+          <p class="title">Mental Supporter, Co-founder</p>
+          <p>Comp. Eng. Student</p>
+          <p></p>
+          <p><a href="https://www.linkedin.com/in/fatma-nur-gen%C3%A7do%C4%9Fan-876a002a7/" target="_blank"><button class="button"><?php echo translate('Contact'); ?></button></p></a>
+
+        </div>
+      </div>
+    </div>
   <style>
     body {
       margin: 0;
@@ -311,6 +314,15 @@ session_start();
 
 
     <script src="cat.js"></script>
+
+    
+    <script>
+        document.querySelector('select[name="language"]').value = localStorage.getItem('language') || 'en';
+
+        document.querySelector('select[name="language"]').addEventListener('change', function() {
+            localStorage.setItem('language', this.value);
+        });
+    </script>
 </body>
 
 </html>

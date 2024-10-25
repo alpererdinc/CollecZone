@@ -254,7 +254,7 @@ function translate($key)
       background-color: #FFF;
       color: #000;
       transition: box-shadow 0.3s ease, transform 0.3s ease;
-      box-shadow:0px 0px 0px 2px black inset, 0 0 0 black;
+      box-shadow: 0px 0px 0px 2px black inset, 0 0 0 black;
     }
 
     /* On hover */
@@ -262,8 +262,8 @@ function translate($key)
       transform: translate(-2px, -2px);
       background-color: #FF5B5B;
       color: #FFF;
-      box-shadow:0px 0px 0px 2px black inset, 3px 3px 0 black;
-      
+      box-shadow: 0px 0px 0px 2px black inset, 3px 3px 0 black;
+
     }
 
     /* On focus */
@@ -276,6 +276,36 @@ function translate($key)
     .language-select-form option {
       padding: 4px;
 
+    }
+
+    /*ScrollBarın stilleri*/
+    /* width */
+    ::-webkit-scrollbar {
+      width: 15px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset -1px 1px 0px black;
+      border-radius: 10px;
+      border: 2.6px solid black;
+      background-color: #fff;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #ffb700;
+      border: 2.6px solid black;
+      border-radius: 10px;
+      box-shadow:  0px 2px 0px black;
+
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ffa200;
+      box-shadow:  0px 3px 0px black;
+      transform: translate(-2px,-2px);
     }
   </style>
 
@@ -314,9 +344,9 @@ function translate($key)
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false"><?php echo translate('categories'); ?></a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="prod_index.php">All Products</a>
-            <a class="dropdown-item" href="product_filter.php?category=music">Music</a>
-            <a class="dropdown-item" href="product_filter.php?category=comics">Comics</a>
+            <a class="dropdown-item" href="prod_index.php"><?php echo translate('allProds'); ?></a>
+            <a class="dropdown-item" href="product_filter.php?category=music"><?php echo translate('music'); ?></a>
+            <a class="dropdown-item" href="product_filter.php?category=comics"><?php echo translate('comics'); ?></a>
           </div>
         </li>
         <li><a href="about.php"><?php echo translate('about'); ?></a></li>
@@ -352,7 +382,7 @@ function translate($key)
         <li>
           <div class="search">
             <form action="search.php" method="GET">
-              <input type="text" class="searchTerm" name="query" placeholder="Find your missing piece..." required>
+              <input type="text" class="searchTerm" name="query" placeholder="<?php echo translate('Find your missing piece...'); ?>" required>
               <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
               </button>

@@ -89,27 +89,29 @@ session_start();
     </div>
 
 
+    <?php
+    $music_sql = "SELECT product_id, name, image, description FROM products WHERE category = 'music' ORDER BY product_id DESC LIMIT 5";
+    $music_result = $conn->query($music_sql);
+    ?>
+
     <div id="productCarousel" class="carousel slide" data-ride="carousel">
-        <h2 class="newProdTitle"><?php echo translate('newPieces'); ?></h2>
+        <h2 class="newProdTitle">New Music Albums</h2>
         <div class="carousel-inner">
             <?php
-            $active = "active";
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
+            $active_music = "active";
+            if ($music_result->num_rows > 0) {
+                while ($row = $music_result->fetch_assoc()) {
                     echo '
-                <div class="carousel-item ' . $active . '">
+            <div class="carousel-item ' . $active_music . '">
                 <a href="product_detail.php?product_id=' . $row['product_id'] . '" style="color: white; text-decoration: none;">
                     <img src="' . $row["image"] . '" class="d-block w-100" alt="' . $row["name"] . '">
-                        <div class="carousel-caption d-none d-md-block">
-                        <h5>
-                                ' . $row["name"] . '
-                        </h5>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>' . $row["name"] . '</h5>
                         <p>' . $row["description"] . '</p>
                     </div>                            
-                    </a>
-
-                </div>';
-                    $active = "";
+                </a>
+            </div>';
+                    $active_music = "";
                 }
             }
             ?>
@@ -123,6 +125,7 @@ session_start();
             <span class="sr-only">Next</span>
         </a>
     </div>
+
 
 
 
@@ -146,6 +149,45 @@ session_start();
         </div>
 
     </div>
+
+    <?php
+    $comics_sql = "SELECT product_id, name, image, description FROM products WHERE category = 'comics' ORDER BY product_id DESC LIMIT 5";
+    $comics_result = $conn->query($comics_sql);
+    ?>
+
+    <div id="comicsCarousel" class="carousel slide" data-ride="carousel">
+        <h2 class="newProdTitle">New Comics</h2>
+        <div class="carousel-inner">
+            <?php
+            $active_comics = "active";
+            if ($comics_result->num_rows > 0) {
+                while ($row = $comics_result->fetch_assoc()) {
+                    echo '
+            <div class="carousel-item ' . $active_comics . '">
+                <a href="product_detail.php?product_id=' . $row['product_id'] . '" style="color: white; text-decoration: none;">
+                    <img src="' . $row["image"] . '" class="d-block w-100" alt="' . $row["name"] . '">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>' . $row["name"] . '</h5>
+                        <p>' . $row["description"] . '</p>
+                    </div>                            
+                </a>
+            </div>';
+                    $active_comics = "";
+                }
+            }
+            ?>
+        </div>
+        <a class="carousel-control-prev" href="#comicsCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#comicsCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
 
     <div id="End" class="bodyTextSpace"></div>
     <p class="bodyText"><a href="prod_index.php"><strong><?php echo translate('mainMottoFind'); ?></strong></a> <?php echo translate('mainMotto'); ?></p>

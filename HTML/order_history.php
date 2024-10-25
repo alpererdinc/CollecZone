@@ -59,15 +59,15 @@ $conn->close();
     <?php include 'navbar.php'; ?>
 
     <div class="container mt-5">
-        <h2 class="mb-4 text-center">Order History</h2>
+        <h2 class="mb-4 text-center"><?php echo translate('Order History'); ?></h2>
         <?php if (count($order_history) > 0): ?>
             <table class="table table-striped table-hover">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Order ID</th>
-                        <th>Date</th>
-                        <th>Products</th>
-                        <th>Total Price</th>
+                        <th><?php echo translate('Order ID'); ?></th>
+                        <th><?php echo translate('Date'); ?></th>
+                        <th><?php echo translate('Products'); ?></th>
+                        <th><?php echo translate('Total Price'); ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -283,6 +283,15 @@ $conn->close();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 
     <script src="theme.js"></script>
+
+    
+    <script>
+        document.querySelector('select[name="language"]').value = localStorage.getItem('language') || 'en';
+
+        document.querySelector('select[name="language"]').addEventListener('change', function() {
+            localStorage.setItem('language', this.value);
+        });
+    </script>
 
 </body>
 

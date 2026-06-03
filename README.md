@@ -32,5 +32,5 @@
 - Bootstrap: Responsive tasarım framework’ü
 - Git/GitHub: Versiyon kontrolü ve proje yönetimi
 
-## Proje Durumu 📅
+## Proje Durumu 
 - Bu proje şu anda geliştirme aşamasında olup, yeni özellikler eklenmeye devam etmektedir.

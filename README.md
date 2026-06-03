@@ -1,15 +1,15 @@
 ![colleczoneLogoWhite](https://github.com/user-attachments/assets/6eb3b0c5-0926-4d85-ac4b-e2ecfcf4434f)  
-# CollecZone 🎶📚🎨
+# CollecZone 
 
 **CollecZone**, koleksiyoncular için özel olarak tasarlanmış bir e-ticaret sitesidir. Kullanıcılar nadir ve özel parçaları keşfedebilir, favori listeleri oluşturabilir ve kendi koleksiyonlarını genişletebilirler. Proje, modern tasarım prensipleri ve kullanıcı dostu arayüzü ile benzersiz bir alışveriş deneyimi sunmayı amaçlar.
 
-## Özellikler ✨
-- 🛒 **Ürün Kartları**: Nadir koleksiyon parçalarının detaylı gösterimi
-- ❤️ **Favorilere Ekleme**: Ürünleri favorilere ekleyip favori listesinde görüntüleme
-- 🛍️ **Alışveriş Sepeti**: Kullanıcıların alışveriş yapmalarını sağlayan sepet özelliği
-- 🎨 **Tema Modları**: Kullanıcı tercihlerine göre renk ve profesyonel tema geçişleri
-- 🔍 **Kategori Bazlı Filtreleme**: Müzik, çizgi roman ve daha fazlası için filtreleme
-- 🚀 **Duyarlı Tasarım**: Farklı ekran boyutlarında mükemmel görünüm
+## Özellikler 
+-  **Ürün Kartları**: Nadir koleksiyon parçalarının detaylı gösterimi
+-  **Favorilere Ekleme**: Ürünleri favorilere ekleyip favori listesinde görüntüleme
+-  **Alışveriş Sepeti**: Kullanıcıların alışveriş yapmalarını sağlayan sepet özelliği
+-  **Tema Modları**: Kullanıcı tercihlerine göre renk ve profesyonel tema geçişleri
+-  **Kategori Bazlı Filtreleme**: Müzik, çizgi roman ve daha fazlası için filtreleme
+-  **Duyarlı Tasarım**: Farklı ekran boyutlarında mükemmel görünüm
 
 ## Ekran Görüntüleri 📷
 ![Ekran görüntüsü 2024-10-18 091033](https://github.com/user-attachments/assets/f6c4cb90-d841-481b-92e1-217d31432ac0)
@@ -23,7 +23,7 @@
 ![image](https://github.com/user-attachments/assets/33823e84-72c4-45f2-8734-03003b0a6e9d)
 
 
-## Kullanılan Teknolojiler 🧰
+## Kullanılan Teknolojiler 
 - HTML5: Yapı ve içerik yönetimi
 - CSS3 (Sass): Stil ve düzenleme
 - JavaScript (ES6): Dinamik işlevsellik
